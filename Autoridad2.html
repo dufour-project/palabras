@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">AUTORIDAD</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "AT. <br>I. «TODA AUTORIDAD VIENE DE DIOS». <br>Este principio, que formulará Pablo (Rm 13,1), se supone constantemente en el AT: el ejercicio de la autoridad aparece en él sometido a las exigencias imperiosas de la voluntad divina. <br>1. Aspectos de la autoridad terrenal.<br> En la creación que Dios ha hecho, todo poder procede de él: el del hombre sobre la naturaleza (Gén 1,28), el del marido sobre la mujer (Gén 3,16), el de los padres sobre los hijos (Lev 19,3). Cuando se consideran las estructuras más complejas de la sociedad humana, todos los que mandan tienen también de Dios la responsabilidad del bien común en cuanto al grupo que les está sometido: Yahveh ordena a Hagar la obediencia a su dueña (Gén 16,9); él también es quien confiere a Hazael el gobierno de Damasco (IRe 19,15; 2Re 8,9-13) y a Nabucodonosor el de todo el Oriente (Jer 27,6). Si esto sucede entre los mismos paganos (cf. Eclo 10,4), con mayor razón en el pueblo de Dios. Pero aquí el problema planteado por la autoridad terrenal reviste un carácter especial que merece ser estudiado aparte. <br>2. Condiciones del ejercicio de la autoridad.<br> La autoridad confiada por Dios no es absoluta; está limitada por las obligaciones morales. La *ley viene a moderar su ejercicio, precisando incluso los derechos de los *esclavos (Éx 21,1-6,26s; Dt 15,12-18; Eclo 33,30...). En cuanto a los niños, la autoridad del padre debe tener por fin su buena *educación (Prov 23,13s; Eclo 7,22s; 30,1...). En materia de autoridad politica es donde el hombre propende más a traspasar los limites de su poder. Embriagado de su *poder, se atribuye el mérito del mismo, como por ejemplo, Asiria victoriosa (Is 10,7-11.13s); se diviniza a si misma (Ez 98,2-5) y se alza contra el Señor soberano (Is 14,13s), hasta enfrentársele en forma blasfematoria (Dan 11,36). Cuando llega a esto se asemeja a las *bestias satánicas que Daniel veía surgir del mar y a las que daba Dios poder por algún tiempo (Dan 7,3- 8.19-25). Pero una autoridad pervertida en esta forma se condena por si misma al *juicio divino, que no dejará de abatirla en el día prefijado (Dan 7,11s.26): habiendo asociado su causa a la de los poderes malvados, caerá finalmente con ellos. <br>II. LA AUTORIDAD EN EL PUEBLO DE DIOS.<br> Todo lo que ha quedado dicho sobre el origen de la autoridad terrenal y las condiciones de su ejercicio, concierne al orden de la creación. Ahora bien, este orden no lo ha respetado el hombre. Para restaurarlo inaugura Dios en la historia de su pueblo un designio de *salvación, en el que la autoridad terrenal adquirirá nuevo sentido, en la perspectiva de la redención. <br>1. Los dos poderes.<br> A la cabeza de su pueblo establece Dios apoderados. No son en primer lugar personajes politicos, sino enviados religiosos, que tienen por *misión hacer de Israel «un reino sacerdotal y una nación santa» (Éx 19,6). *Moisés, los *profetas, los *sacerdotes, son así depositarios de un poder de esencia espiritual, que ejercen en forma visible por delegación divina. Sin embargo, Israel es también una comunidad nacional, un Estado dotado de organización política. Esta es teocrática, pues el poder se ejerce en ella también en nombre de Dios, sea cual fuere su forma: poder de los ancianos que asisten a Moisés (Ex 18,21 ss; Núm 11,24s), de los jefes carismáticos, como Josué y los jueces, finalmente de los *reyes. La doctrina de la alianza supone así una estrecha asociación de los dos poderes, y la subordinación del político al espiritual, en conformidad con la vocación nacional. De ahí resultan en la práctica conflictos inevitables: de Saúl con Samuel (ISa 13,7-15; 15), de Ajab con Elías (IRe 21,17-24), y de tantos reyes con los profetas contemporáneos. Así, en el pueblo de Dios, la autoridad humana está expuesta a los mismos abusos que en todas partes. Razón de más para que esté sometida al juicio divino: el poder politico de la realeza israelita acabará por naufragar en la catástrofe del destierro. <br>2. Frente a los imperios paganos.<br> Cuando el judaísmo se reconstruye después del exilio, sus estructuras recuperan las formas de la teocracia original. La distinción del poder espiritual y del poder político se afirma tanto mejor cuanto que este último está en manos de los imperios extranjeros, de los que los judíos son actualmente súbditos. En esta nueva situación, el pueblo de Dios adopta, según los casos, dos actitudes. La primera es de franca aceptación: de Dios han recibido el imperio Ciro y sus sucesores (Is 45,1ss); puesto que favorecen la restauración del culto santo, hay que servirlos lealmente y orar por ellos (Jer 29,7; Bar 1,10s). La segunda, cuando el imperio pagano se convierte en perseguidor, es un llamamiento a la *venganza divina y finalmente a la rebelión (Jdt; IMac 2,15-28). Pero la restauración monárquica de la época macabea origina de nuevo una concentración equivoca de los poderes. que se precipita rápidamente en la peor de las decadencias. Con la intervención de Roma el año 63, el pueblo de Dios se halló de nuevo bajo la férula de los detestados paganos. <br>NT. <br>I. JESÚS. <br>1. Jesús, depositario de la autoridad.<br> Durante su vida pública aparece Jesús como depositario de una autoridad (exusía) singular: predica con autoridad (Mc 1,22 p), tiene poder para perdonar los pecados (Mt 9,6ss), es señor del sábado (Mc 2,28 p). Poder absolutamente religioso de un enviado divino, ante el cual los judíos se plantean la cuestión esencial: ¿con qué autoridad hace estas cosas (Mt 21.23 p)? Jesús no responde directamente a esta cuestión (Mt 21,27 p). Pero los signos que realiza orientan los espiritus hacia una respuesta: tiene poder (exusía) sobre la enfermedad (Mt 8,8sp), sobre los elementos (Mc 4,41 p), sobre los demonios (Mt 12, 28 p). ¿No es esto indicio, como él mismo lo dirá, de que le ha sido dado todo poder en el cielo y en la tierra (Mt 28,18)? Su autoridad se extiende, por tanto, hasta a las cosas politicas; en este terreno, el poder que se negó a tener de *Satán (Lc 4,5ss), lo recibió en realidad de Dios. Sin embargo, no se prevale de este poder entre los hombres. Mientras que los jefes de este mundo muestran el suyo ejerciendo su dominio, él se comporta entre los suyos como quien sirve (Lc 22,25ss). Es maestro y señor (Jn 15,13); pero ha venido para *servir y para dar su vida (Mc 10.42ss p). Y precisamente porque adopta así la condición de *esclavo, toda *rodilla se doblará finalmente delante de él (Flp 2.5-11). <br>2. Jesús delante de las autoridades terrenas.<br> Tanto más significativa es la actitud de Jesús frente a las autoridades terrenas. Ante las autoridades judías reivindica su calidad de *Hijo del hombre (Mt 26,63s p), base de un poder atestiguado por las Escrituras (Dan 7.14). Ante la autoridad politica, su posición es más matizada. Reconoce la competencia propia del césar (Mt 22,21 p); pero esto no le cierra los ojos para no ver la injusticia de los representantes de la autoridad (Mt 20,25; Lc 13.32). Cuando comparece delante de Pilato no discute su poder, cuyo origen divino conoce, pero destaca la iniquidad de que él es victima (Jn 19,11) y reivindica para si mismo la realeza que no es de este mundo (Jn 18,36). Si, pues, lo espiritual y lo temporal. cada uno a su manera, dependen en principio de él sin embargo, consagra su distinción neta y da a entender que por el momento lo temporal conserva verdadera consistencia. Los dos poderes se confundian en la teocracia israelita; en la Iglesia no sucederá ya lo mismo. <br>II. LOS APÓSTOLES. <br>1. Los depositarios de la autoridad de Jesús.<br> Jesús, al enviar a sus *discípulos en *misión, les delegó su propia autoridad («el que a vosotros escucha, a mi me escucha», Lc 10,16s) y les confia sus poderes (cf. Mc 3,14sp; Lc 10,19). Pero les enseñó también que el ejercicio de aquellos poderes era en realidad un *servicio (Lc 22,26 p; Jn 13,14s). Efectivamente, se ve luego a los *apóstoles usar de sus prerrogativas, por ejemplo, para excluir de la comunidad a los miembros indignos (ICor 5,4s). Sin embargo, lejos de hacer sentir el peso de su autoridad, se preocupan ante todo por servir a Cristo y a los hombres (ITes 2,6- 10). Es que, si bien se ejerce esta autoridad en forma visible. no por eso deja de ser de orden espiritual: concierne exclusivamente al gobierno de la Iglesia. Hay aquí una innovación importante: contrariamente a los estados antiguos, se mantiene efectiva la distinción entre lo espiritual y lo politico. <br>2. El ejercicio de la autoridad humana.<br> Por lo que se refiere al valor de la autoridad humana y a las condiciones de su ejercicio, los escritos apostólicos confirman la doctrina del AT, pero dándole una nueva base. La *mujer debe estar sometida a su marido como la Iglesia a Cristo; pero por su parte el marido debe amar a su mujer como Cristo amó a su Iglesia (Ef 5,22-33). Los hijos deben obedecer a sus padres (Col 3,20s; Ef 6,1ss) porque toda *paternidad recibe su nombre de Dios (Ef 3,15); pero los padres, al educarlos, deben guardarse de exasperarlos (Ef 6,4; Col 3,21). Los *esclavos deben obedecer a sus amos, incluso duros y molestos (IPe 2,18) como al mismo Cristo (Col 3,22; Ef 6,5...); pero los amos deben acordarse de que también ellos tienen un señor en el cielo (Ef 6,9) y aprender a tratar a sus esclavos como a *hermanos (FIm 16). No basta con decir que esta moral social salvaguarda una justa concepción de la autoridad en la sociedad, sino que le da por base y por ideal el servicio de los otros realizado en la caridad. <br>3. Las relaciones de la Iglesia con las autoridades humanas.<br> Los apóstoles, depositarios de la autoridad de Jesús, hallan frente a ellos autoridades humanas con las que hay que ponerse en relación. Entre éstas, las autoridades judías no son autoridades como las otras: tienen un poder de orden religioso y tiene su origen en una institución divina; así los apóstoles las tratan con respeto (Act 4,9; 23,1-5) en tanto no es manifiesta su oposición a Cristo. Pero estas autoridades han contraído grave responsabilidad al desconocer a Cristo y hacerlo condenar (Act 3,13ss; 13, 27s). Todavía la agravan oponiéndose a la predicación del Evangelio; por eso los apóstoles pasan por encima de sus prohibiciones, pues estiman que hay que obedecer a Dios antes que a los hombres (Act 5,29). Rechazando la autoridad de Cristo han perdido los jefes judíos su poder espiritual. Las relaciones con la autoridad política plantean un problema diferente. Frente al imperio romano profesa Pablo perfecta lealtad, reivindica su calidad de ciudadano romano (Act 16,37; 22,25...) y apela al césar para obtener justicia (Act 25,12). Proclama que toda autoridad viene de Dios y que es dada con miras al bien común; la sumisión a los poderes civiles es, pues, un deber de conciencia porque son los ministros de la justicia divina (Rm 13,1-7), y se debe orar por los reyes y por los depositarios de la autoridad (ITim 2,2). La misma doctrina en la 1ª epístola de Pedro (IPe 2,13-17). Esto supone que las autoridades civiles, por su parte, se someten a la ley de Dios. Pero en ninguna parte se ve reivindicar para las autoridades espirituales de la Iglesia un poder directo sobre las cosas políticas. Si, en cambio, la autoridad política, como en otro tiempo el imperio sirio, perseguidor de los judíos, se eleva a su vez contra Dios y contra su Cristo, entonces la profecía cristiana anuncia solemnemente su juicio y su caída: así lo hace el Apocalipsis ante la Roma de Nerón y de Domiciano (Ap 17,1- 19,10). En el imperio totalitario que pretende encarnar la autoridad divina, el poder político no es ya más que una caricatura satánica, frente a la cual ningún creyente deberá inclinar la cabeza. -> - Apóstol - Iglesia - Misión - Obediencia - Pastor - Padre - Poder - Servir";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

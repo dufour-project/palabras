@@ -1,0 +1,614 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ABRAHAM</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<Inicio" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="Históricos>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 11,10-31' /><label for="hist0">Gén 11,10-31</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 12,2-7' /><label for="hist1">Gén 12,2-7</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 13,15ss' /><label for="hist2">Gén 13,15ss</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 15,1' /><label for="hist3">Gén 15,1</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Gén 15,18' /><label for="hist4">Gén 15,18</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 16,10' /><label for="hist5">Gén 16,10</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 17,5-8' /><label for="hist6">Gén 17,5-8</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 18,16-33' /><label for="hist7">Gén 18,16-33</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Gén 22,1' /><label for="hist8">Gén 22,1</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Gén 22,8-18' /><label for="hist9">Gén 22,8-18</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Gén 24,1' /><label for="hist10">Gén 24,1</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Gén 26,3ss' /><label for="hist11">Gén 26,3ss;</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Gén 28,13s' /><label for="hist12">Gén 28,13s</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Gén 28,4' /><label for="hist13">Gén 28,4</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Gén 48,1Ss' /><label for="hist14">Gén 48,1Ss</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Gén 50.24' /><label for="hist15">Gén 50.24</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='Sab 1,13' /><label for="hist16">Sab 1,13</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='Sab 10,5-6' /><label for="hist17">Sab 10,5-6</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Dt 12,31' /><label for="hist18">Dt 12,31</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Dt 1,8' /><label for="hist19">Dt 1,8</label><br>
+		<input name='lecthist' type='radio' id='hist20' value='Dt 9,27' /><label for="hist20">Dt 9,27</label><br>
+		<input name='lecthist' type='radio' id='hist21' value='Eclo 44,19-21' /><label for="hist21">Eclo 44,19-21</label><br>
+		<input name='lecthist' type='radio' id='hist22' value='Ex 2,23s' /><label for="hist22">Ex 2,23s</label><br>
+		<input name='lecthist' type='radio' id='hist23' value='Ex 32, 13' /><label for="hist23">Ex 32, 13</label><br>
+		<input name='lecthist' type='radio' id='hist24' value='Neh 9,7-8' /><label for="hist24">Neh 9,7-8</label><br>
+		<input name='lecthist' type='radio' id='hist25' value='1Re 18,36' /><label for="hist25">1Re 18,36</label><br>
+		<input name='lecthist' type='radio' id='hist26' value='1 Mac 2,52' /><label for="hist26">1 Mac 2,52; </label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Jer 7,31' /><label for="prof0">Jer 7,31</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 41,8' /><label for="prof1">Is 41,8</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 51,1s' /><label for="prof2">Is 51,1s</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Is 29,22' /><label for="prof3">Is 29,22</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Miq 7,20' /><label for="prof4">Miq 7,20</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Ez 33,24-29' /><label for="prof5">Ez 33,24-29</label><br>
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Heb 11,8-19' /><label for="cart0">Heb 11,8-19</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Heb 2,14-17' /><label for="cart1">Heb 2,14-17</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Rom 8,32' /><label for="cart2">Rom 8,32</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Rom 4,11ss' /><label for="cart3">Rom 4,11ss</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Rom 3-27' /><label for="cart4">Rom 3-27;</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='Rom 4,1-4' /><label for="cart5">Rom 4,1-4</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Gál 3,6' /><label for="cart6">Gál 3,6</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='Gal 5,6' /><label for="cart7">Gal 5,6</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Gál 3,14-16' /><label for="cart8">Gál 3,14-16</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Gál 3,28s' /><label for="cart9">Gál 3,28s</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='1Cor 15,10' /><label for="cart10">1Cor 15,10</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='Sant 2,20-24' /><label for="cart11">Sant 2,20-24</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 3,9' /><label for="ev0">Mt 3,9</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 1,1' /><label for="ev1">Mt 1,1</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Lc 16,22-24' /><label for="ev2">Lc 16,22-24</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Lc 1,54s' /><label for="ev3">Lc 1,54s</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Lc 1,73' /><label for="ev4">Lc 1,73</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Lc 18,9-14' /><label for="ev5">Lc 18,9-14</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Jn 8,37-44' /><label for="ev6">Jn 8,37-44</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Jn 8,56' /><label for="ev7">Jn 8,56</label><br>
+	</div>
+</form>
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "Abraham, antepasado del pueblo escogido, ocupa un puesto privilegiado en la historia de la salvación. Su *vocación no constituye sólo la fase inicial del *designio de Dios, sino que fija ya sus orientaciones fundamentales. <br>1. VOCACIÓN DE ABRAHAM.<br>En lugar de una mera crónica sobre la existencia de Abraham, presenta el Génesis un relato religioso en el que se hallan ya las notas de las tres corrientes de tradición: la yahvista insiste en las bendiciones y en las promesas divinas, la elohista en la fe a toda prueba del patriarca, la tradición sacerdotal en la alianza y en la circuncisión. La figura de Abraham así iluminada aparece como la de un hombre, al que Dios atrajo a sí y luego lo probó, con miras a hacer de él el padre, increíblemente colmado, de un pueblo innumerable.<br>1. Abraham, elegido de Dios.<br>La vida entera de Abraham se desenvuelve bajo el signo de la libre iniciativa de Dios. Dios interviene el primero; escoge a Abraham entre la descendencia de Sem, le «hace salir» de Ur (Gén 11,10-31) y lo conduce por sus *caminos a un país desconocido (Heb 11,8). Esta iniciativa es iniciativa de amor: desde los comienzos manifiesta Dios para con Abraham una generosidad sobre toda medida. Sus promesas delinean un porvenir maravilloso. La expresión que se repite constantemente es: «yo daré»; Dios dará a Abraham una tierra (Gén 12,7; 13,15ss; 15,18; 17,8); lo colmará, lo hará extremadamente fecundo (12,2; 16,10; 22,17). A decir verdad, las circunstancias parecen contrarias a estas perspectivas: Abraham es un nómada, Sara no está ya en edad de tener hijos. Así resalta todavía mejor la gratuidad de las promesas divinas: el porvenir de Abraham depende completamente del poder y de la bondad de Dios.Así Abraham resume en sí mismo al pueblo de Dios, *elegido sin mérito precedente. Todo lo que se de pide es una fe atenta e intrépida, una acogida sin reticencia otorgada al designio de Dios.<br>2. Abraham, probado.<br>Esta fe se debe purificar y fortificar en la prueba. Dios tienta a Abraham pidiéndole que le sacrifique a su hijo Isaac, en el que precisamente estriba la promesa (Gén 22,1s). Abraham «no rehusa su hijo, el único» (22,12.16) —es sabido que en los cultos cananeos se practicaban sacrificios de niños—; pero Dios preserva a Isaac, asumiendo él mismo el cuidado de «proporcionar el cordero para el holocausto» (22,8.13ss). Asi se manifestó la profundidad del «*temor de Dios» en Abraham (22,12). Por otra parte, con la misma ocasión revelaba Dios que su designio no está ordenado a la muerte, sino a la vida. «No se regocija de la pérdida de los vivientes» (Sab 1,13; cf. Dt 12,31; Jer 7,31). La muerte será un día vencida; el «sacrificio de Issac» aparecerá entonces como una escena profética (Heb 11l,l9; 2,14-17; cf. Rom 8,32).<br>3. Abraham, padre colmado.<br>La obediencia de Abraham acaba en la confirmaciónn de la promesa (Gén 22,16ss), cuya confirmaciónn ve él mismo esbozarse: «Yahveh bendijo a Abraham en todo» (Gén 24,1). «Nadie le igualó en gloria» (Eclo 44,19). No se trata de una bienandanza individual: la vocación de Abrabam está en ser *padre. Su *gloria está en su descendencia. Según la tradición sacerdotal, el cambio de nombre (Abram se cambia por Abraham) atestigua esta orientación, pues al nuevo nombre se le da la interpretación de «padre de multitudes» (Gén 17,5). El destino de Abraham ha de tener amplias repercusiones. Como Dios no le oculta lo que piensa hacer, el patriarca asume el empeño de interceder por las ciudades condenadas (18,16-33); su paternidad extenderá todavía su influencia, cuya irradiación será universal: «Por tu posteridad serán benditas todas las *naciones» (22,18) La tradición judía, meditando sobre este oráculo, le reconocerá un sentido profundo: «Dios le prometió con juramento bendecir a todas las naciones en su descendencia» (Eclo 44,21; cf. Gén 22,18 LXX). Asi pues, si en Adán se esbozaron los destinos de la humanidad pecadora, en Abraham se esbozaron los de la humanidad salva.<br><br>II. POSTERIDAD DE ABRAHAM.<br>1. Fidelidad de Dios.<br>Con Abraham, las promesas se refieren, pues, también a su posteridad (Gén 13,15; 17,7s). Dios las repite a Isaac y a Jacob (26,3ss; 28,13s), los cuales las transmiten como herencia (28,4; 48,1Ss; 50.24). Cuando los descendientes de Abraham se ven oprimidos en Egipto, Dios presta oídos a sus lamentos, porque «se acuerda de su alianza con Abraham, Isaac y Jacob» (Ex 2,23s; cf. Dt 1,8). «Recordando su palabra sagrada para con Abraham, su siervo, hizo salir a su pueblo en medio de la alegría» (Sal 105,42s). Más tarde alienta a los exiliados Ilamándolos «raza de Abraham, mi amigo» (Is 41,8). En períodos de apuro, en que se ve amenazada la existencia de Israel, los profetas restauran su confianza recordando la vocación de Abraham: «considerad la roca de que habéis sido tallados, la cantera de que habéis sido sacados. Mirad a Abraham, vuestro padre...» (Is 51,1s; cf. Is 29,22; Neh 9,7s). Y para obtener los favores de Dios la mejor oración consiste en apelar a Abraham: «Acuérdate de Abraham...» (Ex 32, 13; Dt 9,27; IRe 18,36), «otorga... a Abraham tu gracia» (Miq 7,20).<br>2. Filiación carnal.<br>Pero hay una manera mala de apelar al patriarca. En efecto, no basta con provenir físicamente de él para ser sus verdaderos herederos; hay que enlazar con él también espiritualmente. Es falsa la *confianza que no va acompañada de una profunda docilidad a Dios. Ya Ezequiel lo dice a sus contemporáneos (Ez 33,24-29). Juan Bautista, anunciando el juicio de Dios se enfrenta con la misma ilusión: «No os forjéis ilusiones diciendo: Tenemos a Abraham por padre. Porque yo os digo que Dios puede hacer de estas piedras hijos de Abraham». (Mt 3,9). El rico avariento de la parábola, por mucho que clama «¡Padre Abraham!», no obtiene nada de su antepasado: por su culpa hay un abismo zanjado entre ambos (Lc 16,24ss). El cuarto evangelio hace la misma afirmación: Jesús, desenmascarando los proyectos homicidas de los judíos, les echa en cara que su calidad de hijos de Abraham no les habla impedido convertirse en hijos del diablo (Jn 8,37-44). La filiación carnal no vale nada sin la fidelidad.<br>3. Las obras y la fe.<br>Para que sea auténtica esta fidelidad hay que evitar otra desviación. En el transcurso de las edades ha celebrado la tradición los méritos de Abraham, su *obediencia (Neh 9,8; Eclo 44,20), su heroísmo (1 Mac 2,52; Sab 10,5-6); continuando en esta dirección ciertas corrientes del judaísmo acabaron por realzar este aspecto: ponían toda su confianza en las *obras humanas, en la perfecta observancia de la ley, con lo cual llegaban a olvidar que lo esencial es apoyarse en Dios. Esta pretensión orgullosa, combatida ya en la parábola del fariseo y del publicano (Lc 18,9-14), queda completamente destruida por san Pablo. Éste se apoya en Gén 1 5,6: «Abraham creyó a Dios y le fue reputado por justicia», para demostrar que la *fe, y no las obras, constituye el fundamento de la salvación (Gál 3,6; Rom 4,3). El hombre no tiene por qué gloriarse, pues todo le viene de Dios «a titulo gratuito» (Rm 3-27; 4,1-4). Ninguna obra antecede al favor de Dios, sino que todas son fruto del mismo. Desde luego, este fruto no debe faltar (Gál 5,6; cf. ICor 15,10), como no faltó en la vida de Abraham; Santiago lo hace notar a propósito del mismo texto (Sant 2,20-24; cf. Heb 11,8-19).<br>4. La única posteridad.<br>¿Cuál es, pues, en definitiva la verdadera posteridad de Abraham? Es Jesucristo, hijo de Abraham (Mt 1,1); más aún: entre los descendientes del patriarca es el único en quien recae con plenitud la *herencia de la promesa: es la descendencia por excelencia (Gál 3,16). Por su vocación estaba Abraham ciertamente orientado hacia el advenimiento de Jesús, y su gozo consistió en percibir, en vislumbrar este *día a través de las bendiciones de su propia existencia (Jn 8,56; cf. Lc 1,54s.73). Esta concentración de la promesa en un descendiente único, lejos de ser una restricción, es la condición del verdadero universalismo. Todos los que creen en Cristo, circuncisos o incircuncisos, israelitas o gentiles, pueden tener participación en las *bendiciones de Abraham (Gál 3,14). Su *fe hace de ellos la descendencia espiritual del que creyó y vino a ser ya «el padre de todos los creyentes» (Rm 4,11ss). «Todos sois uno en Cristo Jesús. Y si todos sois de Cristo, luego sois descendientes de Abraham, herederos según la promesa» (Gál 3,28s). Tal es el coronamiento de la revelación bíblica, llevada a su término por el Espíritu de Dios. Es también la última palabra sobre la «gran recompensa» (Gén 15,1), anunciada al patriarca: su paternidad se extiende a todos los elegidos del cielo. La patria definitiva de los creyentes es «el seno de Abraham» (Lc 16,22), al que la liturgia de difuntos hace votos por que lleguen las almas.<br>-> Bendición - Elección - Fe - Herencia - Padre - Promesa - Vocación.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=27;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=6;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=12;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=8;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

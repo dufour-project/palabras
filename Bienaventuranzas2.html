@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">BIENAVENTURANZAS</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El hombre quiere la felicidad, a la que llama *vida, *paz, *gozo, *re-poso, *bendición, *salvación. Todos estos bienes están diversamente incluidos en la fórmula por la que se declara a alguien feliz o desgraciado. Cuando el «sabio» proclama: «¡Dichosos los pobres! ¡Desgraciados los ricos!», no quiere pronunciar ni una *bendición que proporcione la felicidad, ni una *maldición que produzca la infelicidad, sino exhortar en nombre de su experiencia de felicidad, a seguir los caminos que conducen a ella. <br>AT. <br>Para comprender el alcance y el significado de numerosas máximas de sabiduría que parecen rastreras, hay que situarlas en el clima religioso en que fueron enunciadas. En efecto, si bien la bienaventuranza supone siempre que su fuente está en Dios, conoce, no obstante, una evolución lenta que va de lo terrenal a lo celestial. <br>I. DIOS Y LA BIENAVENTURANZA. <br>1. Felicidad y gloria en Dios. <br>A diferencia de los dioses griegos, saluda-dos ordinariamente con el título de «bienaventurados» porque encarnan el sueño del hombre, la Biblia no se detiene en la felicidad de Dios (cf. lTim 1,11; 6,15), que no tiene punto de comparación con la felicidad a que ella aspira. Dios es, en cambio, un Dios de *gloria, lo cual sugiere una segunda diferencia: mientras que los dioses griegos gozan de su felicidad sin preocuparse especialmente por la suerte de los humanos, Yahveh se inclina con solicitud hacia todos los hombres, especialmente hacia su pueblo; la bienaventuranza del hombre deriva de la *gracia divina, es participación de su gloria. <br>2. La bienaventuranza es Dios mismo.<br> A través de las proclamaciones que abundan en la 'literatura sapiencial, el lector de la Biblia descubre en qué consiste la verdadera felicidad y por qué debe buscarla. Dichoso el que teme a Yahveh: será poderoso, bendecido (Sal 112,1s), tendrá numerosos hijos (Sal 128,1ss). Si quiere procurarse vida, salvación, bendición, riqueza (Prov 3,10), debe seguir los caminos divinos (Sal 1,1), caminar en la ley (Sal 119,1), escuchar la sabiduría (Prov 8,34s), hallarla (Prov 3,13s), ejercitarse en ella (Eclo 14,20), cuidarse del pobre (Sal 41,2), en una palabra, ser justo. Por estos motivos invita el sabio a los *caminos de la verdadera felicidad; sin embargo, no limita su horizonte a 'la *retribución deseada, o más bien muestra que la recompensa esperada es Dios en persona. La lógica del sabio cede entonces ante la experiencia del fiel piadoso que ha comprendido que con Dios lo tiene todo y puede vivir en una *confianza sin límites: no se ex-presa ningún motivo, sino una simple afirmación. «Dichosos los que esperan en él» (Is 30,8). «Dichoso el hombre que confía en ti» (Sal 84,13; cf. Sal 2,12; 65,5; 146,5). Si, pues, el israelita teme a Dios, observa su ley, escucha la sabiduría, es que espera la felicidad como recompensa, pero en definitiva lo que espera es a Dios en persona (Sal 73,25). <br>II. DE LA FELICIDAD TERRENA A LA CELESTIAL. <br>Así se precisa el ápice divino de la bienaventuranza. Sin embargo, no por eso debemos des-conocer los caminos que conducen a ella: esto sería ignorar 'la mentalidad tanto del hombre en general como de Israel. Para descubrir que sólo Dios realiza la felicidad se requiere a veces upa decepción (Sal 118,8s; 146,3s); ordinariamente su-pone esto una lenta depuración del *deseo. <br>1. La bienaventuranza terrena.<br> La felicidad es la *vida, una vida que durante mucho tiempo se identificó con la vida terrena. Ésta es la felicidad del pueblo que tiene por Dios a Yahveh: tener hijos de buena estatura, hijas hermosas, graneros llenos, numerosos rebaños, finalmente la *paz (Sal 144,12-15). Y las bienaventuranzas detallan estos bienes del hombre en la esfera nacional, familiar o personal. Tener un rey digno de este nombre (Eclo 10,16s), una esposa sensata (Eclo 25,8), excelente (26,1), gran fortuna, adquirida debidamente y sin hacerse esclavo de ella (31,8; ser prudente (25,9), no pecar con la lengua (14,1), tener compasión de los desgraciados (Prov 14,21), no tener nada que reprocharse (Eclo 14,2). En una palabra, llevar una vida digna de este nombre y para ello ser educado por Dios mismo (Sal 94,12). Desde luego, está bien lamentarse por el que acaba de morir; pero los llantos no deben durar demasiado, pues un pesar funesto impediría gozar bien de la ventura terrenal (Eclo 38,16-23). <br>2. Hacia la bienaventuranza celestial.<br> A este retrato del *justo dichoso le falta todavía la dimensión de 'la vida eterna. Los valores se mqdifican al ser ilustrados por ésta. La experiencia enseñaba ya que no había que apreciar la felicidad de un hombre antes de la hora final (Eclo 11,28); con el libro de la Sabiduría, la virtud aventaja al gozo de tener posteridad por lo que se refiere a la apreciación de la felicidad : se proclama dichosos a los seres estériles si son justos (Sab 3,13so). Así los sabios coinciden con lo que los salmos de los *pobres proclamaban ya cuando veían el bien absoluto en la confianza en Yahveh (p.e., Sal 73,23-28). <br>NT. <br>Con la venida de Cristo se dan virtualmente todos los bienes, puesto que en él halla finalmente la bienaventuranza su realización; y por él se dará el Espíritu Santo, suma de todos los bienes. <br>I. LA BIENAVENTURANZA Y CRISTO. <br>Jesús no es sencillamente un sabio de gran experiencia, sino uno que vive plenamente la bienaventuranza que propone. <br>1. Las «Bienaventuranzas», situadas en el frontispicio del sermón inaugural de Jesús, ofrecen el programa de la felicidad cristiana (Mt 5,3-12; Lc 6,20-26). Jesús viene de parte de Dios a decir un sí solemne a las promesas del AT; se da el reino de los cielos, se suprimen las necesidades y las aflicciones, se otorga en Dios la misericordia y la vida. En efecto, si bien ciertas bienaventuranzas se pronuncian en futuro, la primera, que contiene virtualmente las otras, va a actualizarse desde ahora. Pero hay más. Las bienaventuranzas son un sí pronunciado por Dios en Jesús. Mientras que el AT llegaba a identificar la bienaventuranza con Dios mismo, Jesús se presenta a su vez como el que *cumple y realiza la aspiración a la felicidad: el *reino de los cielos está presente en él. Más aún, Jesús quiso «encarnar» las bienaventuranzas viviéndolas perfectamente, mostrándose «manso y - humilde de corazón» (Mt 11,29). <br>2. Todas las demás proclamaciones evangélicas tienden igualmente a mostrar que Jesús está en el centro de la bienaventuranza. Se «beatifica» a María por haber dado a luz al Salvador (Lc 1,48; 11,27), por haber creído {1,45); con esto ella misma anuncia la bienaventuranza de todos los que, escuchando la palabra de Dios (11,28), creerán sin haber *visto (Jn 20,29). ¡Ay de los fariseos (Mt 23,13-32), de Judas (26,24), de las ciudades incrédulas (11,21)! ¡Dichoso Simón, al que el Padre reveló en Jesús al Hijo del Dios vivo (Mt 16,17)! ¡Dichosos los ojos que han visto a Jesús (13,16)! ¡Dichosos sobre todo los discípulos que, esperan-do el retorno del Señor, serán fieles, vigilantes (Mt 24,46), dedicados completamente al servicio unos de otros (Jn 13,17)! <br>II. Los VALORES DE CRISTO. <br>Mientras que el AT se esforzaba tímida-mente por añadir a los valores terrenos de la riqueza y del éxito, el valor de la justicia en la pobreza y en el fracaso, Jesús adopta la posición contraria al deseo terrenal del hombre. Desde ahora los dichosos de este mundo no son ya los ricos, los satisfechos, a los que se halaga, sino los que tienen hambre y que lloran, los pobres y los perseguidos (cf. lPe 3,14; 4,14). Esta inversión de los valores era posible por aquel que es todo valor. Dos bienaventuranzas mayores comprenden todas las otras: la *pobreza, con su cortejo de las *obras de *justicia, de *humildad, de *mansedumbre, de *pureza, de *misericordia, de solicitud por la *paz; luego la *persecución por amor de Cristo. Pero estos mismos valores no son nada sin Jesús que les da todo su sentido. Así sólo el que haya visto a Cristo en el centro de su fe puede oir las bienaventuranzas del Apocalipsis. Dichoso si las escucha (Ap 1,3; 22,7), si se mantiene vigilante (16,15), pues ese tal es llamado a las nupcias del cordero (19,9), para la resurrección (20,6). Incluso si debe dar su vida en *testimonio, no debe perder los ánimos: «¡Bienaventurados los muertos que mueren en el Señor!» (14,13).<br> --> Cielo - Consolación - Gloria - Gustar - Alegría - Reposo.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

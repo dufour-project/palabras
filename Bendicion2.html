@@ -1,0 +1,590 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">BENDICIÓN</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+<p id="textodifour2"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 14,13' />Gén 14,13<br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 21,22ss' />Gén 21,22ss<br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 26,28' />Gén 26,28<br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 31,43ss' />Gén 31,43ss<br>
+		<input name='lecthist' type='radio' id='hist4' value=' Gén 21,33' /> Gén 21,33<br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 31,48ss' />Gén 31,48ss<br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 12,7' />Gén 12,7<br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 13,15' />Gén 13,15<br>
+		<input name='lecthist' type='radio' id='hist8' value='Gén 9,1-17' />Gén 9,1-17<br>
+		<input name='lecthist' type='radio' id='hist9' value='Gén 17,1- 14' />Gén 17,1- 14<br>
+		<input name='lecthist' type='radio' id='hist10' value='Ex 3,7-10.16s' />Ex 3,7-10.16s<br>
+		<input name='lecthist' type='radio' id='hist11' value='Éx 14,31' />Éx 14,31<br>
+		<input name='lecthist' type='radio' id='hist12' value='Éx 19,5s' />Éx 19,5s<br>
+		<input name='lecthist' type='radio' id='hist13' value='Éx 19,4' />Éx 19,4<br>
+		<input name='lecthist' type='radio' id='hist14' value='Éx 23,20-31' />Éx 23,20-31<br>
+		<input name='lecthist' type='radio' id='hist15' value='Éx 20,3ss' />Éx 20,3ss<br>
+		<input name='lecthist' type='radio' id='hist16' value='Éx 23,24' />Éx 23,24<br>
+		<input name='lecthist' type='radio' id='hist17' value='Éx 34,12-16' />Éx 34,12-16<br>
+		<input name='lecthist' type='radio' id='hist18' value='Ex 19,7s' />Ex 19,7s<br>
+		<input name='lecthist' type='radio' id='hist19' value='Éx 23, 20-33' />Éx 23, 20-33<br>
+		<input name='lecthist' type='radio' id='hist20' value='Éx 24,1s.9ss' />Éx 24,1s.9ss<br>
+		<input name='lecthist' type='radio' id='hist21' value='Éx 24,3- 8' />Éx 24,3- 8<br>
+		<input name='lecthist' type='radio' id='hist22' value='Éx 25,10-22' />Éx 25,10-22<br>
+		<input name='lecthist' type='radio' id='hist23' value='Éx 33,7-11' />Éx 33,7-11<br>
+		<input name='lecthist' type='radio' id='hist24' value='Éx 24,3-8' />Éx 24,3-8<br>
+		<input name='lecthist' type='radio' id='hist25' value='Ex 24,8' />Ex 24,8<br>
+		<input name='lecthist' type='radio' id='hist26' value='Éx 24,8' />Éx 24,8<br>
+		<input name='lecthist' type='radio' id='hist27' value='Éx 8,13' />Éx 8,13<br>
+		<input name='lecthist' type='radio' id='hist28' value='Éx 19,5s' />Éx 19,5s<br>
+		<input name='lecthist' type='radio' id='hist29' value='Dt 9,4ss' />Dt 9,4ss<br>
+		<input name='lecthist' type='radio' id='hist30' value='Dt 7,6ss' />Dt 7,6ss<br>
+		<input name='lecthist' type='radio' id='hist31' value='Dt 5,7ss' />Dt 5,7ss<br>
+		<input name='lecthist' type='radio' id='hist32' value='Dt 28' />Dt 28<br>
+		<input name='lecthist' type='radio' id='hist33' value='Dt 27,2-26' />Dt 27,2-26<br>
+		<input name='lecthist' type='radio' id='hist34' value='Dt 31,9-13.24-27' />Dt 31,9-13.24-27 <br>
+		<input name='lecthist' type='radio' id='hist35' value='Dt 32,45ss' />Dt 32,45ss<br>
+		<input name='lecthist' type='radio' id='hist36' value='Dt 4,37' />Dt 4,37<br>
+		<input name='lecthist' type='radio' id='hist37' value='Dt 7,8' />Dt 7,8<br>
+		<input name='lecthist' type='radio' id='hist38' value='Dt 10,15' />Dt 10,15<br>
+		<input name='lecthist' type='radio' id='hist39' value='Dt 6,5' />Dt 6,5<br>
+		<input name='lecthist' type='radio' id='hist40' value='Dt 10,12s' />Dt 10,12s<br>
+		<input name='lecthist' type='radio' id='hist41' value='Dt 11,1' />Dt 11,1<br>
+		<input name='lecthist' type='radio' id='hist42' value='1Re 5,26' />1Re 5,26<br>
+		<input name='lecthist' type='radio' id='hist43' value='1Re 15,19' />1Re 15,19<br>
+		<input name='lecthist' type='radio' id='hist44' value='1 Re 8,14- 29.52-61' />1 Re 8,14- 29.52-61<br>
+		<input name='lecthist' type='radio' id='hist45' value='1Sa 23,18' />1Sa 23,18<br>
+		<input name='lecthist' type='radio' id='hist46' value='Jos 9,11-15' />Jos 9,11-15<br>
+		<input name='lecthist' type='radio' id='hist47' value='1Sa 11,1' />1Sa 11,1<br>
+		<input name='lecthist' type='radio' id='hist48' value='2Sa 3,12 ss' />2Sa 3,12 ss<br>
+		<input name='lecthist' type='radio' id='hist49' value='Lev 26' />Lev 26<br>
+		<input name='lecthist' type='radio' id='hist50' value='Núm 10,33-36' />Núm 10,33-36<br>
+		<input name='lecthist' type='radio' id='hist51' value='Jos 8,30-35' />Jos 8,30-35<br>
+		<input name='lecthist' type='radio' id='hist52' value='Jos 24,1-28' />Jos 24,1-28<br>
+		<input name='lecthist' type='radio' id='hist53' value='2Sa 5,3' />2Sa 5,3<br>
+		<input name='lecthist' type='radio' id='hist54' value='2Sa 7,8-16' />2Sa 7,8-16<br>
+		<input name='lecthist' type='radio' id='hist55' value='2Sa 23,5' />2Sa 23,5<br>
+		<input name='lecthist' type='radio' id='hist56' value='2Sa 7,14' />2Sa 7,14<br>
+		<input name='lecthist' type='radio' id='hist57' value='2Re 11,17' />2Re 11,17<br>
+		<input name='lecthist' type='radio' id='hist58' value='2Re 23,1ss' />2Re 23,1ss<br>
+		<input name='lecthist' type='radio' id='hist59' value='Neh 8' />Neh 8<br>
+		<input name='lecthist' type='radio' id='hist60' value='2Re 17,7-23' />2Re 17,7-23<br>
+		<input name='lecthist' type='radio' id='hist61' value='2Re 23,26s' />2Re 23,26s<br>
+
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='Am 1,9' />Am 1,9<br>
+		<input name='lectprof' type='radio' id='prof1' value='Mal 2,14' />Mal 2,14<br>
+		<input name='lectprof' type='radio' id='prof2' value='Ez 17,13s' />Ez 17,13s<br>
+		<input name='lectprof' type='radio' id='prof3' value='Jer 34,18' />Jer 34,18<br>
+		<input name='lectprof' type='radio' id='prof4' value='Ez 16,6-14' />Ez 16,6-14<br>
+		<input name='lectprof' type='radio' id='prof5' value='Jer 22,9' />Jer 22,9<br>
+		<input name='lectprof' type='radio' id='prof6' value='Jer 31,31-35ss' />Jer 31,31-35ss<br>
+		<input name='lectprof' type='radio' id='prof7' value='Os 2,4' />Os 2,4<br>
+		<input name='lectprof' type='radio' id='prof8' value='Ez 16,15-43' />Ez 16,15-43<br>
+		<input name='lectprof' type='radio' id='prof9' value='Jer 33,20s' />Jer 33,20s<br>
+		<input name='lectprof' type='radio' id='prof10"' value='Os 2,20-24' />Os 2,20-24<br>
+		<input name='lectprof' type='radio' id='prof11"' value='Jer 32,37-41' />Jer 32,37-41<br>
+		<input name='lectprof' type='radio' id='prof12"' value='Ez 6,26' />Ez 6,26<br>
+		<input name='lectprof' type='radio' id='prof13"' value='Ez 16,60' />Ez 16,60<br>
+		<input name='lectprof' type='radio' id='prof14"' value='Ez 34,23s' />Ez 34,23s<br>
+		<input name='lectprof' type='radio' id='prof15"' value='Ez 36,26-28' />Ez 36,26-28<br>
+		<input name='lectprof' type='radio' id='prof16"' value='Ez 37,27' />Ez 37,27<br>
+		<input name='lectprof' type='radio' id='prof17"' value='Is 54,9' />Is 54,9<br>
+		<input name='lectprof' type='radio' id='prof18"' value='Is 55,3' />Is 55,3<br>
+		<input name='lectprof' type='radio' id='prof19"' value='Is 42,6' />Is 42,6<br>
+		<input name='lectprof' type='radio' id='prof20"' value='Is 49,6ss' />Is 49,6ss<br>
+		<input name='lectprof' type='radio' id='prof21"' value='Dan 11,28ss' />Dan 11,28ss<br>
+		<input name='lectprof' type='radio' id='prof22"' value='Is 53,10-11' />Is 53,10-11<br>
+
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='1Cor 11,25' />1Cor 11,25<br>
+		<input name='lectcart' type='radio' id='cart1' value='Gál 3,15-18' />Gál 3,15-18<br>
+		<input name='lectcart' type='radio' id='cart2' value='Ef 2,12ss' />Ef 2,12ss<br>
+		<input name='lectcart' type='radio' id='cart3' value='Rom 9,4' />Rom 9,4<br>
+		<input name='lectcart' type='radio' id='cart4' value='Gál 4,24ss' />Gál 4,24ss<br>
+		<input name='lectcart' type='radio' id='cart5' value='2Cor 3,6ss' />2Cor 3,6ss<br>
+		<input name='lectcart' type='radio' id='cart6' value='Rom 11,27' />Rom 11,27<br>
+		<input name='lectcart' type='radio' id='cart7' value='2Cor 6,16' />2Cor 6,16<br>
+		<input name='lectcart' type='radio' id='cart8' value='Rom 5,5' />Rom 5,5<br>
+		<input name='lectcart' type='radio' id='cart9' value='Rom 8,4- 16' />Rom 8,4- 16<br>
+		<input name='lectcart' type='radio' id='cart10' value='Heb 8,6-12' />Heb 8,6-12<br>
+		<input name='lectcart' type='radio' id='cart11' value='Heb 12,24' />Heb 12,24<br>
+		<input name='lectcart' type='radio' id='cart12' value='Heb 9,15-20' />Heb 9,15-20<br>
+		<input name='lectcart' type='radio' id='cart13' value='Heb 10,1-22' />Heb 10,1-22<br>
+		<input name='lectcart' type='radio' id='cart14' value='Heb 13,20' />Heb 13,20<br>
+		<input name='lectcart' type='radio' id='cart15' value='1 Pe 2,9' />1 Pe 2,9<br>
+		<input name='lectcart' type='radio' id='cart16' value='Ap 5,9s' />Ap 5,9s<br>
+		<input name='lectcart' type='radio' id='cart17' value='Ap 21,2.9' />Ap 21,2.9<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='Mc 14,24' />Mc 14,24<br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 26,28' />Mt 26,28<br>
+		<input name='lectev' type='radio' id='ev2' value='Lc 22,20;' />Lc 22,20;<br>
+	
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "1. RIQUEZAS DE LA BENDICIÓN. <br>Con frecuencia evoca la bendición únicamente las formas más superficiales de la religión, fórmulas repetidas de memoria, prácticas vacías de sentido, a 'las que uno se aferra tanto más cuanta menos fe tiene. Por otra parte, incluso la viva tradición cristiana sólo ha retenido de los empleos bíblicos apenas los menos ricos de sentido, incluyendo los más importantes en las categorías de la gracia y de la acción de gracias. De ahí resulta una verdadera indiferencia para con las palabras de bendición y hasta para con la realidad que pueden designar. Sin embargo, el último gesto visible de Cristo en la tierra, el que deja a su Iglesia y que ha fijado el arte cristiano de Bizancio y de las catedrales, es su bendición (Lc 24, 50s). Detallar las riquezas de la bendición bíblica es en realidad destacar las maravillas de la generosidad divina y la calidad religiosa de la admiración que tal generosidad sus-cita en la criatura. La bendición es un *don que afecta a la vida y a su misterio, y es un don expresado por la palabra y por su misterio. La bendición es tanto *palabra como don, tanto dicción como bien (cf. gr. eu-logía, lat. bene-dictio), porque el bien que aporta no es un objeto preciso, un don definido, porque no es de la esfera del tener, sino de la del ser, porque no depende de la acción del hombre, sino de la creación de Dios. Bendecir es decir el don creador y vivificante, sea antes de que se produzca, en forma de oración, sea posterior-mente, en forma de acción de gracias. Pero al paso que la oración de bendición afirma anticipadamente la generosidad divina, la acción de gracias la ha visto ya revelarse. <br>II. EL VOCABULARIO DE LA BENDICIÓN.<br> En hebreo, como también en español, a pesar de la debilitación que ha sufrido entre nosotros la palabra, una sola raíz (brk, emparentada quizá con la *rodilla y con la *adoración, quizá también con la fuerza vital de los órganos sexuales) sirve para designar todas las formas de la bendición, a todos los niveles. Siendo la bendición a la vez cosa dada, don de alguna cosa y formulación de este don, hay tres palabras que la expresan : el sustantivo beraka, el verbo barek y el adjetivo baruk. <br>1. Bendición (beraka).<br> Aun en su sentido más profano y más material, el de regalo, la palabra comporta un matiz muy sensible de encuentro humano. Los presentes ofrecidos por Abigaíl a David (1Sa 25,14-27), por David a las gentes de Judá (1Sa 30, 26-31), por Naamán curado a Elíseo (2Re 5,15), por Jacob a Esaú (Gén 33,11), están todos destinados a sellar una unión o una *reconciliación. Pero los empleos más frecuentes con mucho, de la palabra, se hallan en contexto religioso: aun para designar las cosas más materia-les, si se escoge la palabra bendición, es para hacerlos remontar a Dios y a su generosidad (Prov 10,6.22; Eclo 33,17), o también a la estima de las gentes de bien (Prov 11,11; 28,20; Eclo 2,8). La bendición evoca la imagen de una sana prosperidad, pero también de la generosidad para con los desgraciados (Eclo 7,32; Prov 11,26) y siempre de la benevolencia de Dios. Esta abundancia y este bienestar es a los que 'los hebreos llaman la *paz, y con frecuencia se asocian las dos palabras, pero, si bien las dos evocan la misma plenitud de *riqueza, la riqueza esencial de la bendición es la de la *vida y de la *fecundidad; la bendición flore-ce (Eclo 11,22 hebr.) como un Edén (Eclo 40,17). Su símbolo privilegiado es el *agua (Gén 49,25; Eclo 39,22); el agua misma es una bendición esencial, indispensable (Ez 34,26; Mal 3,10) ; por su origen celestial evoca, al mismo tiempo que la vida que alimenta, la generosidad y 'la gratuidad de Dios, su poder vivificador. El oráculo de Jacob sobre José reúne todas estas imágenes, la vida fecunda, el agua, el *cielo : «Bendiciones de cielo arriba, bendiciones del abismo abajo, bendiciones del seno y de la matriz» (Gén 49,25). Esta sensibilidad a la generosidad de Dios en los dones de la naturaleza prepara a Israel para acoger las generosidades de su *gracia. <br>2. Bendecir.<br> El verbo comporta una muy extensa gama de empleos, desde el saludo trivial dirigido al desconocido en el camino (2Re 4,29) o las fórmulas habituales de cortesía (Gén 47,7.10; lSa 13,10) hasta los dones más altos del favor divino. El que bendice es las más de las veces Dios, y su bendición hace siempre brotar la vida (Sal 65.11; Gén 24,35; Job 1,10). Así sólo los seres vivos son susceptibles de recibirla; los objetos inanimados son consagrados al servicio de Dios y santificados por su presencia, pero no bendecidos. Después de Dios, la fuente de la vida es el *padre, y a él le incumbe bendecir. Su bendición es eficaz más que ninguna otra, como es temerosa su *maldición (Eclo 3,8), y así Jeremías debía hallarse en extrema postración para que osara maldecir al que vino a anunciar a su padre que le había nacido un hijo (Jer 20,15; cf. Job 3,3). Por una paradoja singular sucede con frecuencia que el débil bendice al poderoso (Job 29,13; Sal 72,13-16; Eclo 4,5), que el hombre osa bendecir a Dios. Es que, si bien el *pobre no tiene nada que dar al rico ni el hombre nada que dar a Dios, sin embargo, la bendición establece entre ,los seres una corriente vital y recíproca, que hace que el más pequeño vea desbordar sobre él la generosidad del poderoso. No es absurdo bendecir al Dios que está «por encima de todas las bendiciones» (Neh 9,5); es sencillamente confesar su . generosidad y darle gracias, que es el primer deber de la criatura (Rom 1,21). 3. Bendito. El participio baruk es la más fuerte de todas las palabras de bendición. Constituye el centro de la fórmula típica de bendición israelita: «¡Bendito sea N...!» Esta fórmula, que no es simple afirmación ni mero voto, y es todavía más entusiasta que la *bienaventuranza, brota como un grito ante una persona, en la que Dios acaba de re-velar su poder y su generosidad, y a la que ha escogido «entre nos-otros»: Yael, «entre las mujeres de la tienda» (Jue 5.24); Israel, «entre las naciones» (Dt 33,24); María. «entre las mujeres» (Lc 1,42; cf. Jdt 13,18). Admiración a la vista de lo que Dios puede hacer por su *elegido. El ser bendito es en el mundo como una *revelación de Dios, le pertenece por un título especial, es «bendito de Yahveh», como ciertos seres son «santos de Yahveh». Pero, al paso que la *santidad que consagra a Dios separa del mundo pro-fano, la bendición convierte al ser al que Dios designa, en punto de unión y fuente de irradiación. Ambos, el santo y el bendito, pertenecen a Dios; pero el santo revela más bien su inaccesible grandeza; el bendito, en cambio, su inagotable generosidad. Tan frecuente y tan espontánea como el grito: «¡Bendito N...!», la fórmula paralela: «¡Bendito Dios!» brota igualmente del sobrecogimiento experimentado ante un gesto en que Dios acaba de revelar su poder. Subraya no tanto la amplitud del gesto cuanto su maravillosa oportunidad, su carácter de signo. Una vez más, la bendición es una reacción del hombre ante la revelación de Dios (cf. Gén 14,20, Melquisedec; Gén 24,27, Eliezer; Éx 18,10, Jetró; Rut 4,14, Booz a Rut). Finalmente, más de una vez los dos gritos: «¡Bendito N...!» y «¡Bendito Dios!» van unidos y se corresponden: «¡Bendito Abraham del Dios Altísimo, creador del cielo y de la tierra! — y bendito el Dios Altísimo, que ha puesto a tus enemigos en tus manos!» (Gén 14,19s; cf. lSa 25,32s; Jdt 13,17s). En este ritmo completo aparece la verdadera naturaleza de ala bendición. Es una explosión entusiasta ante un elegido de Dios, pero que no se detiene en el elegido, sino que se remonta hasta Dios, que se ha revelado en este signo. Es el barúk por excelencia, el bendito; posee con plenitud toda bendición. Bendecirlo no es creer añadir nada en absoluto a su riqueza, sino dejarse llevar por el ímpetu de esta revelación y convidar al mundo a *alabarla. La bendición es siempre *confesión pública de la potencia divina y *acción de gracias por su generosidad. <br>III. HISTORIA DE LA BENDICIÓN. <br>Toda la historia de Israel es la historia de la bendición prometida a Abraham (Gén 12,3) y dada al mundo en Jesús, «fruto bendito» del «seno bendito» de María (Lc 1,42). Sin embargo, en los escritos del AT, la atención dirigida a 'la bendición comporta no pocos matices, y la bendición adquiere acentos muy diversos. <br>1. Hasta Abraham.<br> El hombre y la mujer, bendecidos en su origen por el Creador (Gén 1,28), suscitan con su pecado 'la maldición de Dios. Con todo, si son malditos la serpiente (3,14) y el suelo (3,17), no así el hombre ni la mujer. La vida seguirá creciendo (3,16-19) de su trabajo y de su sufrimiento, a menudo a costa de una agonía. Después del diluvio, una nueva bendición da a la humanidad poder y fecundidad (9,1). Sin embargo. el pecado no cesa de dividir y de destruir a la humanidad; la bendición de Dios sobre Sem tiene como contrapartida la maldición de Canaán (9,26). <br>2. La bendición de los patriarcas.<br> Por el contrario, la bendición de Abraham es de otro tipo. Desde luego, en un mundo que sigue dividido tendrá Abraham *enemigos, y Dios le mostrará su fidelidad maldiciendo a quienquiera (en singular) que le maldiga, pero el caso ha de ser una excepción, y el *designio de Dios es bendecir a «todas las *naciones de la tierra» (Gén 12,3). Todos los re-latos del Génesis son 'la historia de esta bendición. <br>a) Las bendiciones pronunciadas por los padres, de tenor más arcaico, los presentan invocando sobre sus hijos, en general en el momento de desaparecer, los poderes de la *fecundidad y de la *vida, «el rocío del cielo y la grosura de la tierra» (Gén 27,28), raudales de leche y «la sangre de los racimos» (49,11s), la fuerza para desbaratar a sus adversarios (27,29; 49,8s), una tierra don-de establecerse (27,28; cf. 27,39; 49, 9) y perpetuar su *nombre (48,16; 49,8...) y su vigor. En estos fragmentos rítmicos y en estos relatos se percibe el sueño de las tribus nómadas en busca de un territorio, ávidos de defender su independencia, aunque ya conscientes de formar una comunidad en torno a algunos jefes y clanes privilegiados (cf. Gén 49). Es, en una palabra, el sueño de la bendición, tal como la desean espontáneamente los hombres, y que están prontos a conquistar por todos los medios, sin excluir la violencia y la astucia (27,18s). <br>b) A estos estribillos y a estos relatos populares superpone el Génesis, no para desautorizarlos, sino para situarlos en su propio lugar en la acción de Dios, las promesas y las bendiciones pronunciadas por Dios mismo. Se habla también de un *nombre poderoso (Gén 12,2), de una descendencia innumerable (15,5), de una tierra donde instarse (1.3, 14-17), pero aquí toma Dios en su mano el porvenir de los suyos; cambia su nombre (17,5.15), los hace pasar por la *tentación (22,1) y la fe (15,6), y ya entonces eles impone un mandamiento (12,1; 17,10). Trata, sin duda, de colmar el *deseo del hombre, pero a condición de que sea en la fe. <br>3. Bendición y alianza.<br> Este nexo entre la bendición y el mandamiento es el principio mismo de la *alianza: la *ley es el medio para hacer vivir a un pueblo «santo de Dios» y por consiguiente «bendito de Dios». Esto es lo que expresan los ritos de alianza. En la mentalidad religiosa del tiempo es el «culto» el medio privilegiado de granjearse la bendición divina, de renovar, al contacto con los lugares, con los tiempos, con los ritos sagrados, la potencia vital del hombre y de su mundo, tan corta y tan frágil. En la religión de Yahveh el culto no es auténtico sino en la alianza y en la fidelidad a la ley. Las bendiciones del Código de la alianza (Éx 23,25), filas amenazas de la asamblea de Siquem bajo Josué (Jos 24,19), las grandes bendiciones del Deuteronomio (Dt 28,1-4), todas ellas suponen una carta de alianza, pro-claman las voluntades divinas, luego la adhesión del pueblo y, finalmente, el gesto cultual que sella el acuerdo y le da valor sagrado. <br>4. Los profetas y la bendición.<br> Los *profetas, apenas si conocen el len-guaje de la bendición. Aunque son los hombres de la *palabra y de su eficacia (Is 55,1Os), aunque se conocen como llamados y elegidos de Dios, signos de su obra (Is 8,18), su acción en ellos es demasiado interior, demasiado pesada, muy poco visible e irradiante para provocar en ellos y en torno a ellos el grito de la bendición. Y su mensaje, que consiste en recordar las condiciones de la alianza y en denunciar sus violaciones, los induce muy poco a bendecir. Entre los esquemas 'literarios que utilizan, el de la maldición les es familiar; el de la bendición, prácticamente desconocido. Por esto es tanto más notable el ver a veces surgir, en el seno mismo de una maldición de tipo clásico, una imagen o una afirmación que pro-clama que la promesa de bendición se mantiene intacta, que de la desolación surgirá la vida, como «una semilla santa» (Is 6,13). Así 'la pro-mesa de la piedra angular de Sión irrumpe en el centro de la maldición contra los gobernadores insensatos que juzgan invulnerable a la ciudad (Is 28,14-19); y así en Ezequiel 'la gran profecía de la efusión del espíritu, toda ella llena de las imágenes de la bendición, el agua, la tierra, las mieses, pone remate, con una lógica divina, a la condenación de Israel (Ez 36,16-38). <br>5. Los cantos de bendición.<br> La bendición es uno de los temas mayores de la *oración de Israel; es la respuesta a toda la obra de Dios, que es revelación. Es muy afín a la *acción de gracias o a la *confesión y está construida según el mismo es-quema, pero está más próxima que ellas al acontecimiento en que Dios acaba de revelarse y conserva en general un acento más sencillo: «¡Bendito sea Yahveh, que hizo para mí maravillas!» (Sal 31,22), «que no nos entregó a sus dientes» (Sal 124,6), «que perdona todos tus pecados» (Sal 103,2). Incluso el himno de los tres jóvenes en el horno, que convoca al universo para cantar la gloria del Señor, tiene presente el gesto que Dios acaba de realizar: «Pues nos ha salvado de los infiernos» (Dan 3,88).";
+	document.getElementById("textodifour2").innerHTML = "<br>IV. BENDITOS EN CRISTO.<br> ¿Cómo podría negarnos nada el Padre, que entregó por nosotros a su propio Hijo? (Rom 8,32). En él nos ha dado todo, no nos falta ningún *don de la *gracia (lCor 1,7) y nosotros somos, «con *Abraham el creyente» (Gál 3,9; cf. 3,14), «bendecidos con toda suerte de bendiciones espirituales» (Ef 1,3). En él damos gracias al Padre por sus dones (Rom 1,8; Ef 5,20; Col 3,17). Los dos movimientos de la bendición, la gracia que desciende y la acción de gracias que se eleva son recapitulados en Jesucristo. No hay nada más allá de esta bendición, y la multitud de los elegidos reunidos delante del trono y delante del cordero para cantar su triunfo final, proclama a Dios: «¡Bendición, gloria, sabiduría, acción de gracias... por los siglos de los siglos!» (Ap 7,12). Si así el NT no es sino la bendición perfecta recibida de Dios y de-vuelta a él, esto no quiere decir, ni mucho menos, que esté constante-mente lleno de las palabras de bendición. Éstas son relativamente raras y están empleadas en contextos precisos, lo cual acaba de precisar exactamente el sentido de la bendición bíblica. <br>1. ¡Bendito el que viene! Los evangelios ofrecen un solo ejemplo de bendición dirigida a Jesús. Es el grito de 'la multitud a su entrada en Jerusalén en vísperas de la pasión : «¡Bendito el que viene!» (Mt 21,9 p). Sin embargo, nadie respondió jamás como Jesús al retrato del ser bendito, en el que Dios revela con signos esplendentes su poder y su bondad (cf. Act 10,38). Su llegada al mundo suscita en Isabel (Lc 1,42), en Zacarías (1,68), en Simeón (2,28), en María misma (sin la palabra, 1, 46s) una oleada de bendiciones. De ellas es él evidentemente el centro: Isabel proclama: «¡Bendito el fruto de tu vientre!» (1,42); más tarde, una madre proclama todavía «bien-aventuradas las entrañas que te llevaron» (11,27). Él mismo, fuera del ejemplo único del domingo de Ramos, no es bendecido nunca directamente. Esta ausencia no debe de ser pura casualidad. Refleja quizá la distancia que se establecía entre Jesús y los hombres : bendecir a alguien es en cierta manera unirse a él. Quizá también marca el carácter inacabado de la revelación de Cristo en tanto no esté consumada su obra, y la oscuridad que subsiste sobre su persona hasta su muerte y su resurrección. <br>2. El cáliz de bendición.<br> Antes de multiplicar los panes (Mt 14,19 p), antes de distribuir el pan convertido en su cuerpo (Mt 26,26 p), antes de partir el pan en Emaús (Lc 24,30). Jesús pronuncia una bendición, y nosotros también «bendecimos el cáliz de bendición» (ICor 10,16). ¿De-signa la bendición en estos textos un gesto especial, o una fórmula particular, distinta de las palabras *eucarísticas propiamente dichas, o es sólo el título dado a las palabras que siguen? Esto no tiene importancia aquí. El hecho es que los relatos eucarísticos asocian estrechamente las bendiciones y la acción de gracias y que en esta asociación la bendición representa el aspecto ritual y visible, el gesto y la fórmula, mientras que la acción de gracias expresa el con-tenido de los gestos y de las palabras. Este rito es, entre todos los que pudo e'1 Señor realizar en su vida, el único que se nos ha conservado, pues es el rito de la nueva alianza (Lc 22,20). La bendición halla en él su total realización; es un don expresado en una palabra inmediatamente eficaz; es el don perfecto del Padre a sus hijos, toda su gracia, y el don perfecto del Hijo que ofrece su vida al Padre, toda nuestra acción de gracias unida a la suya : es un don de fecundidad, un misterio de vida y de comunión. <br>3. La bendición del Espíritu Santo.<br> Si el don de la Eucaristía contiene toda la bendición de Dios en Cristo, si su último gesto es la bendición que deja a su Iglesia (Lc 24,51) y la bendición que suscita en ella (24,53), sin embargo, en ningún lugar del NT se dice que Jesucristo es la bendición del Padre. En efecto, la bendición es siempre el *don, la vida recibida y asimilada. Ahora bien, el don por excelencia es el Espíritu Santo. No ya que Jesucristo nos sea menos dado que el Espíritu Santo, pero el Espíritu nos es dado para ser en nosotros el don recibido de Dios. El vocabulario del NT es expresivo. Es cierto que Cristo es de nosotros, pero sobre todo es cierto que nos-otros somos de Cristo (cf. 1Cor 3,23; 2Cor 10,7). Del Espíritu, por el contrario, se dice más de una vez que nos es dado (Me 13;11; Jn 3,34; Act 5,32; Rom 5,5), que lo recibiremos (Jn 7,39; Act 1,8; Rom 8,15) y que lo poseemos (Rom 8,9; Ap 3,1), hasta tal punto que se habla espontáneamente del «don del Espíritu» (Act 2,38; 10,45; 11,17). La bendición de Dios, en el sentido pleno de la palabra, es su Espíritu Santo. Ahora bien, este don divino, que es Dios mismo, lleva en sí todos los rasgos de la bendición. Los gran-des temas de la bendición, el agua que regenera, el nacimiento y la re-novación, la vida y la fecundidad, la plenitud y la paz, el gozo y la comunión de los corazones, son igualmente *frutos del Espíritu. <br>-> Acción de gracias - Bienaventuranza - Confesar - Culto - Don - Fruto - Gracia - Palabra - Vida.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=62;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=23;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=18;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=3;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

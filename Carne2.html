@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">CARNE</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "La condición carnal del hombre parece a los ojos de algunos una inferioridad y hasta un mal. Este pensamiento depende sólo muy indirectamente de la Biblia. Ésta, en efecto, no considera nunca a la carne como intrínsecamente mala; su juicio se inspira no en especulaciones filosóficas sobre la naturaleza humana, sino en las luces de la revelación: la carne fue creada por Dios, la carne fue asumida por el Hijo de Dios, la carne es transfigurada por el Espíritu de Dios. Desde las primeras hasta las últimas páginas inspiradas, la carne designa la condición de criatura; pero con Pablo este sentido deja de ser ya único: la carne puede designar no ya, ciertamente, una naturaleza mala, pero sí la condición pecadora del hombre; resulta que al término de esta evolución la palabra sarx implica cierta ambigüedad que es conveniente disipar. <br>I. LA CRIATURA FRENTE A Dios.<br> Para el NT como para el AT el hombre es carne, no en el sentido de que esté compuesto de una «materia» (la carne o el cuerpo) animada por una «forma» (el cuerpo o el alma), sino en el sentido de que se expresa a través de esta carne que es su cuerpo, lo que caracteriza a la persona humana en su condición terrena. <br>1. Dignidad de la carne.<br> La carne, formada por Dios como por un tejedor (Job 10,11; Sal 139,13ss) o por un alfarero (Gén 2,7; Jer 1,5; Job 10,8s), es por esta razón digna de nuestra admiración (Ecl 11,5; 2Mac 7,22s); ya sea un elemento de nuestro ser corpóreo — carne y sangre (Eclo 14,18; Mt 16,17), huesos y carne (Gén 2,23; Lc 24,39), corazón y carne (Sal 84,3; 73,26) —, o bien designe el conjunto del *cuerpo, por ejemplo, cuando está enfermo (Sal 38,4; Gál 4,14), doliente (2Cor 12,7), presa de las tribulaciones (lCor 7,28), en ningún caso se descubre el menor indicio de des-precio; por el contrario, no se la debe odiar (Ef 5,28s). Así Ezequiel hace el elogio definitivo de la carne cuando anuncia, que Dios dará a Israel en lugar de su *corazón endurecido, petrificado, «un corazón de carne)) (Ez 36,26), maleable y acogedor. <br>2. La persona corporal.<br> Una dignidad todavía más radical: la carne puede designar también al *hombre en su totalidad concreta. El semita — como lo hace con el término *alma — habla objetivamente de «toda carne» para designar toda la creación animada (Gén 6,17; Sal 136,25; Eclo 40,8), la humanidad (Is 40,5s _ Lc 3,6; Jl 3,1 = Act 2,17; Mc 13,20; Jn 17,2). Puede también indicar con ella el fondo de la perso-' na; así Adán ve otro él en la mujer que Dios le presenta; pero no dice que tiene, como él, un alma, sino que exclama : «Ésta es hueso de mis huesos y carne de mi carne» (Gén 2,23; cf. Eclo 36,24). Estas últimas palabras expresan la conciencia de una comunión profunda, que podrá extenderse a toda parentela (Gén 29,14; 37,27; Rom 9,3), y más especialmente al nuevo ser, la «carne única» que vienen a ser los *esposos (Gén 2,24 = Mt 19,5 p; lCor 6,16; Ef 5,31). En esas condiciones se comprende que el mismo término pueda significar la persona misma, el «yo» (Ecl 4,5; 5,5; 2Cor 7,5) y hasta sus actividades de orden psicológico, con un matiz corporal, sí, pero en modo alguno peyorativo: la carne sufre (Job 14,22), tiene miedo (Sal 119,120), languidece de deseo (Sal 63,2) o grita de júbilo (Sal 84,3); vive de la enseñanza de los sabios (Prov 4,22); está incluso dotada de voluntad (Jn 1,13). <br>3. La condición terrena.<br> Finalmente, designar al hombre concreto por su carne es manifestar su origen terreno. Este matiz se impone cuan-do se emplea el término en contras-te con el mundo celestial de Dios y del espíritu. <br>a) La criatura. Fuera de *Dios, todo es carne, incluso el ángel (Ez 10, 12); como numerosos padres de la Iglesia no hallan dificultad en esto, tampoco la halla Judas (7): se contenta con precisar que la carne angélica es diferente de la nuestra. Así pues, no hay tampoco nada ofensivo en calificar «según la carne» a los patriarcas (Rom 9,5), a nuestro padre Abraham (Rom 4,1) o a los señores temporales (Col 3,22 = Ef 6,5). Asimismo, vivir «en la carne» (2Cor, 10,3; Gál 2,20; Flp 1,22ss; Sant 4,1s) es sencillamente vivir en la tierra, es ser visible (Col 2,1), estar concretamente presente (Col 2,5). Para designar los días de la vidaterrena de Jesús (Un 4,2; Heb 5,7) se dice que tomó carne y sangre (Heb 2,14). <br>b) Caducidad e impotencia. Ordinariamente, quien dice carne dice fragilidad de criatura. «Toda carne es como la hierba..., pero la palabra de Dios permanece para siempre» (Is 40,6s). La carne es al *espíritu lo que lo terrenal es a lo celestial; así Jesucristo, «nacido de la descendencia de David según la carne, fue constituido Hijo de Dios, poderoso según el Espíritu de santidad» (Rom 1,3s; cf. ITim 3,16). El hombre, siendo criatura, és por sí mismo impotente para entrar en el reino de Dios: «lo que ha nacido de la carne es carne, lo que ha nacido del espíritu es espíritu» (Jn 3,6; cf. lCor 15,50). El hombre, «carne y sangre», no puede tampoco conocer por sí mismo las realidades divinas (Mt 16,17; cf. Gál 1,16; Ef 6,12), y si pretende juzgarlas con su razón, muestra ser un «sabio según la carne» (lCor 1,26). En toda verdad, «el espíritu es el que vivifica, la carne no sirve para nada» (Jn 6,63), p.e., para reconocer tras el rito eucarístico a la persona del Salvador. Tal es la condición terrena que quiso asumir el *Hijo de Dios; según el dicho de Juan: «el Verbo se hizo carne» (Jn 1,14), hombre verdadero de este mundo, con sus límites; pero también hombre, en el que el creyente reconoce al Salvador y al Hijo de Dios (Un 4,2; 2Jn 7) y acepta la manducación de su carne y de su sangre con miras a la vida eterna (Jn 6,53-58). <br>4. El mundo de la carne.<br> Así el hombre, por su carne no es sino «polvo» (Gén 3,19; Ecl 12,7), pertenece al mundo terrenal; por el hálito que Dios le presta está en relación con el mundo celestial. Doble pertenencia que lleva poco a poco a distinguir el mundo de los espíritus y del de la carne; así según la pluma del traductor griego de la Biblia : «el Dios de los espíritus que animan a toda carne» viene a ser «el Dios de los espíritus y de toda carne» (Núm 16,22; 27,16), como Heb 12,9 opondrá «el Padre de los espíritus» a los «padres según la carne». No obstante, este dualismo cósmico' no debe confundirse con un dualismo antropológico, según el cual el hombre une en sí a los dos mundos del espíritu y de la carne como dos sustancias componentes. Los raros pasajes (como Rom 7,25), en que aparece una distinción entre razón y carne, no son significativos; como tampoco la palabrá de Jesús : «el espíritu está pronto, pero la carne es débil» (Mt 26,41 p). El dualismo antropológico no se adoptará en el mundo judío sino hacia los siglos II/III, con el rabinismo naciente. <br>II. EL PECADOR DELANTE DE DIOS.<br>Existe, con todo, un dualismo de otro orden, el dualismo moral, que, sin embargo, debe distinguirse cuidadosamente según el ambiente de donde derive. Para algunos griegos el cuerpo es una prisión del alma, de la que hay que tratar de evadirse como de una mala situación natural. Más tarde, a consecuencia de la controversia epicúrea, la carne se con-vierte en el lugar mismo de la sensualidad, considerada como mala y degradante para el espíritu. La gnosis licenciosa combatida por Judas ofrece probablemente alguna semejanza con estas teorías epicúreas (Jds 4.7...): la carne, mala por naturaleza, debe ser vencida. Si los escritores del judaísmo tardío y del NT fomentan semejante lucha, lo hacen en una perspectiva muy diferente: la carne —esta condición de criatura, en la que ,el hombre ha puesto su confianza — acaba por caracterizar a un mundo en que reina el espíritu del mal. <br>1. La confianza pecadora en la carne.<br> Isaías proclama que Dios debe ser nuestro único apoyo: «Los caballos del egipcio son carne y no espíritu» (Is 31,3); Jeremías opone los dos tipos de *confianza : «Maldito el hombre que en el hombre pone su confianza, y de la carne hace su apoyo, y aleja su corazón de Yahveh» (Jer 17,5ss). Y tras ellos Pablo : «No se gloríe ninguna carne delante de Dios» (lCor 1,29); frente a los judíos que fundan su *orgullo en el privilegio de la circuncisión (Rom 2,25-29; Gál 6,12ss), Pablo no quiere fundar su *gloria sino en Cristo (F1p 3,3s). Así, aun cuando vive en la carne, no se conduce ya según la carne (2Cor 10,2s), a fin de no gloriarse en ella (2Cor 11,18); en esta condición no se merece el epíteto de carnal (lCor 3,1.3; 2Cor 1,12), ni en la voluntad (2Cor 1,17), ni en el conocimiento que uno tiene de Cristo (2Cor 5,16). En efecto, se puede juzgar a Cristo según la carne, como Jesús lo reprochó a los judíos (Jn 8,15): como sólo tienen ojos de carne (Job 10,4), juzgan según la apariencia (Jn 7,24), transformando su condición frágil de criatura en condición pecadora. Así Juan acabará ,por calificar al *mundo de pecador y por denunciar la concupiscencia de la carne (Un 2,16). Con esto no acusa a la carne como tal, sino ala voluntad del hombre, que la ha hecho pecadora. Se pueden distinguir dos «espíritus», el del mal y el del bien, cada uno de los cuales tiene un mundo bajo su dominio y se disputa el corazón del hombre (así en Qumrán); pero no por esto se afirma un dualismo de naturaleza, como si esta lucha debiera durar para siempre, no pudiendo triunfar del mal el espíritu del bien. <br>2. La carne pecadora y el espíritu de santidad.<br> Esta lucha y esta victoria fueron sistematizadas por Pablo con la ayuda del binomio carne-espíritu. Esta oposición entre carne y espíritu corresponde sólo en apariencia a la que ponen los griegos entre alma y cuerpo, entre pureza e impureza. Se inspira directamente en la oposición semítica entre terrenal y celestial, pero es transformada por una doble experiencia : el' *Espíritu Santo que es dado a los cristianos, y el *pecado, al que nos ha arrastrado la carne. <br>a) La lucha entre carne y espíritu. El descubrimiento de la antítesis literaria que caracteriza a este combate, se hace en dos etapas marcadas por las epístolas a los Gálatas y a los Romanos, respectivamente. Los creyentes son hijos de Abraham por Sara según el espíritu, y no por Hagar según la carne, de-clara Pablo (Gál 4,21-31). El AT y el NT se distinguen como dos períodos contrastados de la historia de la salvación, caracterizados por la *ley y la *fe respectivamente. De ahí se forjan dos mundos, en los que participa el creyente : la carne aparece como el residuo del peca-do, que la ley contribuyó a multiplicar, y el espíritu como la personificación de todo lo que era bueno en el provecho de la ley y que fue realizado por el don del Espíritu. Entre estos dos poderes hay un antagonismo irreductible en el corazón del cristiano (Gál 5,17): puede vivir según la carne, debe vivir según el espíritu: de ahí el riesgo continuo de pervertir una situación que, sin embargo, ha sido establecida por el Espíritu Santo. En los capítulos 7 y 8 de la epístola a los Romanos muestra Pablo cómo intervienen las dos fuentes de la muerte y de la vida. Estos dos poderes que habitan sucesivamente en el hombre (Rom 7,17-20; 8,9ss), determinan en el creyente, que, no obstante, ha eliminado el pecado por Cristo, una doble manera de vivir (8,4-17). La posibilidad de vivir según la carne es en nosotros la huella del pecado, y esto por intermedio de la carne, en la que en otro tiempo habitaba el pecado. <br>b) El dominio de la carne. La carne, tomada como norma de la existencia, dicta al hombre su conducta. Adquiere una real autonomía, recibiendo la herencia del poder del *pecado, con sus prerrogativas, sus deseos; reduce a su esclavitud a los que obedecen a la «ley del pecado» (Rom 7,25). Con insolencia (Col 2, 23) manifiesta entonces sus *deseos (Rom 8,5ss), sus apetencias (Rom 13,14; Gál 3,3; 5,13.16s), produce *obras malas (Gál 5,19). Tal es la existencia según la carne (Rom 7,5), hasta tal punto que el entendimiento mismo se hace carnal (Col 2,18; cf. lCor 3,3). Y el *cuerpo también — si bien neutral en el asunto —, regido por la carne se llama «el cuerpo de la carne» (Col 2,11), se identifica con el «cuerpo del pecado» (Rom 6,6) y es en verdad modelado por la «carne de pecado» (Rom 8,3). <br>c) El triunfo de Cristo. Pero el pecado fue vencido por Cristo, quien, tomando este «cuerpo de carne» (Col 1,22), fue hecho pecado (2Cor 5,21); venido en una carne de condición pecadora, condenó el pecado en la carne misma (Rom 8,3). Desde ahora el cristiano ha crucificado la carne en Cristo (Gál 5,24); la lucha que sostiené (6,8) no tiene un desenlace fatal, sino que es una *victoria asegurada, en la medida en que el creyente, recobrando su condición auténtica de criatura, no confía en la carne, en su debilidad`, sino en la *fuerza de la muerte del Salvador, fuente del Espíritu de vida. --> Alma - Cuerpo - Espíritu - Hombre - Pecado - Resurrección - Sangre.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

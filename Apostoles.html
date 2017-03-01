@@ -1,0 +1,644 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">APÓSTOLES</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='2Sa 10' /><label for="hist0">2Sa 10</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Núm 27,18' /><label for="hist1">Núm 27,18</label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Is 6,8' /><label for="prof0">Is 6,8</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 61,1ss' /><label for="prof1">Is 61,1ss</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Jer 1,7' /><label for="prof2">Jer 1,7</label><br>
+	</div>
+
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Ap 21, 14' /><label for="cart0">Ap 21, 14</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Rm 11, 13' /><label for="cart1">Rm 11, 13</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Rm 1,1' /><label for="cart2">Rm 1,1</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Rm 15,18' /><label for="cart3">Rm 15,18</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='1Cor 9,1-5s' /><label for="cart4">1Cor 9,1-5s</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='1Cor 15,5-8' /><label for="cart5">1Cor 15,5-8</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='1Cor 12,28' /><label for="cart6">1Cor 12,28</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='1Cor 3,9' /><label for="cart7">1Cor 3,9</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='1Cor 4,9-16' /><label for="cart8">1Cor 4,9-16</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='1Cor 5,3-4' /><label for="cart9">1Cor 5,3-4</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='1Cor 11,34' /><label for="cart10">1Cor 11,34</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='1Cor 14,37' /><label for="cart11">1Cor 14,37</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='1Cor 9, 19' /><label for="cart12">1Cor 9, 19</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='1Cor 9,12' /><label for="cart13">1Cor 9,12</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='1Cor 2,6-16' /><label for="cart14">1Cor 2,6-16</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='2Cor 11,5.13' /><label for="cart15">2Cor 11,5.13</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='2Cor 12,11' /><label for="cart16">2Cor 12,11</label><br>
+		<input name='lectcart' type='radio' id='cart17' value='2Cor 8,23' /><label for="cart17">2Cor 8,23</label><br>
+		<input name='lectcart' type='radio' id='cart18' value='2Cor 5,20' /><label for="cart18">2Cor 5,20</label><br>
+		<input name='lectcart' type='radio' id='cart19' value='2Cor 3,7-11' /><label for="cart19">2Cor 3,7-11</label><br>
+		<input name='lectcart' type='radio' id='cart20' value='2Cor 4,7-6.10' /><label for="cart20">2Cor 4,7-6.10</label><br>
+		<input name='lectcart' type='radio' id='cart21' value='2Cor 10,13-16' /><label for="cart21">2Cor 10,13-16</label><br>
+		<input name='lectcart' type='radio' id='cart22' value='2Cor 13,3' /><label for="cart22">2Cor 13,3</label><br>
+		<input name='lectcart' type='radio' id='cart23' value='2Cor 1,24' /><label for="cart23">2Cor 1,24</label><br>
+		<input name='lectcart' type='radio' id='cart24' value='Gál 1,15-19' /><label for="cart24">Gál 1,15-19</label><br>
+		<input name='lectcart' type='radio' id='cart25' value='Gál 4,14' /><label for="cart25">Gál 4,14</label><br>
+		<input name='lectcart' type='radio' id='cart26' value='Gál 1,8s' /><label for="cart26">Gál 1,8s</label><br>
+		<input name='lectcart' type='radio' id='cart27' value='Gál 1,2' /><label for="cart27">Gál 1,2</label><br>
+		<input name='lectcart' type='radio' id='cart28' value='Ef 4,11' /><label for="cart28">Ef 4,11</label><br>
+		<input name='lectcart' type='radio' id='cart29' value='Ef 3,1 -21' /><label for="cart29">Ef 3,1 -21</label><br>
+		<input name='lectcart' type='radio' id='cart30' value='Hch 9,2 ' /><label for="cart30">Hch 9,2 </label><br>
+		<input name='lectcart' type='radio' id='cart31' value='Hch 28,21' /><label for="cart31">Hch 28,21</label><br>
+		<input name='lectcart' type='radio' id='cart32' value='Hch 15,22' /><label for="cart32">Hch 15,22</label><br>
+		<input name='lectcart' type='radio' id='cart33' value='Hch 11,30' /><label for="cart33">Hch 11,30</label><br>
+		<input name='lectcart' type='radio' id='cart34' value='Hch 13,3' /><label for="cart34">Hch 13,3</label><br>
+		<input name='lectcart' type='radio' id='cart35' value='Hch 14,26' /><label for="cart35">Hch 14,26</label><br>
+		<input name='lectcart' type='radio' id='cart36' value='Hch 15, 2' /><label for="cart36">Hch 15, 2</label><br>
+		<input name='lectcart' type='radio' id='cart37' value='Hch 1,15-26' /><label for="cart37">Hch 1,15-26</label><br>
+		<input name='lectcart' type='radio' id='cart38' value='Hch 1,8' /><label for="cart38">Hch 1,8</label><br>
+		<input name='lectcart' type='radio' id='cart39' value='Hch 14,4.14' /><label for="cart39">Hch 14,4.14</label><br>
+		<input name='lectcart' type='radio' id='cart40' value='Hch 6,1-6' /><label for="cart40">Hch 6,1-6</label><br>
+		<input name='lectcart' type='radio' id='cart41' value='Hch 8,14-25' /><label for="cart41">Hch 8,14-25</label><br>
+		<input name='lectcart' type='radio' id='cart42' value='Hch 20,28' /><label for="cart42">Hch 20,28</label><br>
+		<input name='lectcart' type='radio' id='cart43' value='Hch 10,10-11,18' /><label for="cart43">Hch 10,10-11,18</label><br>
+		<input name='lectcart' type='radio' id='cart44' value='Hch 9,5.27' /><label for="cart44">Hch 9,5.27</label><br>
+		<input name='lectcart' type='radio' id='cart45' value='Heb 3,1' /><label for="cart45">Heb 3,1</label><br>
+		<input name='lectcart' type='radio' id='cart46' value='1Tes 3,2' /><label for="cart46">1Tes 3,2</label><br>
+		<input name='lectcart' type='radio' id='cart47' value='1Tes 2,5-13' /><label for="cart47">1Tes 2,5-13</label><br>
+		<input name='lectcart' type='radio' id='cart48' value='1Tes 1,6' /><label for="cart48">1Tes 1,6</label><br>
+		<input name='lectcart' type='radio' id='cart49' value='2Tes 3,4' /><label for="cart49">2Tes 3,4</label><br>
+		<input name='lectcart' type='radio' id='cart50' value='2Tes 3,9' /><label for="cart50">2Tes 3,9</label><br>
+		<input name='lectcart' type='radio' id='cart51' value='1Tim 4,14' /><label for="cart51">1Tim 4,14</label><br>
+		<input name='lectcart' type='radio' id='cart52' value='1Tim 1,20' /><label for="cart52">1Tim 1,20</label><br>
+		<input name='lectcart' type='radio' id='cart53' value='1Tim 5,22' /><label for="cart53">1Tim 5,22</label><br>
+		<input name='lectcart' type='radio' id='cart54' value='2Tim 1,6' /><label for="cart54">2Tim 1,6</label><br>
+		<input name='lectcart' type='radio' id='cart55' value='1Pe 5,2-5' /><label for="cart55">1Pe 5,2-5</label><br>
+		<input name='lectcart' type='radio' id='cart56' value='Col 1,27' /><label for="cart56">Col 1,27</label><br>
+		<input name='lectcart' type='radio' id='cart57' value='Col 1,24- 29' /><label for="cart57">Col 1,24- 29</label><br>
+	</div>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 10,2' /><label for="ev0">Mt 10,2</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 4,18-22' /><label for="ev1">Mt 4,18-22</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 10,40' /><label for="ev2">Mt 10,40</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Mt 14,19' /><label for="ev3">Mt 14,19</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Mt 16,18' /><label for="ev4">Mt 16,18</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Mt 18,18' /><label for="ev5">Mt 18,18</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Mt 19,27' /><label for="ev6">Mt 19,27</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Mt 28,18ss' /><label for="ev7">Mt 28,18ss</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Mt 5,13s' /><label for="ev8">Mt 5,13s</label><br>
+		<input name='lectev' type='radio' id='ev9' value='Jn 13,16' /><label for="ev9">Jn 13,16</label><br>
+		<input name='lectev' type='radio' id='ev10' value='Lc 6,13' /><label for="ev10">Lc 6,13</label><br>
+		<input name='lectev' type='radio' id='ev11' value='Lc 10,1' /><label for="ev11">Lc 10,1</label><br>
+		<input name='lectev' type='radio' id='ev12' value='Lc 10,16' /><label for="ev12">Lc 10,16</label><br>
+		<input name='lectev' type='radio' id='ev13' value='Mc 3,14' /><label for="ev13">Mc 3,14</label><br>
+		<input name='lectev' type='radio' id='ev14' value='Mc 6,6-13' /><label for="ev14">Mc 6,6-13</label><br>
+	</div>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "En el NT numerosos personajes reciben el título de apóstol: los doce discípulos escogidos por Jesús para fundar su Iglesia (Mt 10,2; Ap 21, 14), así como Pablo, Apóstol de las *naciones por excelencia (Rm 11, 13), son bien conocidos. Pero hay además, según el uso constante de Pablo mismo, «los otros apóstoles, y los hermanos del Señor, y Cefas... y Bernabé». (ICor 9,5s), todos los cuales llevan el mismo titulo; junto a Pedro y a los doce tenemos a «Santiago y los apóstoles» (ICor 15,5ss; cf. Gál 1,19), para no hablar del carisma del apostolado (ICor 12,28; Ef 4,11), ni de los «falsos profetas» y los «archiprofetas» denunciados por Pablo (2Cor 11,5.13; 12,11). Un uso tan extendido de este titulo plantea un problema: ¿qué relación hay entre estos diferentes «apóstoles»? Para resolverlo, a falta de una definición neotestamentaria del apostolado que convenga a todos, hay que situar en su propio lugar a los diferentes personajes que llevan este titulo, después de haber recogido las indicaciones concernientes al término y a la función no específicamente cristiana. El sustantivo apostolos es ignorado por el griego literario (si se exceptúa a Heródoto y a Josefa, que parecen reflejar el lenguaje popular), pero el verbo del que deriva (apostel lo), enviar, expresa bien su contenido; éste se precisa mediante las analogías del AT y las costumbres judías. El AT conocía el uso de los embajadores que deben ser respetados como el rey que los envía (2Sa 10); los *profetas ejercen *misiones del mismo orden (cf. Is 6,8; Jer 1,7; Is 61,1ss), aun cuando no reciben nunca el titulo de apóstol. Pero el judaismo rabínico, después del año 70, conoce la institución de enviados (seli hîn),cuyo uso parece muy anterior, según los textos mismos del NT. Pablo pide cartas para las sinagogas de Damasco, con objeto de perseguir a los fieles de Jesús (Act 9,2 p): es un delegado oficial provisto de credenciales oficiales (cf. Act 28,21 s). La Iglesia sigue esta costumbre cuando de Antioquía y de Jerusalén envía a Bernabé y a Silas con sus cartas (Act 15,22), o hace a Bernabé y a Pablo sus delegados (Act 11,30; 13,3; 14,26; 15, 2); Pablo mismo envía a dos hermanos que son los apostoloi de las Iglesias (2Cor 8,23). Según la palabra de Jesús, que tiene antecedentes, en la literatura judía, el apóstol representa al que le envía: «EI servidor no es mayor que su amo, ni el apóstol mayor que el que lo ha enviado». (Jn 13,16). Así, a juzgar por el uso de la época, el apóstol no es en primer lugar un misionero, o un hombre del Espiritu, y ni siquiera un *testigo: es un emisario, un delegado, un plenipotenciario, un embajador. <br>. LOS DOCE Y EL APOSTOLADO. <br>El apostolado, antes de dar derecho a un titulo, fue una función. En efecto, sólo al cabo de una lenta evolución, el circulo restringido de los doce heredó en forma privilegiada el titulo de apóstoles (Mt 10,2), designación que acabó por atribuirse, tardíamente sin duda, a Jesús mismo (Lc 6,13). Pero si este titulo de honor pertenece sólo a los doce, se ve también que otros con ellos ejercen una función que puede calificarse de «apostólica». <br>1. Los doce apóstoles.<br> Desde el principio de su vida pública quiso Jesús multiplicar su presencia y propagar su mensaje por medio de hombres que fueran como él mismo. Llama a los cuatro primeros discípulos para que sean pescadores de hombres (Mt 4,18-22 p); escoge a doce para que estén «con él» y para que, como él, anuncien el evangelio y expulsen a los demonios (Mc 3,14 p); los envia en *misión a hablar en su nombre (Mc 6,6-13 p), revestidos de su autoridad: «El que os recibe a vosotros, a mí me recibe, y el que me recibe a mí, recibe al que me envió» (Mt 10,40 p); aprenden a distribuir los panes multiplicados en el desierto (Mt 14,19 p), reciben autoridad especial sobre la comunidad que deben dirigir (Mt 16,18; 18,18). En una palabra, constituyen los fundamentos del nuevo *Israel, cuyos jueces serán el último día (Mt 19,27 p), que es lo que simboliza el *número 12 del colegio apostólico. A ellos es a quienes el resucitado, presente siempre con ellos hasta el fin de los siglos, da el encargo de reclutarle discipulos y de bautizar a todas las naciones (Mt 28,18ss). En estas condiciones la elección de un duodécimo apóstol en sustitución de Judas aparece indispensable para que se descubra en la Iglesia naciente la figura del nuevo Israel (Act 1,15-26). Deberán ser *testigos de Cristo, es decir, atestiguar que el Cristo resucitado es el mismo Jesús con el que habían vivido (1,8.21); testimonio único, que confiere a su apostolado (entendido aquí en el sentido más fuerte del término) un carácter único. Los doce son para siempre el fundamento de la Iglesia: «EI muro de la ciudad tenía doce hiladas, y sobre ellas los nombres de los doce apóstoles del cordero» (Ap 21,14). <br>2. El apostolado de la Iglesia naciente.<br> Si los doce son los apóstoles por excelencia, en cuanto que la Iglesia es «apostólica», sin embargo, el apostolado de la Iglesia, entendido en sentido más amplio, no se limita a la acción de los doce. Asi como Jesús, «apóstol de Dios» (Heb 3,1), quiso constituir un colegio privilegiado que multiplicara su presencia y su palabra, así también los doce comunican a otros el ejercicio de su misión apostólica. Ya en el AT Moisés había transmitido a Josué la plenitud de sus poderes (Núm 27,18); así también Jesús quiso que el cargo pastoral confiado a los doce continuara a lo largo de los siglos: aun conservando un vinculo especial con ellos, su presencia de resucitado desbordará infinitamente su estrecho circulo. Por lo demás, ya en su vida pública Jesús mismo abrió el camino a esta extensión de la misión apostólica. Al lado de la tradición prevalente que contaba la misión de los doce, conservó Lucas otra tradición, según la cual Jesús «designó todavía a otros setenta y dos [discípulos] y los envió delante de él» (Lc 10,1). Idéntico objeto de misión que en el caso de los doce, idéntico carácter oficial: «El que a vosotros oye, a mi me oye, y el que a vosotros desecha, a mi me desecha, y el que me desecha a mi, desecha al que me envió» (Lc 10,16; cf. Mt 10,40 p). La misión apostólica no está, pues, limitada a la de los doce en la mente de Jesús. Los mismos doce actúan también con este espíritu. En el momento de la elección de Matías sabían que buen número de discípulos podían llenar las condiciones necesarias (Act 1.21ss): Dios no designa propiamente un apóstol, sino un testigo duodécimo. Ahi está además Bernabé, un apóstol del mismo renombre que Pablo (14,4.14); y si bien a los siete no se los llama apóstoles (6,1-6), pueden, sin embargo, fundar una nueva iglesia: así Felipe en Samaria, aun cuando sus poderes estén limitados por los de los doce (8,14-25). El apostolado, representación oficial del resucitado en la Iglesia, queda para siempre fundado sobre el colegio «apostólico» de los doce, pero se ejerce por todos los hombres a los que éstos confieren autoridad. <br>II. PABLO, APÓSTOL DE LOS GENTILES.<br> La existencia de Pablo confirma a su manera lo que Jesús había insinuado en la tierra enviando a los setenta y dos, además de los doce. Desde el cielo envía el resucitado a Pablo, además de los doce; a través de esta misión apostólica se podrá precisar la naturaleza del apostolado. <br>1. Embajador de Cristo.<br> Cuando Pablo repite con insistencia que ha sido «llamado» como apóstol (Rm 1,1, Gál 1,15) en una visión apocaliptica del resucitado (Gál 1,16; ICor 9,1; 15,8; cf. Act 9,5.27), manifiesta que el origen de su *misión dependió de una *vocación particular. Como apóstol, es un «enviado», no de los hombres (aunque ellos mismos sean apóstoles), sino personalmente de Jesús. Recuerda sobre todo este hecho cuando reivindica su autoridad apostólica: «Somos embajadores de Cristo, como si Dios os exhortase por medio de nosotros» (2Cor 5,20): «la palabra de Dios que os predicamos, la acogisteis no como palabra de hombre, sino como palabra de Dios» (ITes 2,13). Dichosos los que le han «acogido como a un ángel de Dios, como a Cristo Jesús» (Gál 4,14). Porque los apóstoles son «cooperadores de Dios». (ICor 3,9; ITes 3,2). Además, a través de ellos se realiza el ministerio de la *gloria escatológica (2Cor 3,7-11). Y para que el embajador no desvíe en su provecho este poder divino y esta gloria, el apóstol es un hombre despreciado por el mundo; ahí está, perseguido, entregado a la muerte, para que sea dada la vida a los hombres (2Cor 4,7-6, 10; 1 Cor 4, 9- 13). Concretamente, la *autoridad apostólica se ejerce a propósito de la doctrina, del ministerio y de la jurisdicción. Con frecuencia invoca Pablo su autoridad doctrinal, a la que estima capaz de fulminar anatema contra quienquiera que anuncie un *Evangelio diferente del suyo (Gál 1,8s). Pablo se considera capaz de delegar a otros sus propios poderes, como cuando ordena a Timoteo *imponiéndole las manos (ITim 4,14; 2Tim 1,6), gesto que éste podrá hacer a su vez (ITim 5,22). Finalmente, esta autoridad se ejerce por una real jurisdicción sobre las Iglesias que ha fundado Pablo o que le están confiadas: juzga y adopta sanciones (ICor 5,3ss; ITim 1,20), arregla todo a su paso (ICor 11,34; 2Cor 10,13-16; 2Tes 3,4), sabe exigir obediencia a la comunidad (Rm 15,18; ICor 14,37; 2Cor 13,3), a fin de mantener la *comunión (ICor 5,4). Esta autoridad no es tiránica (2Cor 1,24), es un servicio (ICor 9, 19), el de un *pastor (Act 20,28; IPe 5,2-5) que sabe, si es necesario, renunciar a sus derechos (ICor 9,12); lejos de pesar sobre los fieles, los quiere como un padre, como una madre (ITes 2,7-12) y les da el *ejemplo de la fe (ITes 1,6; 2Tes 3,9; ICor 4,16). <br>2. El caso único de Pablo.<br> En esta descripción ideal del apostolado reconoceria Pablo sin dificultad lo que esperaba de sus colaboradores, de Timoteo (cf. 1Tes 3,2) y de Silvano, a los que califica, a lo que parece, de apóstoles (2,5ss), o también de Sóstenes y de Apolo (ICor 4,9). Sin embargo, Pablo se atribuía un puesto aparte en el apostolado de la Iglesia: es el apóstol de las naciones paganas, tiene una inteligencia especial del misterio de Cristo: esto pertenece al orden *carismático y no se puede transmitir. <br>a) El apóstol de las *naciones. Pablo no fue el primero que llevó el Evangelio a los paganos: Felipe había ya evangelizado a los samaritanos (Act 8), y el Espiritu Santo había descendido sobre los paganos de Cesarea (Act 10). Pero Dios quiso que al nacimiento de su Iglesia un apóstol estuviera más especialmente encargado de la evangelización de los gentiles al lado de la de los judíos. Esto es lo que Pablo hace reconocer por *Pedro. No ya que quisiera ser un enviado de Pedro: seguía siendo enviado directo de Cristo; pero tenía interés en informar al jefe de los doce, a fin de no «correr en vano» y de no introducir división en la Iglesia (Gál 1-2). <br>b) El misterio de Cristo es, para Pablo, «Cristo entre las naciones. (Col 1,27); ya Pedro había comprendido por revelación que no había ya prohibición relativa a alimentos que separara a los judíos y a los gentiles (Act 10,10-11,18). Pero Pablo tiene por la gracia de Dios un *conocimiento particular de este *misterio (Ef 3,4) y ha recibido el encargo de transmitirlo a los hombres; sufre persecución, soporta sufrimientos, es prisionero con miras al cumplimiento de este misterio (Col 1,24- 29; Ef 3,1 -21). Tal es la gracia particular, incomunicable, de Pablo; pero el aspecto de embajada de Cristo y hasta, en cierto grado, la inteligencia espiritual que tiene de su apostolado, puede ser otorgada a todos los apóstoles por el señor del Espiritu (ICor 2,6-16). El apostolado de los fieles no es objeto de enseñanza explícita en el NT, pero halla en algunos hechos un sólido punto de apoyo. El apostolado, aun siendo por excelencia función de los doce y de Pablo, se ejerció desde los principios por la Iglesia entera: por ejemplo, las Iglesias de Antioquía y de Roma existían ya cuando llegaron los jefes de la Iglesia. En sentido amplio, el apostolado es cosa de todo *discípulo de Cristo, «luz del mundo y sal de la tierra» (Mt 5,13s). Según su rango debe participar en el apostolado de la Iglesia, imitando en su celo apostólico a Pablo, a los doce y a los primeros apóstoles. -> Autoridad - Carismas - Discipulo - Iglesia - Evangelio - Misión - Oración - Predicar - Testigo - Vocación.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=2;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=3;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=58;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=15;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

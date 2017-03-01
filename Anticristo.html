@@ -1,0 +1,590 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ANTICRISTO</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 3' /><label for="hist0">Gén 3</label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Is 51,9s' /><label for="prof0">Is 51,9s</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 27,1' /><label for="prof1">Is 27,1</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 14,13' /><label for="prof2">Is 14,13</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Ez 28,2ss' /><label for="prof3">Ez 28,2ss</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Ez 38-39' /><label for="prof4">Ez 38-39</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Dan 11,36-40' /><label for="prof5">Dan 11,36-40</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Dan 9,27' /><label for="prof6">Dan 9,27</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Dan 7,8' /><label for="prof7">Dan 7,8</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Dan 7,11-27' /><label for="prof8">Dan 7,11-27</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Dan 12,2' /><label for="prof9">Dan 12,2</label><br>
+		<input name='lectprof' type='radio' id='prof10' value='Dan 2,4' /><label for="prof10">Dan 2,4</label><br>
+		<input name='lectprof' type='radio' id='prof11' value='Dan 2,7-11' /><label for="prof11">Dan 2,7-11</label><br>
+		<input name='lectprof' type='radio' id='prof12' value='Dan 1,7- 10' /><label for="prof12">Dan 1,7- 10</label><br>
+	</div>
+
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='1Jn 2,18.22' /><label for="cart0">1Jn 2,18.22</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='1Jn 4,3' /><label for="cart1">1Jn 4,3</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='2Jn 7' /><label for="cart2">2Jn 7</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='2Tes 2,3-12' /><label for="cart3">2Tes 2,3-12</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Ap 13,1-18' /><label for="cart4">Ap 13,1-18</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='Ap 17,14' /><label for="cart5">Ap 17,14</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Ap 3,21' /><label for="cart6">Ap 3,21</label><br>
+	</div>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mc 13,14 ' /><label for="ev0">Mc 13,14 </label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mc 13,5s.21s' /><label for="ev1">Mc 13,5s.21s</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 24,11' /><label for="ev2">Mt 24,11</label><br>
+	</div>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El término de anticristo (literalmente: «contra Cristo») figura exclusivamente en IJn 2,18.22; 4,3; 2Jn 7. Pero la misma realidad, o una realidad análoga, se enfoca en diferentes pasajes apocalípticos del NT: Mc 13,14 p; 2Tes 2,3-12; Ap 13,418. Y como se encuadra en un marco dualista, atestiguado por el AT, allí es donde hay que observar su primera revelación, imperfecta, pero ya sugestiva. <br>AT. Ya en el AT se ve a la acción de Dios en la tierra enfrentarse con fuerzas adversas que revisten, según los contextos, carices bastante diversos. <br>1. El simbolismo religioso del antigno Oriente proporcionó a la revelación una representación poética de la *creación, en forma de un combate entre Dios creador y las fuerzas del caos, en el que *bestias monstruosas personificaban el poder indomable del *mar (Is 51,9s; Sal 74,13s; 89,10ss). El mismo símbolo, purificado de sus resabios mitológicos, sirve para evocar los «últimos tiempos» en los rasgos de un combate de Yahveh contra la serpiente (Is 27,1). Se le halla también probablemente en el trasfondo del drama original; en efecto, en el Génesis el adversario del designio de Dios tiene el semblante de la serpiente (Gén 3). Así, disimulada por las imágenes, se perfila la figura de *Satán en los dos extremos del designio de salvación; es el adversario de Dios por excelencia. <br>2. Sin embargo, en el marco de la historia, Satán actúa en el mundo por intermedio de los poderes humanos. Los *enemigos del pueblo de Dios son adversarios de Dios mismo cuando se oponen a su designio providencial. Asi *Egipto en el momento del éxodo; así también los potentados de Asar y de *Babilonia, opresores de Israel y adoradores de falsos dioses, cuyo dominio espiritual tratan de extender por la tierra; así finalmente todos los reyes paganos, cuya sacrílega inmoderación los inclina a igualarse con Dios (Ez 28,2ss; Is 14,13). La historia comporta, pues, un enfrentamiento continuo entre Yahveh y estas fuerzas históricas hasta que tenga lugar el enfrentamiento final, en que «Gog, rey de Magog», quedará destruido para siempre (Ez 38-39); después de lo cua! vendrá la salvación escatológica. <br>3. La acción de Antíoco Epifanes, enemigo de Israel al mismo tiempo que perseguidor de los verdaderos adoradores de Dios, permite al libro de Daniel efectuar la síntesis entre las dos representaciones precedentes. Es el *impío que pretende ocupar el lugar de Dios (Dan 11,36) y que instala en el lugar santo la abominación de la desolación (9,27). Es también el undécimo cuerno que nace a la bestia de rostro satánico (7,8). Así su juicio y su destrucción son un preludio del establecimiento del reino de Dios (7,11-27; 11,40-12,2). <br>NT. Tal es la perspectiva escatológica en que se inserta la doctrina del NT. Pero desde ahora la manifestación final de Dios no es ya un hecho totalmente futuro: aquí en la tierra es inaugurada en la persona de Jesús. El anti-Dios del AT va, pues, a convertirse en el anticristo. <br>1. Ya en el Apocalipsis sinóptico, la «gran calamidad» anunciada por Jesús como preludio de la venida gloriosa del Hijo del hombre, comporta la aparición de «falsos cristos», cuya seducción induce a los hombres a la apostasía (Mc 13,5s.21s; Mt 24,11 p), y tiene por signo «la abominación de la desolación» instalada en el lugar santo (Mc 13,14 p). <br>2. En 2Tes 2,3-12, el adversario de los últimos tiempos, el ser perdido, el impío, adopta el cariz de un verdadero anti-Dios, análogo a los del AT (Dan 2,4); pero es también un anticristo que imita los rasgos del Señor, con su parusía, su hora, fijada por Dios, su poder sobrenatural que opera prodigios engañosos para la perdición de los hombres (2,8-10). Asi realizará él aquí la obra de Satán (2,9). Ahora bien, el misterio de la *impiedad, del que será el artífice por excelencia, está ya en acción (2,7); por eso hay tantos hombres que se extravían y se adhieren a la *mentira en lugar de creer en la *verdad (2,11s). Si el impío no se manifiesta todavía en persona, es porque algo, o alguien lo «retiene» (2, 7), alusión enigmática, de la que Pablo no dio explicación. En todo caso, la revelación del impío precederá a la parusía de Jesús, que lo aniquilará con la manifestación de su venida (2,8; cf. 1,7- 10). <br>3. El Apocalipsis evoca una perspectiva escatológica semejante, sirviéndose del símbolo de dos *bestias monstruosas. La primera es un poder político: blasfema contra Dios, se hace adorar y persigue a los verdaderos creyentes (Ap 13,1-10). La segunda es una realidad religiosa: remeda al cordero (es decir, a Cristo), opera prodigios engañosos y seduce a los hombres para hacer que adoren a la primera bestia (13,11-18). Así se opera aquí la obra de Satán, el dragón antiguo, que ha transmitido sus poderes a la primera bestia (13,2). Evocación simbólica grandiosa que, aun refiriéndose a los «últimos tiempos», no por eso deja de referirse con palabras veladas a la situación presente en que se debate la Iglesia de Jesús, perseguida por el imperio pagano de Roma. <br>4. En las epístolas de san Juan el nombre de anticristo designa exclusivamente una realidad actual: quienquiera que niegue que Jesús es Cristo, negando así al Padre y al Hijo (IJn 2,22), quienquiera que no confiese a Jesucristo venido en la carne (IJn 4,3; 2Jn 7), ése es el seductor, el anticristo. Juan hace claramente alusión a los herejes y a los apóstatas, en los que se realiza ya la apostasia anunciada por Jesús y a que se refiere Pablo. La escatología está, pues, actualizada; pero el drama presente de la fe debe comprenderse en función de una perspectiva más vasta, de la que el Apocalipsis da una evocación completa. La doctrina del anticristo es cosa muy misteriosa. No se entiende sino en función de la *guerra secular, en que Dios y su Cristo se enfrentan con Satán y sus fautores terrenales. Por la doble vía de la persecución temporal y de la seducción religiosa tratan éstos de hacer abortar el designio de salvación. Sería un error tratar de poner nombres propios a cada uno de los símbolos que sirven para evocar su presencia; pero quienquiera que actúe como ellos, participa en cierta medida en el misterio del anticristo. Ahora bien, esta empresa se proseguirá sin reposo en todo el transcurso de la historia, situando a los hombres en el interior de una lucha, en la que ningún medio humano es capaz de triunfar. Pero donde fracasan los hombres vencerá el cordero (Ap 17,14), y sus testigos participarán en su victoria (Ap 3,21). -> Babel - Bestia - Enemigo - Guerra - Impío - Mar - Persecución - Satán - Victoria.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=1;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=13;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=7;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=3;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

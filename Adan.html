@@ -1,0 +1,605 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ADÁN</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 4,1.25' /><label for="hist0">Gén 4,1.25</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 5,1.3ss' /><label for="hist1">Gén 5,1.3ss</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 11,5' /><label for="hist2">Gén 11,5</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 2,7--19' /><label for="hist3">Gén 2,7--19</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Gén 3,15.19-23' /><label for="hist4">Gén 3,15.19-23</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 1,26ss' /><label for="hist5">Gén 1,26ss</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 10-14' /><label for="hist6">Gén 10-14</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 5; 10' /><label for="hist7">Gén 5; 10</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Tob 8,6' /><label for="hist8">Tob 8,6</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Job 14,1' /><label for="hist9">Job 14,1</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Job 25,6' /><label for="hist10">Job 25,6</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Ecl 2,12' /><label for="hist11">Ecl 2,12</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='1Re 8,39-46' /><label for="hist12">1Re 8,39-46</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Prov 8,31' /><label for="hist13">Prov 8,31</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Eclo 25,24' /><label for="hist14">Eclo 25,24</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Sab 2,24' /><label for="hist15">Sab 2,24</label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Is 6,12' /><label for="prof0">Is 6,12</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 45,9' /><label for="prof1">Is 45,9</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 11,6-9' /><label for="prof2">Is 11,6-9</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Is 25,8' /><label for="prof3">Is 25,8</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Zac 13,5' /><label for="prof4">Zac 13,5</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Jer 49,18.33' /><label for="prof5">Jer 49,18.33</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Jer 32,19' /><label for="prof6">Jer 32,19</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Jer 1,5' /><label for="prof7">Jer 1,5</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Ez 28,13-19' /><label for="prof8">Ez 28,13-19</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Ez 16' /><label for="prof9">Ez 16</label><br>
+		<input name='lectprof' type='radio' id='prof10' value='Os 11, 3-4' /><label for="prof10">Os 11, 3-4</label><br>
+		<input name='lectprof' type='radio' id='prof11' value='Os 2,20' /><label for="prof11">Os 2,20</label><br>
+		<input name='lectprof' type='radio' id='prof12' value='Dan 12,2' /><label for="prof12">Dan 12,2</label><br>
+		<input name='lectprof' type='radio' id='prof13' value='Dan 7,13s' /><label for="prof13">Dan 7,13s</label><br>
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Hch 17,26' /><label for="cart0">Hch 17,26</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='1Tim 2,13s' /><label for="cart1">1Tim 2,13s</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Flp 2,6-11' /><label for="cart2">Flp 2,6-11</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='1Cor 15,45-49' /><label for="cart3">1Cor 15,45-49</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='1Cor 15,21s' /><label for="cart4">1Cor 15,21s</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='1Cor 6,16' /><label for="cart5">1Cor 6,16</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Rom 5,12-21' /><label for="cart6">Rom 5,12-21</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='Ef 5 25- 33' /><label for="cart7">Ef 5 25- 33</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Ef 4,22s' /><label for="cart8">Ef 4,22s</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Col 3,9s' /><label for="cart9">Col 3,9s</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='Heb 2,5-9' /><label for="cart10">Heb 2,5-9</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 19,4s' /><label for="ev0">Mt 19,4s</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Lc 3,38' /><label for="ev1">Lc 3,38</label><br>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "I. ADÁN Y LOS HIJOS DE ADÁN. <br>1. El sentido de las palabras.<br> Contrariamente a lo que sugieren las traducciones de la Biblia, el término Adán está sumamente extendido y ofrece una amplia gama de significados. Cuando un judío pronunciaba esta palabra, estaba lejos de pensar ante todo en el primer hambre: fuera del relato de la creación, en el que la expresión es ambigua,Adán sólo designa con certeza al primer hombre. En cuatro pasajes de la Biblia (Gén 4,1.25; 5,1.3ss; Tob 8,6). Habitualmente, y con razón, se traduce el término por hombre en general (Job 14,1), por las gentes (Is 6,12), por alguien (Ecl 2,12), por «uno», «se» (Zac 13,5), nadie (IRe 8,46; Sal 105,14), el ser humano (Os 11,4; Sal 94,11). El sentido colectivo domina francamente. Lo mismo se diga de la expresién hijo de Adán, que no se refiere nunca a un descendiente del individuo Adán, sino que es un paralelo de hombre (Job 25,6; Sal 8,5), designa a una persona (Jer 49,18.33; p.e., Ezequiel) a a una colectividad (Prov 8,31; Sal 45,3; 1 Re 8,39.42). Utilizada en contraste con Dios, la expresión subraya, como el término «carne», la condición perecedera y débil de la humanidad: «desde lo alto de los cielos mira Yahveh y ve a todos los hijos de Adán» (Sal 33,13; cf. Gén 11,5; Sal 36,8; Jer 32,19). Los «hijos de Adán» son, pues, los humanos según su condición terrestre. Esto es lo que insinúa la etimología popular de la palabra, que la hace derivar de adamah = suelo, tierra: Adán es el terroso, el que fue hecho del polvo de la tierra. Esta ojeada semántica tiene alcance teológico: no podemos contentarnos con ver en el primer Adán un individuo de tantos. Esto indica el sorprendente paso del singular al plural en la palabra de Dios creador: «Hagamos a Adán a nuestra imagen... y dominen... » (Gén 1,26). ¿Cuál era, pues, la intención del narrador de los primeros capítulos del Génesis? <br>2. Hacia el relato de la creación y del pecado de Adán.<br> Los tres primeros capítulos del Génesis constituyen como un prologo al conjunto del Pentateuco. Pero no tienen una sola procedencia; fueron escritos en dos tiempos y por dos redactores sucesivos, el yahvista (Gén 2-3) y el sacerdotal (Gén 1). Por otra parte sorprende bastante comprobar que no dejaron la menor huella en la literatura hasta el siglo II antes de J.C. Entonces, como causa de la muerte del hombre, el Eclesiástico denuncia a la mujer (Eclo 25,24), y la Sabiduría, al diablo (Sab 2,24). Sin embargo, estos mismos relatos condensan una experiencia secular, lentamente elaborada, algunos de cuyos elementos se pueden descubrir en la tradición profética y sapiencial. a) La creencia en la universaibdad del *pecado se afirma en ella cada vez más; es en cierto modo la condición adámica descrita por el salmista: «pecador me concibió mi madre» (Sal 51,7). En otro lugar se describe el pecado del hombre como el de un ser maravilloso, colocado, algo así como un ángel, en el huerto de Dios y caído por una falta de *soberbia (Ez 28,13-19, cf. Gén 2,10-15; 3,22s). b) La fe en Dios creador y redentor no es menos viva. Un Dios alfarero plasma al hombre (Jer I,5; Is 45,9; cf. Gén 2,7), él mismo lo hace retornar al polvo (Sal 90,3; Gén 3,19). «¿Qué es el hombrepara que de él te acuerdes, o el hijo del hombre para que te acuerdes de él? Le has hecho poco menor que Dios; le has coronado de gloria y de honor. Le diste el señorío sobre las obras de tus manos, todo lo has puesto debajo de sus pies. (Sal 8,5ss; cf. Gén 1,26ss; 2,19s). Después del pecado Dios no solo aparece como el Señor magnífico (Ez 28,13s; Gén 10-14), que destrona al soberbio y le hace volver a sus modestos orígenes (Ez 28,16-19; Gén 3,23s), sino que es también el Dios paciente que educa lentamente a su hijo (Os 11 3s; Ez 16; cf. Gén 2,8-3 21). Asimismo los profetas anunciaron un fin de los tiempos semejantes al antiguo *paraíso (Os 2,20; Is 11,6-9); quedará suprimida la muerte (Is 25,8; Dan 12,2; cf. Gén 3,15), e incluso un misterioso *Hijo del hombre de naturaleza celeste aparecerá vencedor sobre las nubes (Dan 7,13s). <br>3. Adán, nuestro antepasado.<br> En función de las tradiciones que acabamos de esbozar, veamos a grandes rasgos las enseñanzas de los relatos de la *creación. En un primer esfuerzo por pensar la condición humana, el yahvista, convencido de que el antepasado incluye en sí a todos sus descendientes, anuncia a todo hombre como el *Hombre que peco, habiendo sido creado bueno por Dios un día habrá de ser redimido. El relato sacerdotal (Gén 1) por su parte revela que el hombre es creado a *imagen de Dios; luego, con la ayuda de las genealogías (Gén 5; 10), muestra que todos los hombres forman, más allá de Israel, una unidad: el género humano. <br>II. EL NUEVO ADÁN.<br> 1. Hacia la teología del nuevo Adán.<br> El NT repite que todos los hombres descienden de uno solo (Act 17,26), o que los primeros padres son el prototipo de la pareja conyugal (Mt 19,4s p; ITim 2,13s) que debe ser restaurada en la humanidad nueva. La novedad de su mensaje reside en la presentación de Jesucristo como el nuevo Adán. Los apócrifos, habían atraído la atención hacia la recapitulación de todos los hombres pecadores en Adán; sobre todo, Jesús mismo se había presentado como el *Hijo del hombre, queriendo mostrar a la vez que era, sí, de la raza humana y que debía cumplir la profecía gloriosa de Daniel. San Lucas hace una primera tentativa de comparación de Jesús con Adán: el que acaba de triunfar de la tentación es «hijo de Adán, hijo de Dios» (Lc 3,38), verdadero Adán, que resistió al tentador. Seguramente se puede también reconocer en un himno paulino (Flp 2,6-11) un contraste intencionado entre Adán, que trató de apoderarse de la condición divina, y Jesús, que no la retuvo ambiciosamente. A estas insinuaciones se pueden añadir referencias explícitas. <br>2. El último y verdadero Adán.<br> En ICor 15,45-49 opone Pablo vivamente los dos tipos según los cuales estamos constituidos; el primerhombre, Adán, fue hecho alma viva, terrena, psíquica; «el último Adán es un espíritu que da la vida», pues es celestial, espiritual. Al cuadro de los origenes corresponde el del fin de los tiempos, pero un abismo separa la segunda creación de la primera, lo espiritual de lo carnal, lo celestial de lo terrenal. En Rom 5,12-21, dice Pablo explicitamente que Adán era «la *figura del que debía venir». Apoyándose en la convicción de que el acto del primer Adán tuvo un efecto universal, la *muerte (cf. ICor 15,21s), afirma asimismo la acción redentora de Cristo, segundo Adán. Pero marca netamente las diferencias: en Adán, la desobediencia, la condenación y la muerte; en Jesucristo, la obediencia, la justificación y la vida. Además, por Adán entré el *pecado en el mundo; por Cristo, sobreabundó la *gracia, cuya fuente es él mismo. Finalmente, la unión fecunda de Adán y de Eva anunciaba la unión de Cristo y de la Iglesia; ésta, a su vez, viene a ser el misterio en que se funda el *matrimonio cristiano (Ef 5 25- 33; cf. ICor 6,16). <br>3. El cristiano y el doble Adán.<br> El cristiano, hijo de Adán por su nacimiento y renacido en Cristo por su fe, conserva una relación doble con el primero y el último Adán. El relato de los origenes, lejos de invitar al hombre a disculparse con el primer pecador, enseña a cada uno que Adán es él mismo, con su fragilidad, su pecado y su deber de despojarse del hombre viejo, según la expresión de san Pablo (Ef 4,22s; Col 3,9s). Y esto para «revestirse de Jesucristo, el hombre nuevo»; así su destino entero se inserta en el drama del doble Adán. O más bien halla en Cristo al *hombre por excelencia: según el comentario que del Sal 8,5ss hace Heb 2,5-9, el que provisionalmente fue colocado por debajo de los ángeles para merecer la salvación de todos los hombres, recibió la gloria prometida al verdadero Adán. -> Cuerpo de Cristo - Creación - Hombre.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=16;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=14;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=11;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=2;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

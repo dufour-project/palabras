@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">CASTIGOS</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El reino de Dios está bajo el signo de la *bienaventuranza y, sin embargo, la Biblia habla de castigos divinos; el *designio de Dios está ordenado a *reconciliar a toda criatura con Dios y, sin embargo, el *infierno separa de él definitivamente. Escándalo intolerable una vez que se pierde el sentido teologal de las tres realidades subyacentes al castigo: el *pecado, la *ira, el *juicio. Pero gracias a él, el creyente adora el misterio del *amor divino que, por su *paciencia y su *misericordia, obtiene del pecador la *conversión. *Calamidades, *diluvio, *dispersión, *enemigos, *infierno, *guerra, *muerte, *sufrimiento: todos estos castigos revelan al hombre tres cosas: una situación, la del pecador; una lógica, la que conduce del pecado al castigo; un rostro personal, el de Dios que juzga y que salva. 1 El castigo, signo del pecado. La voluntad de la criatura pecadora, a través del castigo que sufre dolorosamente, se hace cargo de que está separada de Dios. El conjunto de la creación pasa por esta experiencia. La serpiente, seductora y homicida (Gén 3,14s; Jn 8,44; Ap 20, 9s); el hombre,, que descubre que «por un solo hombre entró el *pe-cado en el mundo, y por el pecado, la muerte», el sufrimiento, el *trabajo penoso (Rom 5,12; Gén 3, 16-19); las ciudades castigadas por su *incredulidad: Babel, Sodoma, Cafarnaúm, Jerusalén, Nínive; los enemigos del pueblo de Dios: faraón, Egipto, las *naciones, aun cuando Dios se sirva de ellas para castigar a su pueblo (Is 10,5); el mismo pueblo de Dios, en' el que mejor debe aparecer la finalidad positiva del castigo (Bar 2,6-10.27-35); la *bestia y los adoradores de su imagen (Ap 14,9ss; 19,20); la *creación material finalmente, sujeta a la vanidad a consecuencia del pecado de Adán (Rom 8,20). 2. El castigo, fruto del pecado. Se pueden distinguir tres tiempos en la génesis del castigo. En el punto de partida hay a la vez el *don de Dios (creación, elección) y el *pecado. Luego, el llamamiento de Dios a la *conversión es rechazado por el pecador (Heb 12,25), que, sin embargo, percibe con frecuencia a través del llamamiento el anuncio del castigo (Is 8,5-8; Bar 2,22ss). Entonces, ante tal *endurecimiento, el *juicio decide castigar: «pues bien...» (Os 13,7; Is 1,5; Lc 13,34s). El resultado del castigo es doble, según la abertura del *corazón: algunos castigos son «cerrados» y condenan (Satán, *Babel, Ananías y Safira), otros son «abiertos» e invitan a la *conversión (lCor 5,5; 2Cor 2,6). Así el castigo es un dique opuesto al pecado: para unos es el atolladero de la condenación; para otros, la invitación a «volver» a Dios(Os 2,8s; Lc 15,14-20). Pero aun entonces es condenación del pasado y anticipación de la condenación definitiva si el corazón no vuelve a su Dios. No es, pues, el castigo el que separa de Dios, sino el pecado, cuya *retribución es. Marca con fuerza que el pecado es incompatible con la *santidad divina (Heb 10,29s). Si, pues, Cristo conoció el castigo no fue en razón de pecados que hubiera cometido, sino a causa de los pecados de los hombres, que lleva sobre sí y los quita (1Pe 2,24; 3,18; Is 53,4). 3. El castigo, revelación de Dios. El castigo, por su lógica interna, revela a Dios: es como la teofanía apropiada al pecador. El que no acoge la *gracia de la *visita divina, choca con la santidad y se encuentra con Dios mismo (Lc 19,41-44). Es lo que repite sin cesar el profeta : «Entonces sabréis que yo soy Yahveh» (Ez 11,10; 15,7). Como el castigo es revelación, el Verbo es quien lo ejecuta (Sab 18,14ss; Ap 19,11-16), y frente al crucificado es donde adopta sus verdaderas dimensiones (Jn 8,28). El castigo, así ordenado al reconocimiento de Yahveh y de Jesús, es tanto más terrible cuanto que alcanza al que está más próximo a Dios (Lev 10,Iss; Ap 3,19). La misma *presencia, suave al corazón puro, resulta dolorosa, al que está endurecido, si bien no todo *sufrimiento es castigo. Más aún: el castigo revela las profundidades del corazón de Dios: su intransigencia celosa una vez que uno ha entrado en su *alianza (Éx 20,5; 34,7), su *ira (Is 9,llss), su *venganza frente a sus *enemigos (Is 10,12), su *justicia (Ez 18), su voluntad de *perdón (Ez 18,31), su *misericordia (Os 11,9), finalmente su *amor apremiante: «y vosotros no habéis vuelto a mí...» (Am 4,6- 11; Is 9,12; Jer 5,3). Pero hay un castigo en el seno mismo de nuestra historia, en el que el tentador y el pecado fueron heridos de muerte: es la *cruz, en la que resplandece la *sabiduría de Dios (lCor 1,17-2,9). En la cruz coinciden la condenación «cerrada» de Satán, del pecado y de la muerte, y el sufrimiento «abierto», fuente de vida (1Pe 4,1; F1p 3,10). Esta sabiduría había caminado a través de toda la antigua alianza (Dt 8,5s; Sab 10-12; Heb 12,5-13; la *educación de la libertad no pudo hacerse sin «corrección» (Jdt 8,27; lCor 11,32; Gál 3,23s). El castigo está así ligado con la *ley; históricamente está superada esta era, pero psicológicamente no pocos cristianos se mantienen todavía en ella : el castigo es entonces uno de los lazos que siguen uniendo al pecador con Dios. Pero el cristiano que vive del Espíritu está *liberado del castigo (Rom 8,1; lJn 4,18). Si todavía lo reconoce como permitido por el amor del *Padre, es con miras a la *conversión (ITim 1,20; 2Tim 2,25). Y en nuestro tiempo escatológico el verdadero y único castigo es el *endurecimiento final (2Tes 2,10s; Heb 10,26-29). Esta proximidad del juicio decisivo, ya en acción, confiere al castigo del hombre «carnal» un valor de signo: anticipa la condenación de todo lo que no puede participar del *reino. Pero para el «espiritual» el juicio es *justificación: entonces el castigo viene a ser expiación en Cristo (Rom 3,25s; Gál 2,19; 2Cor 5,14); aceptado voluntariamente hace que muera la *carne para vivir según el *Espíritu (Rom 8,13; Col 3,5). –> Calamidad - Ira - Educación - Infierno - Prueba - Exilio - Expiación - Juicio Pecado - Retribución - Visita.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

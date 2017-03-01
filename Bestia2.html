@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">BESTIA</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "1. Nacimiento de una simbólica. <br>No se trata en la Biblia de una simbólica análoga a la de los bestiarios de la edad media; cuando mucho, se esboza a propósito de algunos *animales. Sin embargo, las bestias enemigas del hombre ocupan cierto lugar en el pensamiento religioso, y proporcionan representaciones figurativas, que encontramos constante-mente desde el Génesis hasta el Apocalipsis. Nada de reflexiones sobre el misterio animal; en cambio, ahí están todos los animales repelentes o peligrosos, sin excluir los de la leyenda : 'los animales feroces, leones, lobos y panteras (Os 5,14; Hab 1,8), hienas y chacales (Is 13,22); las rapaces y las aves de las ruinas (Is 13,21; 34,llss; Sof 2,14); los reptiles, del basilisco al cocodrilo (Sal 91,13; Ez 29); los insectos nefastos, como las 'langostas y salta-montes (Nah 3,15ss)... Toda una fauna maligna, en conexión con la presencia de los *demonios (cf. los sátiros de Is 13,21; 34,12-14; Lev 17,7), se alza así frente al hombre. Sin contar los grandes monstruos marinos (Gén 1,21), prototipos de la bestia por excelencia, el dragón, la serpiente huidiza, Rahab o Leviatán (Is 27,1; Job 7,12; Is 51,9). Aquél, que personifica al *mar en la simbólica de los mitos orientales, se yergue frente al mismo Yahveh como el adversario de su designio de salvación. <br>2. En los orígenes.<br> En efecto, algunos textos, reasumiendo una imaginería ahora ya desmitizada, representan el acto *creador de Dios como un combate victorioso contra el monstruo primordial, encarnación del desorden: Rahab o Leviatán (Sal 74,13s; 89,10s; Job 9,13; 25,12; Is 51,9). Primera *guerra, situada fuera del tiempo, que va a dar un sentido a todos los enfrentamientos históricos entre Yahveh y sus *enemigos. El primero de estos enfrentamientos es el drama del *paraíso (Gén 3). En el Génesis, el adversario solapado de Dios y de los hombres no es llamado todavía por su verdadero nombre; pero tras la serpiente terrestre se oculta la serpiente prototipo, el dragón,. que es el diablo y *Satán (Sab 2,24; Ap 12,9; 20,2). La bestia maldita entre todas representa así al maldito por excelencia; y la historia será un campo cerrado, en el que éste se enfrentará con la posteridad de la *mujer, sobre la que ha adquirido cierto poder (Gén 3,14ss). <br>3. Los combates de la bestia contra el hombre. <br>a) Las bestias, azotes de Dios.<br> Esta guerra se sitúa primeramente al nivel temporal: las bestias maléficas atacan a la humanidad pecadora. Pero no obran con plena independencia; Dios sabe enderezar su acción a sus fines; son los artífices de su *juicio contra Egipto (Éx 7, 26-8,28; 10,1- 20; Sab 16,1-12); ejecutan sus maldiciones contra su pueblo infiel (Dt 28,26.42; cf. Jer 15,3). En el desierto, serpientes abrasadoras muerden a los que murmuran (Núm 21,5-7); en la tierra prometida, langostas devoran las cosechas, como ejército terrible cuya invasión anuncia el *día de Yahveh (Jl 1-2). Así se vuelven a hallar langostas simbólicas entre las plagas escatológicas, extraños caballeros que devastan a la humanidad pecadora (Ap 9,3-10; cf. Nah 3,15ss; Jer 51,27). A su cabeza marcha el ángel del abismo (Ap 9,11); y nadie podrá esquivarlos si no está marcado para la salvación (Ap 9,4; cf. 7,3). <br>b) Los triunfos de la bestia.<br> Pero la bestia tiene otros triunfos. A cubierto de la bestia, *Satán se hace adorar por los hombres. Éstos, en su ceguera, se postran ante «toda clase de reptiles y de animales repugnantes» (Ez 8,10). Esta forma de idolatría, proscrita de Israel por la ley (Dt 4,16ss), hace estragos entre los pueblos paganos (Sab 11,15; 12, 24; 13,10.14; Rom 1,23), atrayendo sobre ellos los rigores de 'la *ira divina (Sab 16,1-9; Rom 1,24ss). Más aún, la bestia se encarna en cierto modo en los grandes imperios paganos que tratan de dominar el mundo; hacen *guerra al pueblo de Dios y manifiestan una arrogancia sacrílega (Dan 7,2-8). Así se reanuda acá abajo el combate primordial, puesto que la bestia en cuestión tiene su poder del dragón, príncipe de este mundo (Ap 13,4). Frente a Cristo rey se yergue como el *anticristo, blasfemando, persiguiendo a los san-tos y haciéndose adorar (Ap 13,1-9) y nadie tiene derecho a vivir aquí en la tierra si no está marcado con su cifra (Ap 13,16ss; *número). Esta pretensión del imperio totalitario no es sólo cosa de Antíoco Epífanes o de la Roma pagana; se la verá re-nacer a todo lo largo de la historia de la Iglesia. <br>c) La derrota de la bestia.<br> Pero este triunfo de la bestia no es sino aparente y momentáneo. Ya en el AT se afirma ala *victoria de los creyentes. Para Israel en el desierto erige Moisés el signo de la serpiente de bronce (Núm 21,9) y todo el que la mira queda con vida (Sab 16,6). Frente a la zoolatría de los paganos sabe Israel defender su fe en el único Dios vivo (Dan 14,23-42). Afronta sin flaquear el peligro de los leones, y Dios le libra de ellos (Dan 6), pues quienquiera que se fía de Dios es guardado por sus *ángeles y puede pisotear a las bestias maléficas (Sal 91,11- 13). Estas victorias anticipadas anuncian la de Jesús: éste, una vez que ha rechazado a Satán (Mt 1,11 p), permanece en el desierto «con las bestias salvajes», servido por los ángeles (Mc 1,13). Así puede comunicar a sus discípulos «el poder de pisotear serpientes, escorpiones y todo poder del enemigo», pues ahora Satán ha caído del cielo y los mismos *demonios están sometidos a los enviados de Jesús (Lc 10,17ss; cf. Mc 16,17s). Si la derrota de la Biblia no es todavía pública, es, sin embargo, cosa hecha.<br>4. La muerte de la bestia.<br> El *juicio que pondrá fin a la historia llevará consigo la consumación de esta derrota : se matará a la bestia, y su cuerpo será entregado al fuego (Dan 7,11-27). Será el último combate de Cristo (Ap 19,11-16), en defensa de su ciudad santa 'contra las *naciones desencadenadas (Ap 20,8s). Entonces Satán, y la *muerte y el Hades, y la bestia y su falso profeta, y todos los adoradores de la bestia, secuaces del anticristo, serán arrojados juntos al estanque de fuego y de azufre, que es 'la muerte segunda (Ap 19,19ss ; 20,10.14). Así tendrá fin el drama que se inauguró en los orígenes. <br>—> Animales - Anticristo - Demonios - Guerra - Mar - Satán.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

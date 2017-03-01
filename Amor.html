@@ -1,0 +1,759 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">AMOR</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+<p id="textodifour2"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 2,23s' /><label for="hist0">Gén 2,23s</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 3,16' /><label for="hist1">Gén 3,16</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 12,10-19' /><label for="hist2">Gén 12,10-19</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 22' /><label for="hist3">Gén 22</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Gén 24' /><label for="hist4">Gén 24</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 34' /><label for="hist5">Gén 34</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 24,49' /><label for="hist6">Gén 24,49</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 1, 2-3' /><label for="hist7">Gén 1, 2-3</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Gén 18,17' /><label for="hist8">Gén 18,17</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Gén 12,1' /><label for="hist9">Gén 12,1</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Gén 22,2' /><label for="hist10">Gén 22,2</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Gén 6,8' /><label for="hist11">Gén 6,8</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Gén 3,12' /><label for="hist12">Gén 3,12</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Gén 4,9s' /><label for="hist13">Gén 4,9s</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='1Sa 18,1ss' /><label for="hist14">1Sa 18,1ss</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='2Sa 3,16' /><label for="hist15">2Sa 3,16</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='2Sa 12,15-25' /><label for="hist16">2Sa 12,15-25</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='2Sa 19,1-5' /><label for="hist17">2Sa 19,1-5</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Jos 2,12ss' /><label for="hist18">Jos 2,12ss</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Jos 24,2s' /><label for="hist19">Jos 24,2s</label><br>
+		<input name='lecthist' type='radio' id='hist20' value='Rut 3,10' /><label for="hist20">Rut 3,10</label><br>
+		<input name='lecthist' type='radio' id='hist21' value='Prov 15,17' /><label for="hist21">Prov 15,17</label><br>
+		<input name='lecthist' type='radio' id='hist22' value='Prov 5' /><label for="hist22">Prov 5</label><br>
+		<input name='lecthist' type='radio' id='hist23' value='Prov 14,21' /><label for="hist23">Prov 14,21</label><br>
+		<input name='lecthist' type='radio' id='hist24' value='Prov 1,8-19' /><label for="hist24">Prov 1,8-19</label><br>
+		<input name='lecthist' type='radio' id='hist25' value='Eclo 6,5-17' /><label for="hist25">Eclo 6,5-17</label><br>
+		<input name='lecthist' type='radio' id='hist26' value='Eclo 2,11-17' /><label for="hist26">Eclo 2,11-17</label><br>
+		<input name='lecthist' type='radio' id='hist27' value='Eclo 25,1' /><label for="hist27">Eclo 25,1</label><br>
+		<input name='lecthist' type='radio' id='hist28' value='Eclo 1,10' /><label for="hist28">Eclo 1,10</label><br>
+		<input name='lecthist' type='radio' id='hist29' value='Eclo 4,14' /><label for="hist29">Eclo 4,14</label><br>
+		<input name='lecthist' type='radio' id='hist30' value='Ex 32,9-13' /><label for="hist30">Ex 32,9-13</label><br>
+		<input name='lecthist' type='radio' id='hist31' value='Ex 3,4' /><label for="hist31">Ex 3,4</label><br>
+		<input name='lecthist' type='radio' id='hist32' value='Ex 33,11' /><label for="hist32">Ex 33,11</label><br>
+		<input name='lecthist' type='radio' id='hist33' value='Ex 34,6s' /><label for="hist33">Ex 34,6s</label><br>
+		<input name='lecthist' type='radio' id='hist34' value='Éx 20,12-17' /><label for="hist34">Éx 20,12-17 </label><br>
+		<input name='lecthist' type='radio' id='hist35' value='Ex 22,20-26' /><label for="hist35">Ex 22,20-26</label><br>
+		<input name='lecthist' type='radio' id='hist36' value='Ex 23,4-12' /><label for="hist36">Ex 23,4-12</label><br>
+		<input name='lecthist' type='radio' id='hist37' value='2Re 22' /><label for="hist37">2Re 22</label><br>
+		<input name='lecthist' type='radio' id='hist38' value='Dt 7,7s' /><label for="hist38">Dt 7,7s</label><br>
+		<input name='lecthist' type='radio' id='hist39' value='Dt 11,13;' /><label for="hist39">Dt 11,13;</label><br>
+		<input name='lecthist' type='radio' id='hist40' value='Dt 19,9' /><label for="hist40">Dt 19,9</label><br>
+		<input name='lecthist' type='radio' id='hist41' value='Dt 4,7-28' /><label for="hist41">Dt 4,7-28</label><br>
+		<input name='lecthist' type='radio' id='hist42' value='Dt 30,15-20' /><label for="hist42">Dt 30,15-20</label><br>
+		<input name='lecthist' type='radio' id='hist43' value='Dt 30,6' /><label for="hist43">Dt 30,6</label><br>
+		<input name='lecthist' type='radio' id='hist44' value='Dt 6,4-13' /><label for="hist44">Dt 6,4-13</label><br>
+		<input name='lecthist' type='radio' id='hist45' value='Dt 10,18-19' /><label for="hist45">Dt 10,18-19</label><br>
+		<input name='lecthist' type='radio' id='hist46' value='Sab 11,23-26' /><label for="hist46">Sab 11,23-26</label><br>
+		<input name='lecthist' type='radio' id='hist47' value='Sab 2,10ss' /><label for="hist47">Sab 2,10ss</label><br>
+		<input name='lecthist' type='radio' id='hist48' value='2Mac 7' /><label for="hist48">2Mac 7</label><br>
+		<input name='lecthist' type='radio' id='hist49' value='Lev 19,1-37 ' /><label for="hist49">Lev 19,1-37 </label><br>
+
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Is 41,8' /><label for="prof0">Is 41,8</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 5' /><label for="prof1">Is 5</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 30,18' /><label for="prof2">Is 30,18</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Is 56,6' /><label for="prof3">Is 56,6</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Is 1,14- 17' /><label for="prof4">Is 1,14- 17</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Am 3,7' /><label for="prof5">Am 3,7</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Am 7,15' /><label for="prof6">Am 7,15</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Jer 20,7ss' /><label for="prof7">Jer 20,7ss</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Jer 20,11ss' /><label for="prof8">Jer 20,11ss</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Jer 9,2-5' /><label for="prof9">Jer 9,2-5</label><br>
+		<input name='lectprof' type='radio' id='prof10"' value='Jer 22,15s' /><label for="prof10">Jer 22,15s</label><br>
+		<input name='lectprof' type='radio' id='prof11"' value='Jer 31, 3.20.22' /><label for="prof11">Jer 31, 3.20.22</label><br>
+		<input name='lectprof' type='radio' id='prof12"' value='Jer 31,33s' /><label for="prof12">Jer 31,33s</label><br>
+		<input name='lectprof' type='radio' id='prof13"' value='Am 3,2' /><label for="prof13">Am 3,2</label><br>
+		<input name='lectprof' type='radio' id='prof14"' value='Am 1-2' /><label for="prof14">Am 1-2</label><br>
+		<input name='lectprof' type='radio' id='prof15"' value='Os 11,8' /><label for="prof15">Os 11,8</label><br>
+		<input name='lectprof' type='radio' id='prof16"' value='Os 2,21s' /><label for="prof16">Os 2,21s</label><br>
+		<input name='lectprof' type='radio' id='prof17"' value='Ez 16,60-63' /><label for="prof17">Ez 16,60-63</label><br>
+		<input name='lectprof' type='radio' id='prof18"' value='Ez 32,26s' /><label for="prof18">Ez 32,26s</label><br>
+		<input name='lectprof' type='radio' id='prof19"' value='Ez 34' /><label for="prof19">Ez 34</label><br>
+		<input name='lectprof' type='radio' id='prof20"' value='Ez 17,6-10' /><label for="prof20">Ez 17,6-10</label><br>
+		<input name='lectprof' type='radio' id='prof21"' value='Ez 36,25ss' /><label for="prof21">Ez 36,25ss</label><br>
+		<input name='lectprof' type='radio' id='prof22"' value='Ez 18,5-9' /><label for="prof22">Ez 18,5-9</label><br>
+		<input name='lectprof' type='radio' id='prof23"' value='Jon 4,10s' /><label for="prof23">Jon 4,10s</label><br>
+		<input name='lectprof' type='radio' id='prof24"' value='Jl 2,13' /><label for="prof24">Jl 2,13</label><br>
+		<input name='lectprof' type='radio' id='prof25"' value='Zac 7,9' /><label for="prof25">Zac 7,9</label><br>
+		<input name='lectprof' type='radio' id='prof26"' value='Mal 3,5' /><label for="prof26">Mal 3,5</label><br>
+
+
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Heb 1,1' /><label for="cart0">Heb 1,1</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Heb 10,5ss' /><label for="cart1">Heb 10,5ss</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Heb 2,8' /><label for="cart2">Heb 2,8</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Heb 4,15' /><label for="cart3">Heb 4,15</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Rom 5,5-8' /><label for="cart4">Rom 5,5-8</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='Rom 8,28-32' /><label for="cart5">Rom 8,28-32</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Rom 8,15' /><label for="cart6">Rom 8,15</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='Rom 8,35-39' /><label for="cart7">Rom 8,35-39</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Rom 13, 8s' /><label for="cart8">Rom 13, 8s</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Rom 15,30' /><label for="cart9">Rom 15,30</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='Rom 12,5-10' /><label for="cart10">Rom 12,5-10</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='Rom 12,14-21' /><label for="cart11">Rom 12,14-21</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='1Jn 3,1' /><label for="cart12">1Jn 3,1</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='1Jn 4,7-20' /><label for="cart13">1Jn 4,7-20</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='1Jn 15,12' /><label for="cart14">1Jn 15,12</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='1Jn 5,2' /><label for="cart15">1Jn 5,2</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='1Jn 2,15' /><label for="cart16">1Jn 2,15</label><br>
+		<input name='lectcart' type='radio' id='cart17' value='1Jn 3,11-18' /><label for="cart17">1Jn 3,11-18</label><br>
+		<input name='lectcart' type='radio' id='cart18' value='2Jn 5' /><label for="cart18">2Jn 5</label><br>
+		<input name='lectcart' type='radio' id='cart19' value='Tit 3,5' /><label for="cart19">Tit 3,5</label><br>
+		<input name='lectcart' type='radio' id='cart20' value='Gál 4,4-7' /><label for="cart20">Gál 4,4-7</label><br>
+		<input name='lectcart' type='radio' id='cart21' value='Gál 2,20' /><label for="cart21">Gál 2,20</label><br>
+		<input name='lectcart' type='radio' id='cart22' value='Gál 5,22' /><label for="cart22">Gál 5,22</label><br>
+		<input name='lectcart' type='radio' id='cart23' value='Gál 6,2' /><label for="cart23">Gál 6,2</label><br>
+		<input name='lectcart' type='radio' id='cart24' value='Gál 3,28' /><label for="cart24">Gál 3,28</label><br>
+		<input name='lectcart' type='radio' id='cart25' value='Gál 5,13' /><label for="cart25">Gál 5,13</label><br>
+		<input name='lectcart' type='radio' id='cart26' value='Hch 10,38' /><label for="cart26">Hch 10,38</label><br>
+		<input name='lectcart' type='radio' id='cart27' value='Hch 2,1-36' /><label for="cart27">Hch 2,1-36</label><br>
+		<input name='lectcart' type='radio' id='cart28' value='1Cor 8,1-3' /><label for="cart28">1Cor 8,1-3</label><br>
+		<input name='lectcart' type='radio' id='cart29' value='1Cor 12,12-27' /><label for="cart29">1Cor 12,12-27</label><br>
+		<input name='lectcart' type='radio' id='cart30' value='1Cor 13' /><label for="cart30">1Cor 13</label><br>
+		<input name='lectcart' type='radio' id='cart31' value='1Cor 13,1-4' /><label for="cart31">1Cor 13,1-4</label><br>
+		<input name='lectcart' type='radio' id='cart32' value='1Cor 13,8-13' /><label for="cart32">1Cor 13,8-13</label><br>
+		<input name='lectcart' type='radio' id='cart33' value='2Cor 5,14-16' /><label for="cart33">2Cor 5,14-16</label><br>
+		<input name='lectcart' type='radio' id='cart34' value='2Cor 13, 13' /><label for="cart34">2Cor 13, 13</label><br>
+		<input name='lectcart' type='radio' id='cart35' value='1Tim 2,5s' /><label for="cart35">1Tim 2,5s</label><br>
+		<input name='lectcart' type='radio' id='cart36' value='Ef 2,21s' /><label for="cart36">Ef 2,21s</label><br>
+		<input name='lectcart' type='radio' id='cart37' value='Ef 5,1s' /><label for="cart37">Ef 5,1s</label><br>
+		<input name='lectcart' type='radio' id='cart38' value='Ef 4,25-5,2' /><label for="cart38">Ef 4,25-5,2</label><br>
+		<input name='lectcart' type='radio' id='cart39' value='Ef 5,25-32' /><label for="cart39">Ef 5,25-32</label><br>
+		<input name='lectcart' type='radio' id='cart40' value='Ef 4,16' /><label for="cart40">Ef 4,16</label><br>
+		<input name='lectcart' type='radio' id='cart41' value='Col 3,14' /><label for="cart41">Col 3,14</label><br>
+		<input name='lectcart' type='radio' id='cart42' value='1Tes 4,9' /><label for="cart42">1Tes 4,9</label><br>
+		<input name='lectcart' type='radio' id='cart43' value='Flp 2,1-11' /><label for="cart43">Flp 2,1-11</label><br>
+		<input name='lectcart' type='radio' id='cart44' value='Flp 1,9ss' /><label for="cart44">Flp 1,9ss</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 11,25-28' /><label for="ev0">Mt 11,25-28</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 22,37' /><label for="ev1">Mt 22,37</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 10, 40' /><label for="ev2">Mt 10, 40</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Mt 28,20' /><label for="ev3">Mt 28,20</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Mt 21,31s' /><label for="ev4">Mt 21,31s</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Mt 26 53' /><label for="ev5">Mt 26 53</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Mt 5,43-47' /><label for="ev6">Mt 5,43-47</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Mt 25, 31-46' /><label for="ev7">Mt 25, 31-46</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Mt 6,12.14s' /><label for="ev8">Mt 6,12.14s</label><br>
+		<input name='lectev' type='radio' id='ev9' value='Mt 5,23-26' /><label for="ev9">Mt 5,23-26</label><br>
+		<input name='lectev' type='radio' id='ev10' value='Mc 14,32-41' /><label for="ev10">Mc 14,32-41</label><br>
+		<input name='lectev' type='radio' id='ev11' value='Mc 10, 45' /><label for="ev11">Mc 10, 45</label><br>
+		<input name='lectev' type='radio' id='ev12' value='Mc 14,24' /><label for="ev12">Mc 14,24</label><br>
+		<input name='lectev' type='radio' id='ev13' value='Mc 14,50' /><label for="ev13">Mc 14,50</label><br>
+		<input name='lectev' type='radio' id='ev14' value='Mc 12,28-33' /><label for="ev14">Mc 12,28-33</label><br>
+		<input name='lectev' type='radio' id='ev15' value='Mc 15,29-34' /><label for="ev15">Mc 15,29-34</label><br>
+		<input name='lectev' type='radio' id='ev16' value='Mc 3,13' /><label for="ev16">Mc 3,13</label><br>
+		<input name='lectev' type='radio' id='ev17' value='Mc 10, 17-21' /><label for="ev17">Mc 10, 17-21</label><br>
+		<input name='lectev' type='radio' id='ev18' value='Mc 1,11' /><label for="ev18">Mc 1,11</label><br>
+		<input name='lectev' type='radio' id='ev19' value='Mc 9,7' /><label for="ev19">Mc 9,7</label><br>
+		<input name='lectev' type='radio' id='ev20' value='Mc 1,35' /><label for="ev20">Mc 1,35</label><br>
+		<input name='lectev' type='radio' id='ev21' value='Mc 12,6' /><label for="ev21">Mc 12,6</label><br>
+		<input name='lectev' type='radio' id='ev22' value='Lc 1,54s' /><label for="ev22">Lc 1,54s</label><br>
+		<input name='lectev' type='radio' id='ev23' value='Lc 23,.34.43-46' /><label for="ev23">Lc 23,.34.43-46</label><br>
+		<input name='lectev' type='radio' id='ev24' value='Lc 14,25ss' /><label for="ev24">Lc 14,25ss</label><br>
+		<input name='lectev' type='radio' id='ev25' value='Lc 2,34' /><label for="ev25">Lc 2,34</label><br>
+		<input name='lectev' type='radio' id='ev26' value='Lc 9,22' /><label for="ev26">Lc 9,22</label><br>
+		<input name='lectev' type='radio' id='ev27' value='Lc 17,25' /><label for="ev27">Lc 17,25</label><br>
+		<input name='lectev' type='radio' id='ev28' value='Lc 24,7.26' /><label for="ev28">Lc 24,7.26</label><br>
+		<input name='lectev' type='radio' id='ev29' value='Lc 9,58' /><label for="ev29">Lc 9,58</label><br>
+		<input name='lectev' type='radio' id='ev30' value='Lc 7,36-50' /><label for="ev30">Lc 7,36-50</label><br>
+		<input name='lectev' type='radio' id='ev31' value='Lc 19,1-10' /><label for="ev31">Lc 19,1-10</label><br>
+		<input name='lectev' type='radio' id='ev32' value='Lc 8,1ss' /><label for="ev32">Lc 8,1ss</label><br>
+		<input name='lectev' type='radio' id='ev33' value='Lc 2,11' /><label for="ev33">Lc 2,11</label><br>
+		<input name='lectev' type='radio' id='ev34' value='Lc 23,13-28' /><label for="ev34">Lc 23,13-28</label><br>
+		<input name='lectev' type='radio' id='ev35' value='Lc 24,49' /><label for="ev35">Lc 24,49</label><br>
+		<input name='lectev' type='radio' id='ev36' value='Lc 10,26s' /><label for="ev36">Lc 10,26s</label><br>
+		<input name='lectev' type='radio' id='ev37' value='Lc 6,36' /><label for="ev37">Lc 6,36</label><br>
+		<input name='lectev' type='radio' id='ev38' value='Lc 14,13' /><label for="ev38">Lc 14,13</label><br>
+		<input name='lectev' type='radio' id='ev39' value='Lc 10,29-37' /><label for="ev39">Lc 10,29-37</label><br>
+		<input name='lectev' type='radio' id='ev40' value='Lc 2,49' /><label for="ev40">Lc 2,49</label><br>
+		<input name='lectev' type='radio' id='ev41' value='Jn 1,18' /><label for="ev41">Jn 1,18</label><br>
+		<input name='lectev' type='radio' id='ev42' value='Jn 3,35-36' /><label for="ev42">Jn 3,35-36</label><br>
+		<input name='lectev' type='radio' id='ev43' value='Jn 10,17-18' /><label for="ev43">Jn 10,17-18</label><br>
+		<input name='lectev' type='radio' id='ev44' value='Jn 15,9' /><label for="ev44">Jn 15,9</label><br>
+		<input name='lectev' type='radio' id='ev45' value='Jn 1,1' /><label for="ev45">Jn 1,1</label><br>
+		<input name='lectev' type='radio' id='ev46' value='Jn 10,30-38' /><label for="ev46">Jn 10,30-38</label><br>
+		<input name='lectev' type='radio' id='ev47' value='Jn 17, 19-26' /><label for="ev47">Jn 17, 19-26</label><br>
+		<input name='lectev' type='radio' id='ev48' value='Jn 14,15-26' /><label for="ev48">Jn 14,15-26</label><br>
+		<input name='lectev' type='radio' id='ev49' value='Jn 3,16-19' /><label for="ev49">Jn 3,16-19</label><br>
+		<input name='lectev' type='radio' id='ev50' value='Jn 4,34' /><label for="ev50">Jn 4,34</label><br>
+		<input name='lectev' type='radio' id='ev51' value='Jn 6,38' /><label for="ev51">Jn 6,38</label><br>
+		<input name='lectev' type='radio' id='ev52' value='Jn 5,30' /><label for="ev52">Jn 5,30</label><br>
+		<input name='lectev' type='radio' id='ev53' value='Jn 8,26.40' /><label for="ev53">Jn 8,26.40</label><br>
+		<input name='lectev' type='radio' id='ev54' value='Jn 11,41s' /><label for="ev54">Jn 11,41s</label><br>
+		<input name='lectev' type='radio' id='ev55' value='Jn 9,31' /><label for="ev55">Jn 9,31</label><br>
+		<input name='lectev' type='radio' id='ev56' value='Jn 11,3.5.36' /><label for="ev56">Jn 11,3.5.36</label><br>
+		<input name='lectev' type='radio' id='ev57' value='Jn 15,13-16' /><label for="ev57">Jn 15,13-16</label><br>
+		<input name='lectev' type='radio' id='ev58' value='Jn 6,60-71' /><label for="ev58">Jn 6,60-71</label><br>
+		<input name='lectev' type='radio' id='ev59' value='Jn 8,13-59' /><label for="ev59">Jn 8,13-59</label><br>
+		<input name='lectev' type='radio' id='ev60' value='Jn 12,48' /><label for="ev60">Jn 12,48</label><br>
+		<input name='lectev' type='radio' id='ev61' value='Jn 19,26' /><label for="ev61">Jn 19,26</label><br>
+		<input name='lectev' type='radio' id='ev62' value='Jn 17,4' /><label for="ev62">Jn 17,4</label><br>
+		<input name='lectev' type='radio' id='ev63' value='Jn 16,14' /><label for="ev63">Jn 16,14</label><br>
+		<input name='lectev' type='radio' id='ev64' value='Jn 13,34-35' /><label for="ev64">Jn 13,34-35</label><br>
+		<input name='lectev' type='radio' id='ev65' value='Jn 17,9-11' /><label for="ev65">Jn 17,9-11</label><br>
+		<input name='lectev' type='radio' id='ev66' value='Jn 12,24s' /><label for="ev66">Jn 12,24s</label><br>
+		<input name='lectev' type='radio' id='ev67' value='Jn 17,15s' /><label for="ev67">Jn 17,15s</label><br>
+		<input name='lectev' type='radio' id='ev68' value='Jn 13,1' /><label for="ev68">Jn 13,1</label><br>
+		<input name='lectev' type='radio' id='ev69' value='Jn 1,13' /><label for="ev69">Jn 1,13</label><br>	
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "«Dios es amor» «Amaos los unos a los otros» El hombre, antes de llegar a esta cima de la revelación del NT, debe purificar las concepciones totalmente humanas que se forman del amor, para acoger el misterio del amor divino, el cual pasa por la cruz. La palabra «amor» designa, en efecto, gran cantidad de cosas diferentes, carnales o espirituales, pasionales o pensadas, graves o ligeras, que expansionan o que destruyen. Se ama una cosa agradable, a un animal, a un compañero de trabajo, a un amigo, a los padres, a los hijos, a una mujer. El hombre bíblico conoce todo esto. El Génesis (cf. Gén 2,23s, 3,16, 12,10-19; 22; 24; 34), la historia de David (cf. ISa 18,1ss; 2Sa 3,16; 12,15-25; 19,1-5), el Cantar de los cantares son, entre otros muchos, testigos de sentimientos de todas clases. Con frecuencia se mezcla en ello el pecado, pero también hallamos rectitud, profundidad y sinceridad bajo palabras habitualmente sobrias y discretas. Israel, poco llevado a la abstracción intelectual, da con frecuencia a las palabras una coloración afectiva: para él, *conocer es ya amar; su *fidelidad a los vinculos sociales y familiares (hesed) está totalmente impregnada de arranque y de espontaneidad generosa (cf. Gén 24,49; Jos 2,12ss; Rut 3,10; Zac 7,9). «Aman (hebr. ahab; gr. agapan) tiene tantos armónicos como en nuestras lenguas. En una palabra, el hombre bíblico sabe el valor de la afectividad (cf Prov 15,17), aun cuando no ignora sus riesgos (Prov S; Eclo 6,5-17). Cuando la noción de amor penetra su psicología religiosa, está completamente cargada de una experiencia humana densa y concreta. Al mismo tiempo suscita numerosas cuestiones. Dios, tan grande, tan puro, ¿puede abajarse a amar al hombre pequeño, pecador? Y si Dios tiene la condescendencia de amar al hombre, ¿cómo podrá el hombre corresponder con amor a ese amor? ¿Qué relación existe entre el amor de Dios y el amor de los hombres? Las religiones se esfuerzan, cada una a su manera, por responder a estas cuestiones, cayendo ordinariamente en uno de dos extremos opuestos relegar el amor de Dios a una esfera inaccesible, a fin de mantener la distancia entre Dios y el hombre, o profanar el amor de Dios convirtiéndolo en un amor totalmente humano, a fin de hacer a Dios presente al hombre. A estas búsquedas metafísicas o místicas responde la Biblia con claridad. Dios ha tomadora iniciativa de un diálogo de amor con los hombres; en nombre de este amor los induce y les enseña a amarse unos a otros. <br>1. EL DIÁLOGO DE AMOR ENTRE DIOS Y EL HOMBRE <br>AT. Aun cuando en los relatos de la creación (Gén 1; 2-3) no figura la palabra amor, en ellos se insinúa el amor de Dios a través de la bondad de que son objeto Adán y Eva. Dios quiere darles la *vida con plenitud, pero este don supone una libre adhesión a su *voluntad; Dios entabla el diálogo de amor indirectamente a través del mandamiento. Adán lo descartó queriendo apoderarse por fuerza de lo que le estaba destinado como don. Y pecó. Entonces el misterio de la bondad se profundiza en *misericordía para con el pecador mediante las *promesas de *salvación; progresivamente se restablecerán los lazos de amor que unen a Dios y al hombre La historia del paraíso expresa en compendio la historia sagrada. <br>1. Amigos y confidentes de Dios.<br> Dios, al llamar a Abraham, un pagano entre tantos (Jos 24,2s), a ser su amigo (Is 41,8), expresa su amor en forma de una *amistad: Abraham viene a ser el confidente de sus secretos (Gén 18,17). Si es así, es que Abraham ha respondido a las exigencias del amor divino: ha dejado su patria siguiendo la llamada de Dios (12,1); debe penetrar más adentro en el misterio del *temor de Dios que es amor, pues es llamado a sacrificar a su hijo único, y con el su amor humano: Toma a tu hijo, al que amas. (Gén 22,2). *Moisés no tiene que sacrificar a su hijo; pero su pueblo entero se pone en contingencia por el conflicto entre la santidad divina y el pecado; Moisés está desgarrado entre Dios, cuyo enviado es, y su pueblo, al que representa (Ex 32,9-13). Si se mantiene fiel, es porque desde su vocación (3,4) hasta su muerte no cesó de progresar en la intimidad de Dios, conversando con él como con un amigo (33,11; *prójimo); tuvo la revelación de la ternura inmensa de Dios, de un amor que, sin sacrificar nada de la *santidad, es *misericordia (34,6s). <br>2. La revelación profética.<br> Los profetas, también confidentes de Dios (Am 3,7), amados personalmente por un Dios, cuya elección se posesiona de ellos (7,15), los desgarra a veces (Jer 20,7ss), pero los llena también de gozo (20,11ss), son los testigos del drama del *amor y de la *ira de Yahveh (Am 3,2). Oseas, luego Jeremías y Ezequiel, revelan que Dios es el *esposo de Israel, el cual, sin embargo, no cesa de ser infiel; este amor apasionado y exclusivo es correspondido únicamente con ingratitud y traición. Pero el amor es más fuerte que el pecado, aun cuando deba sufrir (Os 11,8); *perdona y re-crea en Israel un *corazón *nuevo capaz de amar (Os 2,21s; Jer 31, 3.20.22; Ez 16,60-63; 32,26s). Otras imágenes, como la del *pastor (Ez 34) o de la *viña (Is 5; Ez 17,6-10), expresan el mismo celo divino y el mismo drama. El Deuteronomio, promulgado sin duda (2Re 22) en el momento en que el pueblo parece preferir definitivamente al amor de Dios el culto de los *ídolos, recuerda incesantemente que el amor de Dios a Israel es, gratuito (Dt 7,7s) y que Israel debe «amar a Dios con todo su corazón» (6,5). Este amor se expresa en actos de *adoración y de *obediencia (11,13; 19,9) que suponen una elección radical, un desprendimiento costoso (4,9-28; 30,15-20). Pero solo es posible si Dios en persona viene a *circuncidar el corazón de Israel y a hacerlo capaz de amar (30,6). <br>3. Hacia un diálogo personal.<br> Después de la *cautividad Israel, purificado por la prueba, descubre que Dios se dirige al corazón de cada uno. En otro tiempo se hablaba del amor de Yahveh a la colectividad (Dt 4,7) o a los jefes (2Sa 12,24); ahora se sabe ya que todo judío es amado, sobre todo el *justo (Sal 37, 25-29; 146,8), el *pobre y el pequeño (Sal 113,5-9). Esto lo expresa admirablemente el Cantar de los cantares: el diálogo de amor, con sus alternativas de posesión y de busca, se establece entre Yahveh e Israel. Poco a poco se esboza incluso la idea de que más allá del judío, el amor de Dios respeta también a los paganos (Jon 4,10s), y hasta a toda criatura (Sab 11,23-26). Próximamente a la venida de Cristo, el judío piadoso (hebr. hasid: Sal 4,4; 132,9.16) sabe ser amado por un Dios, del que canta la misericordiosa *fidelidad a la *alianza (Sal 136; JI 2,13), la bondad (Sal 34,9; 100,5), la *gracia (Gén 6,8; Is 30,18). Por su parte reitera sin cesar su amor a Dios (Sal 31,24; 73,25; 116,1) y a todo lo que se relaciona con Él: su *nombre, su *ley, su *sabiduría (Sal 34,13; 119,127; Is 56,6; Eclo 1,10; 4,14). Este amor debe con frecuencia probarse frente al ejemplo y a la presión de los *impios (Sal 10; 40,14-17; 73; Eclo 2,11-17), y esto puede llegar hasta al *martirio, el de los Macabeos (2Mac 7) o el de rabbi Aquiba, que muere por su fe el 135 después de J.C.: «Le he amado con todo mi corazón, dirá, y con toda mi fortuna; todavía no había tenido ocasión de amarlo con toda mi *alma. El momento ha llegado». Cuando se pronunciaba esta palabra sublime, la revelación plenaria había sido dada ya a los hombres por Jesucristo. <br>NT. El amor entre Dios y los hombres se había revelado en el AT a través de una sucesión de hechos: iniciativas divinas y repulsas del hombre, sufrimiento del amor desdeñado, superaciones dolorosas para estar al nivel del amor y aceptar su gracia. En el NT el amor divino se expresa en un hecho único, cuya naturaleza misma transfigura los datos de la situación: Jesús viene a vivir como Dios y como hombre el drama del diálogo de amor entre Dios y el hombre. <br>1. El don del Padre.<br> La venida de Jesús es en primer lugar un gesto del Padre. Después de los profetas y de las promesas del AT, «acordándose de su misericordia» (Lc 1,54s; Heb 1,1) se da Dios a conocer (Jn 1,18); manifiesta su amor (Rm 8,39; IJn 3,1; 4,9) en aquel que no es sólo el *mesías salvador esperado (Lc 2,11), sino además su propio *Hijo (Mc 1,11; 9,7; 12,6), aquel a quien ama (Jn 3,35; 10,17; 15,9; Do! 1,13), el que es uno con Él, Dios como Él (Jn 1,1; cf. 10,30-38; 17, 21; Mt 11,27). El amor del Padre se expresa entonces en una forma que no puede ser superada por nada. Se realiza la nueva *alianza y se concluyen las nupcias eternas del *esposo con la humanidad. La gratuidad divina, que existía desde siempre (Dt 7,7s), llega a su colmo en un *don sin medida común con el valor del hombre (Rm 5,6s; Tit 3,5; IJn 4,10-19). Este don es definitivo, más allá de la existencia terrenal de Jesús (Mt 28,20; Jn 14,18s); es llevado al extremo, pues consiente con la muerte del Hijo para que el *mundo logre la vida (Rm 5,8; 8,32) y para que nosotros seamos *hijos de Dios (IJn 3,1, Gál 4,4-7). Si «Dios amo tanto al mundo que le dio a su Hijo unigénito» (Jn 3,16), es para que los hombres tengan la *vida eterna: pero a si mismos se condenan los que se niegan a creer en el que ha sido enviado y «aman más las tinieblas que la luz (3,19). La opción es inevitable: o el amor por la fe en el Hijo, o la *ira por la repulsa de la fe (3,36). <br>2. El amor perfecto revelado en Jesús.<br> Ahora ya el drama del amor se desarrolla no sólo con ocasión del contacto con Jesús, sino también a través de su persona. Por su misma existencia es Jesús revelación concreta del amor. Jesús es el *hombre que realiza el diálogo filial con Dios y da su testimonio delante de los hombres. Jesús es Dios que viene a vivir en plena humanidad su amor y a hacer oir su ardiente llamamiento. En su persona misma el hombre ama a Dios y es amado por él. <br>a) La vida entera de Jesús manifiesta este doble diálogo. Dado al Padre desde los comienzos (Lc 2,49; cf. Heb 10,5ss), viviendo en oración y en acción de gracias (cf. Mc 1,35; Mt 11,25) y sobre todo en perfecta conformidad con la voluntad divina (Jn 4,34; 6,38), está incesantemente a la *escucha de Dios (5,30; 8,26. 40), lo cual le asegura que es escuchado por él (11,41s; cf. 9,31). Por lo que se refiere a los hombres su vida se da completamente, no sólo a algunos *amigos (cf. Mc 10,21; Lc 8,1ss; Jn 11,3.5.36), sino a todos (Mc 10,45); pasa por el mundo haciendo bien (Act 10,38; Mt 11,28ss), en un desinterés total (Lc 9,58) y atento a todos, incluso, y sobre todo, a los más despreciados y a los más indignos (Lc 7,36-50; 19,1-10; Mt 21,31s); escoge gratuitamente a los que quiere (Mc 3,13) para hacerlos sus amigos (Jn 15,15s). Este amor exige reciprocidad; el mandamiento del Deuteronomio se mantiene en vigor (Mt 22,37; cf. Rom 8,28; ICor 8,3; IJn 5,2), pero se le obedece a través de Jesús: amándole se ama al Padre (Mt 10 40; Jn 8,42; 14,21-24). Finalmente, amar a Jesús es guardar íntegramente su *palabra (Jn 14,15.21.23) y *seguirle renunciando a todo (Mc 10, 17-21; Lc 14,25s,s). Consiguientemente, a lo largo del evangelio se opera una división (Lc 2,34) entre los que aceptan y los que rechazan este amor, frente al cual no se puede permanecer neutral (Jn 6,60-71; cf. 3,18s; 8,13-59; 12,48). <br>b) En la *cruz revela el amor en forma decisiva su intensidad y su drama. Era preciso que Jesús sufriera (Lc 9,22; 17,25; 24,7.26; cf. Heb 2,8), para que se revelara plenamente su *obediencia al Padre (Flp 2,8) y su amor a los suyos (Jn 13,1). Totalmente libre (cf. Mt 26 53; Jn 10,18), a través de la tentación y del aparente *silencio de Dios (Mc 14,32-41; 15,34; cf. Heb 4,15) en la radical *soledad humana (Mc 14,50; 15,29-32), perdonando sin embargo y acogiendo todavía (Lc 23,28.34.43; Jn 19,26), llega Jesús al instante único del «más grande amor» (Jn 15,13).";
+	document.getElementById("textodifour2").innerHTML = "<br>Entonces da todo, sin reserva, a Dios (Lc 23,46) y a todos los hombres sin excepción (Mc 10. 45; 14,24; 2Cor 5,14s; ITim 2,5s). Por la cruz es Dios plenamente *glorificado (Jn 17,4); del hombre Jesús» (ITim 2,5) y con él la humanidad entera merece ser amada por Dios sin reserva (Jn 10,17; Flp 2,9ss). Dios y el hombre comunican en la *unidad, según la última oración de Jesús (Jn 17). Pero todavía es preciso que el hombre acepte libremente un amor tan total y exigente, que debe llevarle a sacrificarse siguiendo a Cristo (17,19). Halla en el camino el *escándalo de la *cruz, que no es sino el escándalo del amor. Ahi es donde se manifiesta en su plenitud el don del Esposo a la esposa (Ef 5,25ss; Gál 2,20), pero tambien para los hombres la suprema tentación de la infidelidad. <br>3. El amor universal en el Espíritu.<br> Si el calvario es el lugar del amor perfecto, la manera como lo manifiesta es una *prueba decisiva: de hecho los amigos del crucificado lo abandonan (Mc 14,50; Lc 23,13-24); es que la adhesión al amor divino no es cuestión de encuentro físico ni de razonamiento humano, en una palabra, de «conacimiento según la *carne» (2Cor 5,16); hace falta el don del *Espirito, que crea en el hombre un «*corazón *nuevo» (cf. Jer 31,33s; Ez 36,25ss). El Espiritu derramado en *pentecostés (Act 2,1-36), como lo había prometido Cristo (Jn 14,16ss; cf. Lc 24,49) está desde entonces presente en el mundo (Jn 14,16) por la Iglesia (Ef 2,21s). y *enseña a los hombres lo que Jesús les ha dicho (Jn 14,26) haciéndoselo comprender desde dentro, con un verdadero *conocimiento religioso; los hombres, testigos o no de la vida terrestre de Jesús, son aquí iguales, sin distinción de tiempo ni de raza. Todo hombre tiene necesidad del Espiritu para poder decir «Padre» (Rm 8,15) y glorificar a Cristo (Jn 16,14). Asi se derrama en nosotros un amor (Rom 5,5) que nos apremia (2Cor 5,14), un amor del que nada puede ya separarnos (Rom 8,35-39) y que nos prepara al encuentro definitivo de amor, en el que «conoceremos como somos conocidos» (ICor 13,12). <br>4. Dios es amor.<br> El amor entre Dios y el hombre tiene finalmente por fuente el amor eterno del Padre y del Hijo (Jn 17,24.26), que es también el amor del Espiritu (2Cor 13, 13), en una palabra, el amor eterno de la Trinidad. Y en ésta aparece la afirmación que es la última palabra de toda cosa: en su esencia misma *Dios es amor (IJn 4,8.16). <br>II. LA CARIDAD FRATERNA. <br>AT. Ya en el AT el mandamiento del amor de Dios se completa con el «segundo mandamiento»: «Amarás a tu prójimo como a ti mismo» (Lev 19,18). A decir verdad, este mandamiento se presenta en forma menos solemne que el otro (comp. Lev 19,1-37 y Dt 6,4-13) y la palabra *prójimo tiene un sentido bastante restringido. Pero al israelita se le invita ya a prestar atención a «los otros». En los textos más antiguos es ya una ofensa a Dios ser indiferente u hostil al prójimo (Gén 3,12; 4,9s) y la ley une a las exigencias que conciernen a las relaciones con Dios, las que atañen a las relaciones entre los hombres: así el Decálogo (Éx 20,1217) o el Código de la alianza., que abunda en prescripciones de atención para con los *pobres y los pequeños (Ex 22,20-26; 23,4-12). Toda la tradición profética (Am 1-2; Is 1,14- 17, Jer 9,2-5; Ez 18,5-9; Mal 3,5) y toda la tradición sapiencial (Prov 14,21; 1,8-19; Eclo 25,1; Sab 2,10ss) van en el mismo sentido; no se puede agradar a Dios sin respetar a los otros hombres, pero sobre todo a los más abandonados, los menos «interesantes». Nunca se creyó poder amar a Dios sin interesarse por los hombres: «practicaba la justicia y el derecho... juzgaba la causa del pobre y del desgraciado. *Conocerme, ¿no es esto?» (Jer 22, 15s). El oráculo concierne a Josías, pero alcanza a todo Israel (cf. Jer 9,4) Que a este amor se le llama explicitamente amor, esto no se dice con frecuencia (Lev 19,18; 19,34; Dt 10,19). Sin embargo, ya con ocasión del amor para con el *extranjero se funda el mandamiento en el deber de obrar como Yahveh en los tiempos del *Éxodo: «Yahveh ama al extranjero y le alimenta y le viste. Amad también vosotros al extranjero, porque extranjeros fuisteis en la tierra de Egiptos (Dt 10,18s). El motivo no es una mera solidaridad natural, sino la historia de la salvación. Antes de la venida de Cristo, el judaísmo profundiza la naturaleza del amor *fraterno. En el amor del prójimo se incluye al adversario judio y hasta al enemigo pagano; el amor se hace más universal, aun cuando Israel conserva su papel central. «Ama la paz», dice Hillel. «Aspira a la paz. Ama a las criaturas condúcelas a la ley». Se descubre que amar es prolongar la acción divina: «Lo mismo que el Santo —¡bendito sea!— viste a los que están desnudos, consuela a los afligidos, entierra a los muertos, así tú también viste a los que están desnudos, visita a los enfermos, etc.. En estas condiciones era ya fácil hacer el enlace entre los dos mandamientos de amor de Dios y de amor del prójimo; así lo hizo un día un escriba que abordó a Jesús (Lc 10,26s). <br>NT. Si la concepción judía podia hacer creer que el amor fraterno se yuxtapone en el mismo plano a otros mandamientos, la visión cristiana, en cambio, le da el puesto central y hasta único. <br>1. Los dos amores.<br> De un extremo a otro del NT el amor del *prójimo aparece indisociable del amor de Dios: los dos mandamientos son el ápice y la clave de la ley (Mc 12,28-33 p); es el compendio de toda exigencia moral (Gál 5,22; 6,2; Rom 13, es; Col 3,14), el mandamiento único (IJn 15,12; 2Jn 5); la caridad es la *obra única y multiforme de toda *fe viva (Gál 5,ó.22): «el que no ama a su hermano, al que ve, ¿cómo amará a Dios, al que no ve» (IJn 4,20s)? Este amor es esencialmente religioso, de un espíritu completamente distinto de la mera filantropía. En primer lugar por su modelo: imitar el amor mismo de Dios (Mt 5,44s; Ef 5,1s.25; IJn 4,11s). Luego por su fuente, y sobre todo porque es la obra de Dios en nosotros: ¿cómo seríamos nosotros *misericordiosos como el Padre celestial (Lc 6,36) si no nos lo enseñara el Señor (ITes 4,9), si no lo derramara el Espíritu en nuestros corazones (Rm 5,5; 15,30)? Este amor viene de Dios y existe en nosotros por el hecho mismo de que Dios nos toma por *hijos (IJn 4,7). Y, venido de Dios, vuelve a Dios: amando a nuestros hermanos amamos al Señor mismo (Mt 25,40), puesto que todos juntos formamos el *cuerpo de Cristo (Rm 12,5-10; ICor 12,12-27). Tal es la manera como podemos responder al amor con que Dios nos amó el primero (IJn 3,16; 4,19s). Mientras se aguarda la parusía del Señor, la caridad es la actividad esencial de los discípulos de Jesús, según la cual serán juzgados (Mt 25, 31-46). Tal es el testamento dejado por Jesús: «Amaos los unos a los otros, como yo os he amado». (Jn 13,34s). El acto de amor de Cristo sigue expresándose a través de los actos de los discípulos. Este mandamiento, si bien antiguo por estar ligado con las fuentes de la revelación (IJn 2,7s), es *nuevo: en efecto, Jesús inauguró una era nueva que anunciaban los profetas, dando a cada uno el Espiritu que crea corazones nuevos. Si, pues, están unidos los dos mandamientos, es porque el amor de Cristo continúa expresándose a través de la caridad que manifiestan los discípulos entre sí. <br>2. El amor es don.<br> La caridad cristiana es vista, sobre todo por los sinópticos y san Pablo, conforme a la imagen de Dios que da gratuitamente su Hijo por la salvación de todos los hombres pecadores, sin mérito alguno por su parte (Mc 10,45; Rom 5,6ss). Es, pues, universal, sin dejar que subsista barrera alguna social o racial (Gál 3,28), sin despreciar a nadie (Lc 14,13; 7,39); más aún, exige el amor de los *enemigos (Mt 5,43-47; Lc 10,29-37). El amor no puede desalentarse: tiene como leyes el *perdón sin limites (Mt 18, 21s; 6,12.14s), el gesto espontáneo para con el adversario (Mt 5,23-26), la *paciencia, el bien devuelto a cambio del mal (Rm 12,14-21; Ef 4,25-5,2). En el *matrimonio se expresa en forma de don total, a imagen del sacrificio de Cristo (Ef 5,25-32). Para todos es finalmente una *esclavitud mutua (Gál 5,13), en la que el hombre renuncia a si mismo con Cristo crucificado (Flp 2,1-11). Pablo, en su «himno a la caridad» (1Cor 13) manifiesta la naturaleza y la grandeza del amor. Sin descuidar en modo alguno sus exigencias cotidianas (13,4ss), afirma que sin la caridad nada tiene valor (13,1ss), que sólo ella sobrevivirá a todo: amando como Cristo vivimos ya una realidad divina y eterna (13,8-13). Por ella es *edificada la Iglesia (ICor 8, 1; Ef 4,16); por ella el hombre viene a ser perfecto para el *dia del Señor (Flp I,9ss). <br>3. El amor es comunión.<br> Desde luego, Juan no ignora la universalidad y la gratuidad del amor divino (Jn 3,16; 15,16; IJn 4,10), pero es más sensible a la *comunión del Padre y del Hijo en el Espiritu. Este amor se difunde en nosotros y nos invita a participar en él, no sólo amando a Dios, sino viviendo a su imagen en una intensa comunión religiosa de intercambio y de reciprocidad. La comunión de los discípulos es un fuego de amor que el cristiano debe animar con todo su corazón. Frente al *mundo, al que no debe amar (IJn 2,15; cf. Jn 17,9), amará a sus hermanos con un amor exigente y concreto (IJn 3,11-18), en el que entra en juego la ley de la renuncia y de la muerte, sin la cual no hay verdadera *fecundidad (Jn 12,24s). Por esta caridad el creyente *permanece en comunión con Dios (IJn 4,7-5,4). Tal fue la última oración de Jesús: «que el amor con que me has amado esté en ellos y yo en ellos» (Jn 17,26). Este amor fraterno, vivido por los discípulos en medio del mundo al que no pertenecen (17,11.15s), es el *testimonio a través del cual el mundo puede reconocer a Jesús como enviado del Padre (17,21): «En esto conocerán que sois mis discípulos: si tenéis caridad los unos con los otros» (13,35). -> Amigo - Ira - Conocer - Elección - Esposo - Eucaristía - Enemigo - Hermano - Odio - Misericordia - Prójimo - Sacrificio - Celo.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=50;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=27;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=45;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=70;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

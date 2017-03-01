@@ -1,0 +1,624 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">Acción de Gracias</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Esd 3,11' /><label for="hist0">Esd 3,11</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Dt 30,19;' /><label for="hist1">Dt 30,19;</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Dt 32,43' /><label for="hist2">Dt 32,43</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Neh 9,5...' /><label for="hist3">Neh 9,5...</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Neh 9,5-37' /><label for="hist4">Neh 9,5-37</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='1Cron 29,10...' /><label for="hist5">1Cron 29,10... </label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Ex 15,18' /><label for="hist6">Ex 15,18</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Ex 15,1-21' /><label for="hist7">Ex 15,1-21</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Jue 5' /><label for="hist8">Jue 5</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='1Cron 16,8...' /><label for="hist9">1Cron 16,8...</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='1Cron 29,10-19' /><label for="hist10">1Cron 29,10-19</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Tob 13,1-8' /><label for="hist11">Tob 13,1-8</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Jdt 16,1-17' /><label for="hist12">Jdt 16,1-17</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Eclo 51,1-12' /><label for="hist13">Eclo 51,1-12</label><br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='Dan 3,90' /><label for="prof0">Dan 3,90</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Dan 3,26- 45' /><label for="prof1">Dan 3,26- 45.</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 12' /><label for="prof2">Is 12</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Is 25' /><label for="prof3">Is 25</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Is 42,10...' /><label for="prof4">Is 42,10...</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Is 63, 7...' /><label for="prof5">Is 63, 7...</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Jer 20,13' /><label for="prof6">Jer 20,13</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Jer 3,51-90' /><label for="prof7">Jer 3,51-90</label><br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='Rm 1,21' /><label for="cart0">Rm 1,21</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Rom 1,8' /><label for="cart1">Rom 1,8</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Rom 15,11' /><label for="cart2">Rom 15,11</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Rom 7,25' /><label for="cart3">Rom 7,25</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Rom 1,8ss' /><label for="cart4">Rom 1,8ss</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='Heb 13,15' /><label for="cart5">Heb 13,15</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='1Cor 14,16' /><label for="cart6">1Cor 14,16</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='1Cor 1,14' /><label for="cart7">1Cor 1,14</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Sant 3,9' /><label for="cart8">Sant 3,9</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Sant 7,25' /><label for="cart9">Sant 7,25</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='1Tes 5,17-18' /><label for="cart10">1Tes 5,17-18</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='1Tes 1,2' /><label for="cart11">1Tes 1,2</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='1Tes 3,9s' /><label for="cart12">1Tes 3,9s</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='2Tes 1,3' /><label for="cart13">2Tes 1,3</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='Ef 5,20' /><label for="cart14">Ef 5,20</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='Ef 1,3' /><label for="cart15">Ef 1,3</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='Col 3,17' /><label for="cart16">Col 3,17</label><br>
+		<input name='lectcart' type='radio' id='cart17' value='Col 1,3' /><label for="cart17">Col 1,3</label><br>
+		<input name='lectcart' type='radio' id='cart18' value='Hch 28,15' /><label for="cart18">Hch 28,15</label><br>
+		<input name='lectcart' type='radio' id='cart19' value='Hch 5,41' /><label for="cart19">Hch 5,41</label><br>
+		<input name='lectcart' type='radio' id='cart20' value='Hch 21,20' /><label for="cart20">Hch 21,20</label><br>
+		<input name='lectcart' type='radio' id='cart21' value='2Cor 1,11' /><label for="cart21">2Cor 1,11</label><br>
+		<input name='lectcart' type='radio' id='cart22' value='2Cor 2,3' /><label for="cart22">2Cor 2,3</label><br>
+		<input name='lectcart' type='radio' id='cart23' value='Flp 1,3' /><label for="cart23">Flp 1,3</label><br>
+		<input name='lectcart' type='radio' id='cart24' value='Ap 4,9ss' /><label for="cart24">Ap 4,9ss</label><br>
+		<input name='lectcart' type='radio' id='cart25' value='Ap 11,16s' /><label for="cart25">Ap 11,16s</label><br>
+		<input name='lectcart' type='radio' id='cart26' value='Ap 15,3s' /><label for="cart26">Ap 15,3s</label><br>
+		<input name='lectcart' type='radio' id='cart27' value='Ap 19,1-8' /><label for="cart27">Ap 19,1-8</label><br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='Jn 1,17' /><label for="ev0">Jn 1,17</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Jn 17,19' /><label for="ev1">Jn 17,19</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Jn 17,1' /><label for="ev2">Jn 17,1</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Jn 6,11' /><label for="ev3">Jn 6,11</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Jn 11,41-42' /><label for="ev4">Jn 11,41-42</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Lc 2,38' /><label for="ev5">Lc 2,38</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Lc 2,13,20' /><label for="ev6">Lc 2,13,20</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Mt 5,16' /><label for="ev7">Mt 5,16</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Mt 9,8' /><label for="ev8">Mt 9,8</label><br>
+		<input name='lectev' type='radio' id='ev9' value='Mt 11,25ss' /><label for="ev9">Mt 11,25ss</label><br>
+		<input name='lectev' type='radio' id='ev10' value='Lc 1,64-68' /><label for="ev10">Lc 1,64-68</label><br>
+		<input name='lectev' type='radio' id='ev11' value='Lc 2,28' /><label for="ev11">Lc 2,28</label><br>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "La realidad primera de la historia bíblica es el *don de Dios, gratuito, sobreabundante, sin revocación. El encuentro con Dios no sólo pone al hombre en presencia del absoluto, sino que lo colma y transforma su vida. La acción de gracias aparece como la respuesta a esta *gracia progresiva y continua que había un día de florecer in Cristo. La acción de gracias, a la vez toma de conciencia de los dones de Dios, arranque muy puro del alma penetrada de maravilla por esta generosidad, reconocimiento gozoso ante la grandeza divina, es esencial en la Biblia porque es una reacción religiosa fundamental de la criatura que descubre en una trepidación de *gozo y de veneración, algo de *Dios, de su grandeza y de su *gloria. El pecado capital de los paganos consiste, según san Pablo, en «no haber dado a Dios gloria ni acción de gracias» (Rm 1,21). Y, en efecto, entre la masa de himnos creados por la piedad mesopotámica, la acción de gracias es excepcional, al paso que es frecuente en la Biblia, en la que suscita poderosos arranques.<br> AT. 1. De una a otra alianza.<br> La acción de gracias del AT anuncia la del NT en cuanto que es siempre, al mismo tiempo que gratitud, tensión hacia el futuro y hacia una gracia más alta. Por otra parte, a la hora de la nueva alianza, la acción de gracias irrumpe verdaderamente, haciéndose omnipresente en la oración y en la vida de los cristianos, como no lo había sido nunca en los justos de otros tiempos. La acción de gracias de la Biblia es esencialisimamente cristiana. Sin embargo, no lo es en forma exclusiva, hasta tal punto que, como se ha escrito, en el AT el aisraelita alaba sin dar graciass. En realidad, si el AT no conoce todavía la plenitud de la acción de gracias, es porque todavía no ha saboreado la plenitud de la gracia. Si la *alabanza, más espontánea, más exteriorizada, tiene quizás en el AT más lugar que la acción de gracias propiamente dicha, es más consciente, más atenta a los gestos de Dios, a sus intenciones, a su *revelación, es que el Dios muy santo sólo se reveló progresivamente, descubriendo poco a poco la amplitud de su acción y la profundidad de sus dones. <br>2. El vocabulario.<br> Descubrir la acción de gracias en la Biblia es al mismo tiempo encontrar el gozo (Sal 33, 1-3.21), la alabanza y la exaltación (Esd 3,11; Sal 69,31), la glorificación de Dios (Sal 50,23; 86,12). Precisando más, la acción de gracias es *confesión pública de gestos divinos determinados. Alabar a Dios es publicar sus grandezas; darle gracias es proclamar las maravillas que opera y dar testimonio de sus obras. La acción de gracias va de la mano con la *revelación; es como su eco en los corazones. Asi comporta con frecuencia la mención de la asamblea de los justos o de los pueblos convocados para oirla (Sal 35,18; 57,10; 109,30), una invitación a unirse a ella (Sal 92,2ss; 105,1s). En hebr. este matiz de confesión maravillada y agradecida se expresa por todah, que suele traducirse con una palabra mucho menos expresiva y bastante poco exacta: agradecer. La palabra que parece cristalizar la acción de gracias en el AT y traducir lo más exactamente posible la actitud religiosa apuntada es *«bendición. (hebr. barak), que expresa el intercambio esencial' entre Dios y el hombre. A la bendición de Dios, que da a su criatura la vida y la salvación (Dt 30,19; Sal 28,9), responde la bendición, por la que el hombre, movido por este poder y esta generosidad, da gracias al Creador (Dan 3,90; cf. Sal 68,20.27; Neh 9,5...; 1 Par 29,10...). <br>3. Historia de la acción de gracias.<br> Existe un esquema literario clásico de la acción de gracias, visible en particular en los Salmos, y que manifiesta bien el carácter de la acción de gracias, reacción ante un gesto de Dios. La confesión de la gratitud por la *salvación obtenida se desarrolla normalmente en un «relato» en tres partes: descripción del peligro corrido (Sal 116,3), oración angustiada (Sal 116,4), evocación de la magnifica intervención de Dios (Sal 116,6; cf. Sal 30; 40; 124). Este género literario reaparece idéntico en toda la Biblia y obedece a una misma tradición de vocabulario, permanente a través de los salmos, de los cánticos y de los himnos proféticos. Si la acción de gracias es una, es que responde a la única *obra de Dios. Más o menos confusamente cada beneficio particular de Yahveh se siente siempre como un momento de una grande historia en curso de realización. La acción de gracias irnpulsa la historia bíblica y la prolonga en la esperanza escatológica (cf. Ex 15,18; Dt 32,43; Sal 66,8; 96). No sólo la acción de gracias inspira algunos fragmentos literarios muy antiguos, que recogen ya toda la fe de Israel: el Cántico de Moisés (Ex 15,1-21) o el de Débora (Jue 5) sino que es muy posible que en la base del Hexateuco y de toda la historia de Israel haya una confesión de *fe cultual que proclama en la acción de gracias las altas gestas de Yahveh para con su pueblo. Asi desde los origenes la verdadera fe es confesión en la acción de gracias. Esta tradición se desarrolla constantemente a medida que Israel va adquiriendo más conciencia de la generosidad de Dios, y se expresa en todos los terrenos: en la literatura profética (Is 12; 25; 42,10..., 63, 7...; Jer 20,13) y sacerdotal (IPar 16,8...; 29,10-19; Neh 9,5-37), en las composiciones monumentales de los últimos escritos del AT (Tob 13,1-8; Jdt 16,1-17, Eclo 51,1-12, Dan 3,26- 45.51-90). <br>NT.<br> El NT, por ser la revelación y el don de la gracia perfecta (cf. Jn 1,17), es también en la persona del Señor la revelación de la perfecta acción de gracias tributada al Padre en el Espiritu Santo. <br>1. El vocabulario cristiano.<br> Éste es heredero, a través de los LXX, de la tradición del AT. La acción de gracias es inseparable de la *confesión (gr. homologeo Mt 11,25; Lc 2,38; Heb 13,15), de la alabanza (gr. aineo: Lc 2,13,20; Rom 15,11) de la glorificaciónn (gr. doxazo: Mt 5,16; 9,8) y siempre, en forma privilegiada, de la bendición (gr. eulogeo: Lc 1,64.68; 2,28; lCor 14,16 Sant 3,9). Pero un término nuevo prácticamente ignorado por el AT (gr. eukharisteo, eukharistia) invade el NT (más de 60 veces), manifestando la originalidad y la importancia de la acción de gracias cristiana, respuesta a la *gracia (kharis) dada por Dios en Jesucristo. La acción de gracias cristiana es una *eucaristía y su expresión acabada es la eucaristia sacramental, la acción de gracias del Señor, dada por éste a su Iglesia. <br>2. La acción de gracias del Señor.<br> El gesto supremo del Señor es una acción de gracias; el *sacrificio que Jesús hace de su vida consagrándola al Padre para santificar a los suyos (Jn 17,19) es nuestra eucaristía. En la cena y en la cruz revela Jesús el móvil de toda su vida, así como el de su muerte: la acción de gracias de su corazón de *Hijo. Se requiere la pasión y la muerte de Jesús para que pueda glorificar plenamente al Padre (Jn 17,1), pero toda su vida es una acción de gracias incesante, que a veces se hace explícita y solemne para inducir a los hombres a creer y a dar gracias a Dios con él (cf. Jn 11,42). El objeto esencial de esta acción de gracias es la obra de Dios, la realización mesiánica, manifestada particularmente por los milagros (cf. Jn 6,11; 11,41ss), el don de su palabra, que Dios ha hecho a los hombres (Mt 11,25ss). <br>3. La acción de gracias de los discipulos.<br> El don de la eucaristía a la Iglesia expresa una verdad esencial: sólo Jesucristo es nuestra acción de gracias, como él solo es nuestra alabanza. Él da el primero gracias al Padre, y los cristianos tras él y en él: per ipsum et cum ipso et in ipso. En la acción de gracias cristiana, como en toda oración cristiana, Cristo es el único modelo y el único mediador (cf. Rom 1,8: 7,25; ITes 5,18; Ef 5,20; Col 3,17). Los primeros cristianos, conscientes del don recibido y arrastrados por el ejemplo del maestro, hacen de la acción de gracias la trama misma de su vida renovada. La abundancia de estas manifestaciones tiene algo sorprendente. Son los cánticos de Lc I y 2, provocados, como ciertos cánticos del AT, por la meditación lenta y religiosa de los acontecimientos. Son los «reflejos» de acción de gracias de los apóstoles y de las primeras comunidades (Act 28,15; cf. 5,41; 21,20; Rom 7,25; 2Cor 1,11; Ef 5,20; Col 3,17; ITes 5,l8). Son sobre todo los grandes textos de Pablo, tan evocadores de su acción de gracias «continua» (ICor 1,14; Flp 1,3; Col 1,3; ITes 1,2; 2,13; 2Tes I,3), que adoptan a veces la forma solemne de la bendición (2Cor 2,3; Ef 1,3). Toda la vida cristiana, toda la vida de la Iglesia, está para Pablo sostenida y envuelta por una combinación constante de súplica y de acción de gracias (ITes 3,9s; 5,17s; Rom 1,8ss) El objeto de esta acción de gracias, a través de toda clase de acontecimientos y de signos, es siempre el mismo, el que llena la gran acción de gracias de la epístola a los Efesios: el *reino de Dios, el advenimiento del Evangelio, el *misterio de Cristo, fruto de la redención, desplegado en la *Iglesia. El Apocalipsis amplia esta acción de gracias hasta las dimensiones de la vida eterna. En la *Jerusalén celeste, acabada ya la obra mesiánica, la acción de gracias viene a ser pura alabanza de gloria, contemplación absorta de Dios y de sus maravillas eternas (cf. Ap 4,9ss; 11,16s; 15,3s; 19,1-8). -> Bendición - Confesar - Culto - Eucaristia - Gozo - Alabanza - Oración. ";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=14;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=8;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=28;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=12;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

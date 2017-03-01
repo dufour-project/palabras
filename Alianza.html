@@ -1,0 +1,673 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ALIANZA</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+<p id="textodifour2"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 14,13' /><label for="hist0">Gén 14,13</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 21,22ss' /><label for="hist1">Gén 21,22ss</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 26,28' /><label for="hist2">Gén 26,28</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 31,43ss' /><label for="hist3">Gén 31,43ss</label><br>
+		<input name='lecthist' type='radio' id='hist4' value=' Gén 21,33' /><label for="hist4"> Gén 21,33</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 31,48ss' /><label for="hist5">Gén 31,48ss</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 12,7' /><label for="hist6">Gén 12,7</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 13,15' /><label for="hist7">Gén 13,15</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Gén 9,1-17' /><label for="hist8">Gén 9,1-17</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Gén 17,1- 14' /><label for="hist9">Gén 17,1- 14</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Ex 3,7-10.16s' /><label for="hist10">Ex 3,7-10.16s</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Éx 14,31' /><label for="hist11">Éx 14,31</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Éx 19,5s' /><label for="hist12">Éx 19,5s</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Éx 19,4' /><label for="hist13">Éx 19,4</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Éx 23,20-31' /><label for="hist14">Éx 23,20-31</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Éx 20,3ss' /><label for="hist15">Éx 20,3ss</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='Éx 23,24' /><label for="hist16">Éx 23,24</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='Éx 34,12-16' /><label for="hist17">Éx 34,12-16</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Ex 19,7s' /><label for="hist18">Ex 19,7s</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Éx 23, 20-33' /><label for="hist19">Éx 23, 20-33</label><br>
+		<input name='lecthist' type='radio' id='hist20' value='Éx 24,1s.9ss' /><label for="hist20">Éx 24,1s.9ss</label><br>
+		<input name='lecthist' type='radio' id='hist21' value='Éx 24,3- 8' /><label for="hist21">Éx 24,3- 8</label><br>
+		<input name='lecthist' type='radio' id='hist22' value='Éx 25,10-22' /><label for="hist22">Éx 25,10-22</label><br>
+		<input name='lecthist' type='radio' id='hist23' value='Éx 33,7-11' /><label for="hist23">Éx 33,7-11</label><br>
+		<input name='lecthist' type='radio' id='hist24' value='Éx 24,3-8' /><label for="hist24">Éx 24,3-8</label><br>
+		<input name='lecthist' type='radio' id='hist25' value='Ex 24,8' /><label for="hist25">Ex 24,8</label><br>
+		<input name='lecthist' type='radio' id='hist26' value='Éx 24,8' /><label for="hist26">Éx 24,8</label><br>
+		<input name='lecthist' type='radio' id='hist27' value='Éx 8,13' /><label for="hist27">Éx 8,13</label><br>
+		<input name='lecthist' type='radio' id='hist28' value='Éx 19,5s' /><label for="hist28">Éx 19,5s</label><br>
+		<input name='lecthist' type='radio' id='hist29' value='Dt 9,4ss' /><label for="hist29">Dt 9,4ss</label><br>
+		<input name='lecthist' type='radio' id='hist30' value='Dt 7,6ss' /><label for="hist30">Dt 7,6ss</label><br>
+		<input name='lecthist' type='radio' id='hist31' value='Dt 5,7ss' /><label for="hist31">Dt 5,7ss</label><br>
+		<input name='lecthist' type='radio' id='hist32' value='Dt 28' /><label for="hist32">Dt 28</label><br>
+		<input name='lecthist' type='radio' id='hist33' value='Dt 27,2-26' /><label for="hist33">Dt 27,2-26</label><br>
+		<input name='lecthist' type='radio' id='hist34' value='Dt 31,9-13.24-27' /><label for="hist34">Dt 31,9-13.24-27 </label><br>
+		<input name='lecthist' type='radio' id='hist35' value='Dt 32,45ss' /><label for="hist35">Dt 32,45ss</label><br>
+		<input name='lecthist' type='radio' id='hist36' value='Dt 4,37' /><label for="hist36">Dt 4,37</label><br>
+		<input name='lecthist' type='radio' id='hist37' value='Dt 7,8' /><label for="hist37">Dt 7,8</label><br>
+		<input name='lecthist' type='radio' id='hist38' value='Dt 10,15' /><label for="hist38">Dt 10,15</label><br>
+		<input name='lecthist' type='radio' id='hist39' value='Dt 6,5' /><label for="hist39">Dt 6,5</label><br>
+		<input name='lecthist' type='radio' id='hist40' value='Dt 10,12s' /><label for="hist40">Dt 10,12s</label><br>
+		<input name='lecthist' type='radio' id='hist41' value='Dt 11,1' /><label for="hist41">Dt 11,1</label><br>
+		<input name='lecthist' type='radio' id='hist42' value='1Re 5,26' /><label for="hist42">1Re 5,26</label><br>
+		<input name='lecthist' type='radio' id='hist43' value='1Re 15,19' /><label for="hist43">1Re 15,19</label><br>
+		<input name='lecthist' type='radio' id='hist44' value='1 Re 8,14- 29.52-61' /><label for="hist44">1 Re 8,14- 29.52-61</label><br>
+		<input name='lecthist' type='radio' id='hist45' value='1Sa 23,18' /><label for="hist45">1Sa 23,18</label><br>
+		<input name='lecthist' type='radio' id='hist46' value='Jos 9,11-15' /><label for="hist46">Jos 9,11-15</label><br>
+		<input name='lecthist' type='radio' id='hist47' value='1Sa 11,1' /><label for="hist47">1Sa 11,1</label><br>
+		<input name='lecthist' type='radio' id='hist48' value='2Sa 3,12 ss' /><label for="hist48">2Sa 3,12 ss</label><br>
+		<input name='lecthist' type='radio' id='hist49' value='Lev 26' /><label for="hist49">Lev 26</label><br>
+		<input name='lecthist' type='radio' id='hist50' value='Núm 10,33-36' /><label for="hist50">Núm 10,33-36</label><br>
+		<input name='lecthist' type='radio' id='hist51' value='Jos 8,30-35' /><label for="hist51">Jos 8,30-35</label><br>
+		<input name='lecthist' type='radio' id='hist52' value='Jos 24,1-28' /><label for="hist52">Jos 24,1-28</label><br>
+		<input name='lecthist' type='radio' id='hist53' value='2Sa 5,3' /><label for="hist53">2Sa 5,3</label><br>
+		<input name='lecthist' type='radio' id='hist54' value='2Sa 7,8-16' /><label for="hist54">2Sa 7,8-16</label><br>
+		<input name='lecthist' type='radio' id='hist55' value='2Sa 23,5' /><label for="hist55">2Sa 23,5</label><br>
+		<input name='lecthist' type='radio' id='hist56' value='2Sa 7,14' /><label for="hist56">2Sa 7,14</label><br>
+		<input name='lecthist' type='radio' id='hist57' value='2Re 11,17' /><label for="hist57">2Re 11,17</label><br>
+		<input name='lecthist' type='radio' id='hist58' value='2Re 23,1ss' /><label for="hist58">2Re 23,1ss</label><br>
+		<input name='lecthist' type='radio' id='hist59' value='Neh 8' /><label for="hist59">Neh 8</label><br>
+		<input name='lecthist' type='radio' id='hist60' value='2Re 17,7-23' /><label for="hist60">2Re 17,7-23</label><br>
+		<input name='lecthist' type='radio' id='hist61' value='2Re 23,26s' /><label for="hist61">2Re 23,26s</label><br>
+
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Am 1,9' /><label for="prof0">Am 1,9</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Mal 2,14' /><label for="prof1">Mal 2,14</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Ez 17,13s' /><label for="prof2">Ez 17,13s</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Jer 34,18' /><label for="prof3">Jer 34,18</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Ez 16,6-14' /><label for="prof4">Ez 16,6-14</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Jer 22,9' /><label for="prof5">Jer 22,9</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Jer 31,31-35ss' /><label for="prof6">Jer 31,31-35ss</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Os 2,4' /><label for="prof7">Os 2,4</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Ez 16,15-43' /><label for="prof8">Ez 16,15-43</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Jer 33,20s' /><label for="prof9">Jer 33,20s</label><br>
+		<input name='lectprof' type='radio' id='prof10"' value='Os 2,20-24' /><label for="prof10">Os 2,20-24</label><br>
+		<input name='lectprof' type='radio' id='prof11"' value='Jer 32,37-41' /><label for="prof11">Jer 32,37-41</label><br>
+		<input name='lectprof' type='radio' id='prof12"' value='Ez 6,26' /><label for="prof12">Ez 6,26</label><br>
+		<input name='lectprof' type='radio' id='prof13"' value='Ez 16,60' /><label for="prof13">Ez 16,60</label><br>
+		<input name='lectprof' type='radio' id='prof14"' value='Ez 34,23s' /><label for="prof14">Ez 34,23s</label><br>
+		<input name='lectprof' type='radio' id='prof15"' value='Ez 36,26-28' /><label for="prof15">Ez 36,26-28</label><br>
+		<input name='lectprof' type='radio' id='prof16"' value='Ez 37,27' /><label for="prof16">Ez 37,27</label><br>
+		<input name='lectprof' type='radio' id='prof17"' value='Is 54,9' /><label for="prof17">Is 54,9</label><br>
+		<input name='lectprof' type='radio' id='prof18"' value='Is 55,3' /><label for="prof18">Is 55,3</label><br>
+		<input name='lectprof' type='radio' id='prof19"' value='Is 42,6' /><label for="prof19">Is 42,6</label><br>
+		<input name='lectprof' type='radio' id='prof20"' value='Is 49,6ss' /><label for="prof20">Is 49,6ss</label><br>
+		<input name='lectprof' type='radio' id='prof21"' value='Dan 11,28ss' /><label for="prof21">Dan 11,28ss</label><br>
+		<input name='lectprof' type='radio' id='prof22"' value='Is 53,10-11' /><label for="prof22">Is 53,10-11</label><br>
+
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='1Cor 11,25' /><label for="cart0">1Cor 11,25</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Gál 3,15-18' /><label for="cart1">Gál 3,15-18</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Ef 2,12ss' /><label for="cart2">Ef 2,12ss</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Rom 9,4' /><label for="cart3">Rom 9,4</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Gál 4,24ss' /><label for="cart4">Gál 4,24ss</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='2Cor 3,6ss' /><label for="cart5">2Cor 3,6ss</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Rom 11,27' /><label for="cart6">Rom 11,27</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='2Cor 6,16' /><label for="cart7">2Cor 6,16</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Rom 5,5' /><label for="cart8">Rom 5,5</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Rom 8,4- 16' /><label for="cart9">Rom 8,4- 16</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='Heb 8,6-12' /><label for="cart10">Heb 8,6-12</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='Heb 12,24' /><label for="cart11">Heb 12,24</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='Heb 9,15-20' /><label for="cart12">Heb 9,15-20</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='Heb 10,1-22' /><label for="cart13">Heb 10,1-22</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='Heb 13,20' /><label for="cart14">Heb 13,20</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='1 Pe 2,9' /><label for="cart15">1 Pe 2,9</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='Ap 5,9s' /><label for="cart16">Ap 5,9s</label><br>
+		<input name='lectcart' type='radio' id='cart17' value='Ap 21,2.9' /><label for="cart17">Ap 21,2.9</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mc 14,24' />/><label for="ev0">Mc 14,24</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 26,28' />/><label for="ev1">Mt 26,28</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Lc 22,20;' />/><label for="ev2">Lc 22,20;</label><br>
+	
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "Dios quiere llevar a los hombres a una vida de comunión con él. Esta idea, fundamental para la doctrina de la *salvación, es la que expresa el tema de la alianza. En el AT di- rige todo el pensamiento religioso, pero se ve cómo con el tiempo se va profundizando. En el NT adquiere una plenitud sin igual, pues ahora tiene ya por contenido todo el misterio de Jesucristo. <br>AT. La alianza (berit), antes de referirse a las relaciones de los hombres con Dios, pertenece a la experiencia social de los hombres. Éstos se ligan entre sí con pactos y contratos. Acuerdos entre grupos o individuos iguales que quieren prestarse ayuda : son las alianzas de paz (Gén 14,13; 21,22ss; 26,28; 31,43ss; 1Re 5,26; 15,19), las alianzas de hermanos (Am 1,9), los pactos de amistad (lSa 23,18), e incluso el matrimonio (Mal 2,14). Tratados desiguales, en que el poderoso promete su protección al débil, mientras que éste se compromete a servirle: el antiguo Oriente practicaba corrientemente estos pactos de vasallaje, y la historia bíblica ofrece diversos ejemplos de ellos (Jos 9,11-15; lSa 11,1; 2Sa 3,12 ss). En estos casos el inferior puede solicitar la alianza; pero el poderoso la otorga según su beneplácito y dicta sus condiciones (cf. Ez 17,13s). La conclusión del pacto se hace según un ritual consagrado por el uso. Las partes se comprometen con juramento. Se cortan animales en dos y se pasa por entre los trozos pronunciando imprecaciones contra los eventuales transgresores (cf. Jer 34,18). Final-mente, se establece un memorial: se planta un árbol o se erige una piedra, que en . adelante serán los testigos del pacto (Gén 21,33; 31,48ss). Tal es la experiencia fundamental, a partir de la cual Israel se representó sus relaciones con Dios. <br>I. LA ALIANZA DEL SINAÍ. <br>El tema de la alianza no tardó en introducirse en el AT: forma el punto de partida de todo el pensamiento religioso. En el Sinaí, el pueblo libertado entró en alianza con Yahveh y así fue como el culto de Yahveh vino a ser su religión nacional. Evidentemente, la alianza en cuestión no es un pacto entre iguales; es análoga a los tratados de vasallaje: Yahveh decide con soberana libertad otorgar su alianza a Israel y él mismo dicta sus condiciones. Sin embargo, no se lleva demasiado lejos la comparación, pues la alianza sinaítica, dado que es cosa de Dios, es de un orden particular: de golpe revela un aspecto esencial del designio divino. <br>1. La alianza en el designio de Dios.<br> Ya en la visión de la zarza que ardía reveló Yahveh a un mismo tiempo a Moisés su nombre y su designio para con Israel: quiere libertar a Israel de Egipto para asentarlo en la tierra de Canaán (Ex 3,7-10.16s), pues Israel es «su pueblo» (3,10), al que quiere dar latierra prometida a sus padres (cf. Gén 12,7; 13,15). Esto supone ya que por parte de Dios es Israel objeto de *elección y depositario de una *promesa. El *éxodo viene luego a confirmarla revelación del Horeb: al libertar Dios efectivamente a su pueblo muestra que es el Señor y que es capaz de imponer su voluntad ; así, el pueblo libertado responde al acontecimiento con su *fe (Éx 14,31). Ahora, una vez adquirido este punto, puede Dios ya revelar su designio de alianza: «Si escucháis mi voz y observáis mi alianza, seréis mi propiedad entre todos los pueblos; porque mía es toda la tierra, pero vosotros seréis para mí un reino de sacerdotes y una nación consagrada» (Éx 19,5s). Estas .palabras subrayan la gratuidad de la elección divina: Dios escogió a Israel sin méritos por su parte (Dt 9,4ss), porque lo ama y quería mantener el juramento hecho a sus padres (Dt 7,6ss). Habiéndolo separado de las *naciones paganas, se lo reserva exclusivamente: Israel será su *pueblo, le servirá con su *culto, vendrá a ser su *reino. Por su parte, Yahveh le garantiza ayuda y protección : ¿no lo había ya en tiempos del éxodo «llevado sobre alas de águila y traído a sí» (Éx 19,4)? Y ahora, frente al porvenir, le renueva sus promesas: el *ángel de Yahveh caminará delante de él para facilitarle la conquista de la *tierra prometida; allí le colmará Dios de sus *bendiciones y le garantizará la *vida y la *paz (Éx 23,20-31). La alianza, momento capital en el designio de Dios, domina así toda la evolución futura, cuyos detalles, sin embargo, no se revelan totalmente desde el comienzo. <br>2. Las cláusulas de la alianza.<br> *Dios, al otorgar su afianza a Israel y hacerle promesas, le impone también condiciones que Israel deberá observar. Los relatos que se entrelazan en el Pentateuco ofrecen varias formulaciones de estas cláusulas que reglamentan el pacto y constituyen la *ley. La primera concierne al culto del único Yahveh y la proscripción de la *idolatría (Éx 20,3ss; Dt 5,7ss). De aquí se desprende inmediatamente la repulsa de toda alianza con las *naciones paganas (cf. Éx 23,24; 34,12-16). Pero también se sigue que Israel deberá aceptar todas las *voluntades divinas, que en-volverán su existencia entera en una red tupida de prescripciones: «Moisés expuso todo lo que le había prescrito Yahveh. Entonces todo el pueblo respondió: 'Todo lo que ha di-cho Yahveh, lo observaremos'» (Ex 19,7s). Compromiso solemne, cuyo respeto condicionará para siempre el destino histórico de Israel. El pueblo de Israel se halla en el cruee de los caminos. Si *obedece, tiene aseguradas las *bendiciones divinas; si falta a su palabra, él mismo se condena a las *maldiciones (cf. Éx 23, 20-33; Dt 28; Lev 26). <br>3. La conclusión de la alianza.<br> El relato complejo del Éxodo conserva dos rituales diferentes de la conclusión de la alianza. En el primero, Moisés, Aarón y los ancianos de Israel toman una comida sagrada en presencia de Yahveh, al que contemplan (Éx 24,1s.9ss). El segundo pa-rece reproducir una tradición litúrgica conservada en los santuarios del norte. Moisés erige doce estelas para las doce tribus y un *altar para el sacrificio. Ofrece sacrificios, derrama parte de la sangre sobre el altar y rocía con ella al pueblo para indicar la unión que se establece entre Yahveh e Israel. Entonces el pueblo se compromete solemnemente a observar las cláusulas de la alianza (Éx 24,3- 8). La *sangre de la alianza desempeña un papel esencial en este ritual. Una vez concluido el pacto, diversos objetos perpetuarán su recuerdo, atestiguando a través de los siglos el compromiso inicial de Israel, El *arca de la alianza es un escriño en el que se depositan las «tablas del testimonio» (es decir, de la ley); ella es elmemorial de la alianza y el signo de la presencia de Dios en Israel (Éx 25,10-22; Núm 10,33-36). La tienda en que se la coloca, esbozo del *templo futuro, es el lugar del encuentro de Yahveh y su pueblo (Éx 33,7-11). Arca de alianza y tienda de 'la cita marcan el lugar de culto central, en el que la confederación de las tribus aporta a Yahveh el homenaje oficial del pueblo que él se ha escogido, sin perjuicio de los otros lugares de culto. Con esto se indica el enlace perpetuo del culto israelita con el acto inicial que fundó la nación : la alianza del Sinaí. Este enlace es el que da a los rituales israelitas su sentido particular, pese a todos los préstamos que en él se observan, así como la ley entera no tiene sentido sino en función de la alianza, cuyas cláusulas enuncia. <br>4. Sentido y límites de la alianza sinaítica.<br> La alianza sinaítica reveló en forma definitiva un aspecto esencial del designio de salvación : Dios quiere asociarse los hombres haciendo de ellos una comunidad cultual entregada a su servicio, regida por su ley, depositaria de sus promesas. El NT realizará en su plenitud este proyecto divino. En el Sinaí comienza la realización, pero en diversos aspectos queda todavía ambigua e imperfecta. Aun cuando la alianza es un libre *don de Dios a Israel, su forma contractual parece ligar el designio de salud con el destino histórico de Israel y se expone a presentar la salvación como el salario de una *fidelidad humana. Además, su limitación a una sola nación se compagina mal con el universalismo del designio de Dios, aunque por lo de-más tan claramente afirmado. Final-mente, la garantía material temporal de las promesas divinas (la felicidad terrestre de Israel) podría también disimular el objetivo religioso de la alianza: el establecimiento del reinado de Dios en Israel, y por Israel en el mundo entero. A pesar de es-tos límites, la alianza sinaítica do-minará la vida de Israel en lo sucesivo y el desarrollo ulterior de la revelación. <br>II. LA ALIANZA EN LA VIDA Y EN EL PENSAMIENTO DE ISRAEL. <br>1. Las renovaciones de la alianza.<br> Sería imprudente afirmar que la alianza se renovaba anualmente en el culto israelita. Sin embargo, conserva fragmentos de una liturgia que supone una renovación de este género, con el enunciado de las maldiciones rituales (Dt 27,2-26) y la lectura solemne de la ley (Dt 31,9-13.24-27; 32,45ss); pero este último punto está previsto solamente para cada siete años (31,10), y no hay modo de verificar su práctica en época antigua. Es más fácil comprobar una renovación efectiva de la alianza en ciertos puntos cruciales de la historia. Josué la renueva en Siquem, y el pueblo reitera su compromiso para con Yahveh (Jos 8,30-35; 24,1-28). El pacto de *David con los ancianos de Israel (2Sa 5,3) va seguido de una promesa divina: Yahveh otorga su alianza a David y a su dinastía (Sal 89,4ss. 20-38; cf. 2Sa 7,8-16; 23,5), a condición únicamente de que la alianza del Sinaí sea fielmente observada (Sal 89,31ss; 132,12; cf. 2Sa 7,14). La oración y la bendición de Salomón en el momento de la inauguración del *templo enlazan a la vez con esta alianza davídica y con la del Sinaí, cuyo memorial conserva el templo (1 Re 8,14- 29.52-61). Las mismas renovaciones bajo Joás (2Re 11,17), y sobre todo bajo Josías, que sigue el ritual deuteronómico (2Re 23,1ss; cf. Éx 24,3-8). La lectura solemne de la ley por Esdras presenta un contexto muy semejante (Neh 8). Así el pensamiento de la alianza se mantiene como idea directriz que sirve de base a todas las reformas religiosas. <br>2. La reflexión profética.<br> El mensaje de las profecías se refiere a ella constantemente. Si denuncian los profetas unánimemente lainfidelidad de Israel a Dios, si anuncian las catástrofes que amenazan al pueblo pecador, lo hacen en función del pacto del Sinaí, de sus exigencias y de las maldiciones que formaban parte de su tenor. Pero para conservar viva la doctrina de alianza en el espíritu de sus contemporáneos, los profetas hacen aparecer en ella aspectos nuevos que la tradición antigua contenía sólo en estado virtual. Originariamente se presentaba la alianza sobre todo en un aspecto jurídico: un pacto entre Yahveh y su pueblo. Los profetas la cargan con notas afectivas, buscando en la experiencia humana otras analogías para explicar las relaciones mutuas entre Dios y su pueblo. Israel es el rebaño y Yahveh el *pastor, Israel es la *viña y Yahveh el viñador. Israel es el *hijo de Yahveh y Yahveh el *padre, Israel es la esposa y Yahveh el *esposo. Estas imágenes, sobre todo la última, hacen aparecer la alianza sinaítica como un asunto de *amor (cf. Ez 16,6-14): amor que previene y amor gratuito de Dios, que reclama por su parte un amor que se traducirá en *obediencia. La espiritualidad deuteronómica recoge el fruto de esta profundización: si recuerda sin cesar las exigencias, las promesas y las amenazas de la alianza, es para subrayar mejor el amor de Dios (Dt 4,37; 7,8; 10,15), que aguarda el amor de Israel (Dt 6,5; 10,12s; 11,1). Tal es el fondo sobre el que se destaca ya la fórmula fundamental de la alianza: «Vosotros sois mi pueblo y yo soy vuestro Dios.» <br>3. Las síntesis de la historia sagrada.<br> Paralelamente a la predicación de los profetas, la reflexión de los historiadores sagrados sobre el pasado de Israel tiene como punto de partida la doctrina de la alianza. Ya el yahvista enlazaba la alianza del Sinaí con la alianza más antigua concluida por *Abraham, marco de las primeras promesas (Gén 15). Los escribas deuteronomistas, describiendo la historia acaecida desde los tiempos de Moisés hasta la ruina de Jerusalén (de Jos a 2Re), no tienen otro fin sino el de hacer resaltar en los hechos la aplicación del pacto sinaítico: Yahveh cumplió sus pro-mesas; pero la infidelidad de su pueblo le obligó a infligirle también los castigos previstos. Tal es el sentido de la doble ruina de Samaria (2Re 17,7-23) y de Jerusalén (2Re 23,26s). Cuando durante la cautividad, el historiador sacerdotal des-cribe el designio de Dios desde la creación hasta la época mosaica, la alianza divina le sirve de hilo conductor: después del primer fracaso del designio creador y la catástrofe del diluvio, la alianza de Noé adquiere una amplitud universal (Gén 9,1-17); después del segundo fracaso y la dispersión de Babel, la alianza de Abraham restringe el designio de Dios a la sola descendencia del patriarca (Gén 17,1- 14); después de la prueba de Egipto, la alianza sinaítica prepara el porvenir fundando el pueblo de Dios. Israel comprende así el sentido de su historia refiriéndose al pacto del Sinaí. <br>III. HACIA LA NUEVA ALIANZA. <br>1. La ruptura de la antigua alianza.<br> Los profetas no sólo profundizaron la doctrina de la alianza subrayando las implicaciones del pacto sinaítico. Volviendo los ojos hacia el porvenir, presentaron en su conjunto el drama del pueblo de Dios que se cierne en tomo a é1. A consecuencia de la infidelidad de Israel (Jer 22,9), el antiguo pacto queda roto (Jer 31,32), como un *matrimonio que se des-hace a causa de los adulterios de la esposa (Os 2,4; Ez 16,15-43). Dios no ha tomado la iniciativa de esta ruptura, pero saca las consecuencias de ella: Israel sufrirá en su historia el justo castigo de su infidelidad; tal será el sentido de sus *pruebas nacionales: ruina de *Jerusalén, *cautividad, *dispersión.<br>2. Promesa de la nueva alianza. <br>A pesar de todo esto, el designio de alianza revelado por Dios subsiste invariable (Jer 31,35ss; 33,20s). Habrá, pues, al final de los tiempos, una alianza nueva. Oseas la evoca bajo los rasgos de nuevos esponsales que comportarán a la esposa *amor, *justicia, *fidelidad,. *conocimiento de Dios, y que restablecerán la *paz entre el hombre y la creación entera (Os 2,20-24). Jeremías precisa que entonces serán cambiados los *corazones humanos, puesto que se inscribirá en ellos la ley de Dios (Jer 31,33s; 32,37-41). Ezequiel anuncia la conclusión de una alianza eterna, de una alianza de paz (Ez 6,26), que renovará la del Sinaí (Ez 16,60) y la de David (34,23s), y que comportará el cambio de los corazones y el don del *Espíritu divino (36,26ss). Así se realizará el programa esboza-do en otro tiempo: «Vosotros seréis mi pueblo y yo seré vuestro Dios» (Jer 31,33; 32,38; Ez 36,28; 37,27). En el mensaje de consolación adopta esta alianza de nuevo los rasgos de las nupcias de Yahveh y de la nueva Jerusalén (Is 54); alianza inquebrantable como la que se había jurado a Noé (54,9s), alianza hecha de las gracias prometidas a David (55,3). Tiene por artífice al misterioso *siervo, al que Dios constituye como «alianza del *pueblo y luz de las *naciones» (42,6; 49,6ss). Así la visión se amplía magníficamente. El designio de alianza que domina toda la historia humana hallará su punto culminante al final de los tiempos. Revelado en forma imperfecta en la alianza patriarcal, mosaica, davídica, se realizará finalmente en una forma perfecta, a la vez interior y universal, por la mediación del siervo de Yahveh. Cierto, la historia de Israel proseguirá su curso. En consideración del pacto del Sinaí, las instituciones judías llevarán el nombre de alianza santa (Dan 11,28ss). Pero esta historia estará de hecho dirigida hacia el porvenir, hacia la nueva alianza, hacia el Nuevo Testamento. ";
+	document.getElementById("textodifour2").innerHTML = "<br>NT. Los Setenta, utilizando la pa-labra diatheke para traducir el hebreo berit, hacían una elección significativa, que había de tener considerable influencia en el vocabulario cristiano. En la lengua del derecho helenístico, esta palabra designaba el pacto por el cual alguien dispone de sus bienes (testamento) o declara las disposiciones que en-tiende imponer. El acento no recae tanto sobre la naturaleza de la convención jurídica como sobre la autoridad del que con ella fija el curso de las cosas. Las traducciones griegas, al utilizar este vocablo, subrayan a la vez la trascendencia divina y la condescendencia que forma el origen del pueblo de Israel y de su ley. <br>1. CONCLUSIÓN DE LA NUEVA ALIANZA POR JESÚS.<br> La palabra diatheke figura en los cuatro relatos de la última Cena; en un contexto de importancia única. Jesús, después de tomar el pan y de distribuirlo diciendo: «Tomad y comed, éste es mi cuerpo», toma el cáliz de vino, lo bendice y lo hace circular. La fórmula más breve nos ha sido conservada por Marcos: «Ésta es mi sangre, la sangre de la alianza, que será derramada por una multitud» (Mc 14,24); Mateo añade: «para la remisión de los pecados» (Mt 26,28). Lucas y Pablo dicen: «Este cáliz es la nueva alianza de mi sangre» (Lc 22,20; iCor 11,25), y Lucas solo : «que será derramada por vosotros». La distribución del cáliz es un gesto ritual. Las palabras pronunciadas la enlazan con el gesto que Jesús está a punto de realizar: su muerte aceptada libremente por la *redención de la multitud. En este último rasgo se ve que Jesús se considera como el *siervo doliente (Is S3,11s) y comprende su muerte como un sacrificio expiatorio (cf. 53,10). Con esto viene a ser el *mediador de alianza que dejaentrever el mensaje de consolación (Is 42,6). Pero la «sangre de la alianza» recuerda también que la alianza del Sinaí se había concluido en la *sangre (Ex 24,8): los sacrificios de animales son sustituidos por un sacrificio nuevo, cuya sangre realiza eficazmente una unión definitiva entre Dios y los hombres. Así se cumple la promesa de la «nueva alianza» enunciada por Jeremías y Ezequiel: gracias a la sangre de Jesús serán cambiados los corazones humanos y se dará el Espíritu de Dios. La muerte de Cristo, a la vez sacrificio de pascua, sacrificio de alianza y sacrificio expiatorio, llevará a su cumplimiento las *figuras del AT, que la esbozaban de diversas maneras. Y puesto que este acto se hará en adelante presente en un gesto ritual que Jesús ordena «rehacer en *memoria suya», mediante la participación *eucarística realizada con fe se unirán los fieles en la forma más estrecha con el misterio de la nueva alianza y beneficiarán así de sus gracias. <br>II. REFLEXIÓN CRISTIANA SOBRE LA NUEVA ALIANZA.<br> 1. San Pablo.<br> El tema de la alianza, situado por Jesús mismo en el corazón del culto cristiano, constituye el trasfondo de todo el NT, incluso donde no se indica explícitamente. Pablo, en su argumentación contra los judaizantes, que tienen por necesaria la observancia de la ley dada por la alianza sinaítica, dice que aun antes de que viniera la ley, otra disposición (diatheke) divina se había enunciado en buena y debida forma : la *promesa hecha a Abraham. La ley no ha podido anular esta disposición. Ahora bien, Cristo es el cumplimiento de la promesa (Gál 3,15-18). Así pues, por la *fe en él se obtiene la salvación, no por la observancia de la ley. Esta visión de las cosas subraya un hecho: la antigua alianza misma se insertaba en una economía gratuita, una economía de promesa, que Dios había instituido libremente. El NT es el punto en que desemboca aquella economía. Pablo no discute que la «disposición» fundada en el Sinaí viniera de Dios: las «alianzas» renovadas eran uno de los privilegios de *Israel (Rom 9,4), al que las *naciones eran hasta entonces extrañas (Ef 2,12). Pero cuando se compara esta disposición con la que Dios acaba de revelar en Cristo, se ve la superioridad de la nueva alianza sobre la antigua (Gál 4,24ss; 2Cor 3,6ss). En la nueva alianza se quitan los pecados (Rom 11,27); Dios habita entre los hombres (2Cor 6,16); cambia el corazón de los hombres y pone en ellos su espíritu (Rom 5,5; cf. 8,4- 16). Ya no es, pues, la alianza de la letra, sino la del espíritu (2Cor 3,6), la que aporta consigo la *libertad de los hijos de Dios (Gál 4,24). Alcanza a las naciones como al pueblo de Israel, pues la sangre de Cristo ha rehecho la *unidad del género humano (Ef 2,12ss). Pablo, reasumiendo las perspectivas de las promesas proféticas, que ve cumplidas en Cristo, elabora así un cuadro general de la historia humana, en el que el tema de la alianza constituye el hilo conductor. <br>2. La epístola a los hebreos, en una óptica un tanto diferente, opera una síntesis paralela de los mismos elementos. Por la *cruz, Cristo sacerdote entró en el santuario del cielo. Está allí para siempre delante de Dios, intercediendo por nosotros e inaugurando nuestra comunión con él. Así se realiza la nueva alianza anunciada por Jeremías (Heb 8,8-12; Jer 31,31-34); una alianza «mejor», dada la calidad eminente de su mediador (Heb 8,6; 12,24); un:s alianza sellada en la sangre como la primera (Heb 9,20; Éx 24,8), no ya en sangre de animales, sino en la de Cristo mismo, derramada por nuestra *redención (9,lls). Esta nueva disposición había sido preparada por la precedente, pero ha hecho a ésta caduca, y sería vano aferrarse a lo que va adesaparecer (8,13). Así como una disposición testamentaria entra en vigor con la muerte del testador, así la muerte de Jesús nos ha puesto en posesión de la *herencia prometida (Heb 9,15ss). La antigua alianza era, pues, imperfecta, ya que se mantenía en el plano de las sombras y de las *figuras, aseguran-do sólo imperfectamente el encuentro de los hombres con Dios. Por el contrario, la nueva es perfecta, puesto que Jesús, nuestro sumo sacerdote, nos asegura para siempre el acceso cerca de Dios (Heb 10,1-22). Cancelación de los pecados, unión de los hombres con Dios: tal es el resultado obtenido por Jesucristo, que «por la sangre de una alianza eterna ha venido a ser el *pastor supremo de las ovejas» (Heb 13,20). <br>3. Otros textos.<br> Sin necesidad de citar explícitamente el AT, los otros libros del NT evocan los frutos de la cruz de Cristo en términos que recuerdan el tema de la alianza. Mejor que Israel en el Sinaí, nosotros hemos venido a ser «un *sacerdocio regio y una nación santa» (1 Pe 2,9; cf. Éx 19,5s). Este privilegio se extiende ahora a una comunidad, de la que forman parte hombres «de toda raza, lengua, pueblo y nación» (Ap 5,9s). Es cierto que aquí en la tierra la realización de la nueva alianza comporta todavía limitaciones. .Hay, pues, que contemplarla en la perspectiva escatológica de la *Jerusalén celestial: en esta «morada de Dios con los hombres» «ellos serán su pueblo, y él, Dios con ellos, será su Dios» (Ap 21,3). La nueva alianza se consuma en las nupcias del *cordero y de la *Iglesia, su esposa (Ap 21,2.9). Al término del desarrollo doctrinal, el tema de la alianza recubre así todos los que, del AT al NT, habían servido para definir las relaciones de Dios y de los hombres. Para hacer que aparezca su contenido, hay que hablar de *filiación, de *amor, de *comunión. Sobre todo, hay que referirse al acto por el que Jesús fundó la nueva alianza : por el *sacrificio de su cuerpo y de su sangre derramada hizo de los hombres su *cuerpo. El AT no conocía todavía este don de Dios; sin embargo, su historia y sus instituciones esbozaban oscuramente sus rasgos, puesto que allí todo concernía ya a la alianza entre Dios y los hombres. -> Amor - Eucaristía - Ley - Mediador - Sacrificio.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=62;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=23;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=18;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=3;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

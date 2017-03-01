@@ -1,0 +1,639 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ÁNGELES</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 3,24' /><label for="hist0">Gén 3,24</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 28,10-12' /><label for="hist1">Gén 28,10-12</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 16,7' /><label for="hist2">Gén 16,7</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 22,11' /><label for="hist3">Gén 22,11</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Gén 16,13' /><label for="hist4">Gén 16,13</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Ex 25,18s' /><label for="hist5">Ex 25,18s</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Éx 3,2' /><label for="hist6">Éx 3,2</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Éx 33,20' /><label for="hist7">Éx 33,20</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Éx 23,20' /><label for="hist8">Éx 23,20</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Éx 12,23' /><label for="hist9">Éx 12,23</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='1Re 22, 19' /><label for="hist10">1Re 22, 19</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='1Re 6,23-29' /><label for="hist11">1Re 6,23-29</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='2Re 19,35' /><label for="hist12">2Re 19,35</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Job 4,18' /><label for="hist13">Job 4,18</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Job 5,1' /><label for="hist14">Job 5,1</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Job 15,15' /><label for="hist15">Job 15,15</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='Job 1,12' /><label for="hist16">Job 1,12</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='Job 2, 1-10' /><label for="hist17">Job 2, 1-10</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Dt 32,8' /><label for="hist18">Dt 32,8</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Neh 9,6' /><label for="hist19">Neh 9,6</label><br>
+		<input name='lecthist' type='radio' id='hist20' value='Jue 2,1' /><label for="hist20">Jue 2,1</label><br>
+		<input name='lecthist' type='radio' id='hist21' value='1Tim 6.16' /><label for="hist21">1Tim 6.16</label><br>
+		<input name='lecthist' type='radio' id='hist22' value='1Tim 3,16' /><label for="hist22">1Tim 3,16</label><br>
+		<input name='lecthist' type='radio' id='hist23' value='2Sa 24,16s' /><label for="hist23">2Sa 24,16s</label><br>
+		<input name='lecthist' type='radio' id='hist24' value='Tob 3,17' /><label for="hist24">Tob 3,17</label><br>
+		<input name='lecthist' type='radio' id='hist25' value='Tob 12,12-16' /><label for="hist25">Tob 12,12-16</label><br>
+		<input name='lecthist' type='radio' id='hist26' value='Jos3,13ss' /><label for="hist26">Jos3,13ss</label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Is 6,1-3' /><label for="prof0">Is 6,1-3</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 6,7' /><label for="prof1">Is 6,7</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Dan 4,10' /><label for="prof2">Dan 4,10</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Dan 3,49s' /><label for="prof3">Dan 3,49s</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Dan 10,13-21' /><label for="prof4">Dan 10,13-21</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Dan 8,15-19' /><label for="prof5">Dan 8,15-19</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Dan  9,21ss' /><label for="prof6">Dan  9,21ss</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Dan 12,1' /><label for="prof7">Dan 12,1</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Dan 10,9' /><label for="prof8">Dan 10,9</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Ez 10,1ss' /><label for="prof9">Ez 10,1ss</label><br>
+		<input name='lectprof' type='radio' id='prof10' value='Ez 40,3s' /><label for="prof10">Ez 40,3s</label><br>
+		<input name='lectprof' type='radio' id='prof11' value='Zac 3, 1 s' /><label for="prof11">Zac 3, 1 s</label><br>
+		<input name='lectprof' type='radio' id='prof12' value='Zac 1,8s' /><label for="prof12">Zac 1,8s</label><br>
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Jds 9' /><label for="cart0">Jds 9</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Heb 1,14' /><label for="cart1">Heb 1,14</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Heb 2,7' /><label for="cart2">Heb 2,7</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Heb 1,6s' /><label for="cart3">Heb 1,6s</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Heb 9,5 ' /><label for="cart4">Heb 9,5 </label><br>
+		<input name='lectcart' type='radio' id='cart5' value='Ap 8,2-3' /><label for="cart5">Ap 8,2-3</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Ap 7,11s' /><label for="cart6">Ap 7,11s</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='Ap 14,14-16' /><label for="cart7">Ap 14,14-16</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='Ap 5,8-11' /><label for="cart8">Ap 5,8-11</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='Ap 12,1-9' /><label for="cart9">Ap 12,1-9</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='Ap 4,8-11' /><label for="cart10">Ap 4,8-11</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='Ap 22, 8s' /><label for="cart11">Ap 22, 8s</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='1Tes 4,16' /><label for="cart12">1Tes 4,16</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='2Tes 1,7' /><label for="cart13">2Tes 1,7</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='Col 1,16' /><label for="cart14">Col 1,16</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='Col 2,18' /><label for="cart15">Col 2,18</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='Ef 1,20-21' /><label for="cart16">Ef 1,20-21</label><br>
+		<input name='lectcart' type='radio' id='cart17' value='1Pe 1,12' /><label for="cart17">1Pe 1,12</label><br>
+		<input name='lectcart' type='radio' id='cart18' value='Hch 1,10s' /><label for="cart18">Hch 1,10s</label><br>
+		<input name='lectcart' type='radio' id='cart19' value='Hch 12,15' /><label for="cart19">Hch 12,15</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 1,20.24' /><label for="ev0">Mt 1,20.24</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 2,13.19' /><label for="ev1">Mt 2,13.19</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 4,11' /><label for="ev2">Mt 4,11</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Mt 22,30' /><label for="ev3">Mt 22,30</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Mt 24,31-36' /><label for="ev4">Mt 24,31-36</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Mt 13,39.49' /><label for="ev5">Mt 13,39.49</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Mt 25.31' /><label for="ev6">Mt 25.31</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Mt 13,41' /><label for="ev7">Mt 13,41</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Mt 26,53' /><label for="ev8">Mt 26,53</label><br>
+		<input name='lectev' type='radio' id='ev9' value='Mt 28,5ss' /><label for="ev9">Mt 28,5ss</label><br>
+		<input name='lectev' type='radio' id='ev10' value='Mt 18,10' /><label for="ev10">Mt 18,10</label><br>
+		<input name='lectev' type='radio' id='ev11' value='Lc 22,43' /><label for="ev11">Lc 22,43</label><br>
+		<input name='lectev' type='radio' id='ev12' value='Lc 15,10' /><label for="ev12">Lc 15,10</label><br>
+		<input name='lectev' type='radio' id='ev13' value='Lc 1,19.26' /><label for="ev13">Lc 1,19.26</label><br>
+		<input name='lectev' type='radio' id='ev14' value='Lc 2,9-14' /><label for="ev14">Lc 2,9-14</label><br>
+		<input name='lectev' type='radio' id='ev15' value='Lc 16,22' /><label for="ev15">Lc 16,22</label><br>
+		<input name='lectev' type='radio' id='ev16' value='Jn 1,51' /><label for="ev16">Jn 1,51</label><br>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El nombre de los ángeles no es un nombre de naturaleza, sino de función: hebr. mal'ak, gr. angelos, significa «mensajero». Los ángeles son «espíritus destinados a servir, enviados en misión de favor de los que han de heredar la salud» (Heb 1,14). Inaccesibles a nuestra percepción ordinaria, constituyen un mundo misterioso. Su existencia no es nunca un problema para la Biblia; pero fuera de este punto la doctrina relativa a los ángeles presenta un desarrollo evidente, y la manera como se habla de ellos y como se los representa supone una utilización constante de los recursos del simbolismo religioso. <br>AT. 1. Los ángeles de Yahveh y el ángel de Yahveh.<br> El AT, sirviéndose de un rasgo corriente en las mitologías orientales, pero adaptándolo a la revelación del Dios único, representa con frecuencia a Dios como un soberano oriental (IRe 22, 19; Is 6,1ss). Los miembros de su corte son también sus *servidores (Job 4,18); se los llama también los *santos (Job 5,1; 15,15; Sal 89,6; Dan 4,10) o los *hijos de Dios (Sal 29,1; 89,7; Dt 32,8). Entre ellos los querubines (cuyo nombre es de origen mesopotámico) sostienen su trono (Sal 80,2; 99,1), arrastran su carro (Ez 10,1ss), le sirven de montura (Sal 18,11), o guardan la entrada de sus dominios para vedarla a los profanos (Gén 3,24); los serafines (los «ardientes») cantan su gloria (Is 6,3), y uno de ellos purifica los labios de Isaías durante su visión inaugural (Is 6,7). Se halla también a los querubines en la iconografía del templo, en el que resguardan el arca con sus alas (IRe 6,23-29, Ex 25,18s). Todo un ejército celeste (IRe 22,19; Sal 148,2; Neh 9,6) realza así la *gloria de Dios; está a su disposición para gobernar el mundo y ejecutar sus órdenes (Sal 103, 20); establece un enlace entre el cielo y la tierra (Gén 28,12). Sin embargo, junto a estos enigmáticos mensajeros, los antiguos relatos bíblicos conocen también un ángel de Yahveh (Gén 16,7; 22,11; Éx 3,2: Jue 2,1), que no difiere de Yahveh mismo manifestado acá abajo en forma visible (Gén 16,13: Ex 3,2): *Dios, que habita en una luz inaccesible (ITim 6.16), no puede dejar ver su *rostro (Éx 33,20): los hombres no perciben nunca de él sino un misterioso reflejo. El ángel de Yahveh de los viejos textos sirve, pues, para traducir una ideología todavía arcaica, que con la denominación de «ángel del Señor», deja huellas hasta en el NT (Mt 1,20.24: 2,13.19), e incluso en la patrística. Sin embargo, a medida que progresa la revelación se va asignando más y más su papel a los ángeles, mensajeros ordinarios de Dios. <br>2. Desarrollo de la doctrina de los ángeles.<br> Originariamente se atribuian indistintamente a los ángeles tareas buenas o malas (cf. Job 1,12). Dios envia su buen ángel para que vele sobre Israel (ox 23,20); pero para una *misión funesta envía ángeles de desgracia (Sal 78,49), tales como el Exterminador (Éx 12,23; cf. 2Sa 24,16s; 2Re 19,35). Incluso el *Satán del libro de Job forma todavía parte de la corte divina (Job 1,6-12; 2, 1-10). Sin embargo, después de la cautividad se especializan mas los cometidos angélicos y los ángeles adquieren una calificación moral en relación con su función: ángeles buenos por un lado, Satán y los *demonios por el otro: entre unos y otros hay oposición constante (Zac 3, 1 s). Esta concepción de un mundo espiritual dividido revela la influencia indirecta de Mesopotamia y de Persia; para resistir mejor al sincretismo iranobabilónico. el pensamiento judío desarrolla su doctrina anterior; sin renunciar en nada a su riguroso monoteísmo, usa a veces de una simbólica prestada y sistematiza su representación del mundo angélico. Así el Libro de Tobías cita a los siete ángeles de la faz (Tob 12,15; cf. Ap 8,2), que tienen su réplica en la angelología de Persia. Pero no ha cambiado el papel asignado a los ángeles. Velan por los hombres (Tob 3,17; Sal 91,11; Dan 3,49s) y presentan a Dios sus oraciones (Tob 12,12); presiden los destinos de las naciones (Dan 10,13-21). A partir de Ezequiel explican a los profetas el sentido de sus visiones (Ez 40,3s; Zac 1,8s); esto viene finalmente a ser un rasgo literario característico de los apocalipsis (Dan 8,15-19; 9,21ss). Reciben *nombres en relación con sus funciones: Rafael, «Dios cura» (Tob 3,17; 12,15), Gabriel, «héroe de Dios» (Dan 8,16: 9,21), Miguel. «¿quién como Dios?». A éste, que es el príncipe de todos, está encomendada la comunidad judia (Dan 10,13.21; 12,1). Estos datos se amplifican todavía en la literatura apócrifa (Libro de Henoc) y rabínica, que trata de organizarlos en sistemas más o menos coherentes. Asi la doctrina del AT sobre la existencia del mundo angélico y su presencia en el mundo de los hombres se afirma con constancia. Pero las representaciones y clasificaciones que utiliza tienen necesariamente un carácter simbólico que hace muy delicada su apreciación. <br>NT. El NT recurre al mismo lenguaje convencional, que toma a la vez de los libros sagrados y de la tradición judía contemporánea. Así enumera los arcángeles (ITes 4,16; Jds 9), los querubines (Heb 9,5), los tronos, las dominaciones, los principados, las potestades (Col 1,16), a los que en otro lugar se añaden las virtudes (Ef 1,21). Esta jerarquía, cuyos grados varian en la expresión, no tiene el carácter de una doctrina ya fijada. Pero, como en el AT, lo esencial del pensamiento está en otra parte, y aquí se reordena en torno a la revelación de Jesucristo. <br>1. Los ángeles y Cristo.<br> El mundo angélico tiene su puesto en el pensamiento de Jesús. Los evangelistas hablan a veces de su trato intimo con los ángeles (Mt 4,11; Lc 22,43); Jesús menciona a los ángeles como seres reales y activos. Sin dejar de velar por los hombres, ven el rostro del Padre (Mt 18,10 p). Su vida está exenta de las sujeciones de la carne (cf. Mt 22,30 p). Aun cuando ignoran la fecha del juicio final, que es un secreto exclusivo del Padre (Mt 24,36 p), serán sus ejecutores (Mt 13,39.49; 24,31). Desde ahora participan en el gozo de Dios cuando los pecadores se convierten (Lc 15,10). Todos estos rasgos están conformes con la doctrina tradicional. Jesús precisa además su situación en relación con el *Hijo del hombre, esa figura misteriosa que le define a él mismo, particularmente en su *gloria futura: los ángeles le acompañarán el día de su parusía (Mt 25.31); ascenderán y descenderán sobre él (Jn 1,51), como en otro tiempo por la escalera de Jacob (Gén 28,10...); él los enviará para reunir a los elegidos (Mt 24,31 p) y descartar del reino a los condenados (Mt 13,41s). En el tiempo de la pasión están a su servicio y él podría requerir su intervención (Mt 26,53). El pensamiento cristiano primitivo no hace, pues, sino prolongar las palabras de Jesús, cuando afirma que los ángeles le son inferiores. Rebajado por debajo de ellos con su encarnación (Heb 2,7), merecía, sin embargo, su adoración en su calidad de *Hijo de Dios (Heb 1,6s; cf Sal 97,7). A repartir de su resurrección aparece claro que Dios los ha sometido a él (Ef 1,20s), una vez que habían sido creados en él, por él y para él (Col 1,16). Actualmente reconocen su *señorío (Ap 5,11s; 7,11s) y el último *día formarán su escolta (2Tes 1,7; Ap 14,14-16; cf. ITes 4,16). Asi el mundo angélico se subordina a Cristo, cuyo misterio ha contemplado (ITim 3,16; cf. IPe 1,12). <br>2. Los ángeles y los hombres.<br> En esta perspectiva los ángeles siguen desempeñando cerca de los hombres los cometidos que les asignaba ya el AT. Cuando una comunicación sobrenatural llega del cielo a la tierra, son ellos sus misteriosos mensajeros: Gabriel transmite la doble anunciación (Lc 1,19.26); un ejército celeste interviene la noche de Navidad (Lc 2,9-14); los ángeles anuncian también la resurrección (Mt 28,5ss p) y dan a conocer a Ios apóstoles el sentido de la ascensión (Act 1,10s). Auxiliares de Cristo en la obra de la salvación (Heb 1,14), se encargan de la custodia de los hombres (Mt 18,10; Act 12,15), presentan a Dios las oraciones de los santos (Ap 5,8; 8,3), conducen el alma de los justos al paraíso (Lc 16,22; «In paradisum deducant te angeli...»). Para proteger a la Iglesia llevan adelante en torno a Miguel el combate contra Satán, que dura desde los origenes (Ap 12,1-9). Un vinculo íntimo enlaza así al mundo terrenal con el mundo celestial; en el cielo los ángeles celebran una liturgia perpetua (Ap 4,8-11), a la que se asocia en la tierra la liturgia de la Iglesia (cf. gloria, prefacio, sanctus). Estamos rodeados de presencias sobrenaturales, que el vidente del Apocalipsis concreta en el lenguaje de convención consagrado por el uso. Esto exige de nuestra parte cierta reverencia (cf. Jos 3,13ss; Dan 10,9; Tob 12,16), que no se ha de confundir con la adoración (Ap 22, 8s). Si, pues, es necesario proscribir un culto exagerado de los ángeles, que perjudicaría al de Jesucristo (Col 2,18), no obstante, el cristiano debe conservar un sentido profundo de su presencia invisible y de su acción auxiliadora. -> Demonios - Dios - Espiritu - Gloria - Misión - Satán.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=27;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=13;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=20;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=17;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

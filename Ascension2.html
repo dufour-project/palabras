@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ASCENSIÓN</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "Es de fe que Cristo resucitado entró en la gloria, pero esto es un misterio que trasciende la experiencia sensible y no puede circunscribirse, a lo que parece, a la sola escena del monte de los Olivos, donde los apóstoles vieron como su maestro los abandonaba para retornar a Dios. De hecho los textos sagrados se expresan sobre el sentido, el momento, el modo de la exaltación celestial de Cristo, con una variedad, cuya riqueza es instructiva. A la luz de estos textos vamos a tratar de percibir la realidad profunda del misterio a través de la génesis de su expresión literaria. <br>I EL TRAYECTO ENTRE CIELO Y TIERRA <br>Según una concepción espontánea y universal adoptada también por la Biblia, el *cielo es la morada de la divinidad, hasta tal punto que este término sirve de metáfora para significar a *Dios. La *tierra, su escabel (Is 66,1), es la residencia de los hombres (Sal 115,16; Ecl 5,1). Así pues, para visitar a éstos «desciende» Dios del cielo (Gén 11 ,5; Ex 19, 11ss; Miq 1,3; Sal 144.5) y «asciende» de nuevo a él (Gén 17.22). La *nube es su vehículo (Núm 11. 25; Sal 18.10; Is 19.1). El *Espiritu enviado por Dios debe también descender (Is 32.15; Mt 3.16; IPe 1.12); asimismo la *palabra, la cual vuelve a él una vez realizada su obra (Is 55,10s; Sab 18,15). Los *ángeles por su parte, que habitan el cielo con Dios (IRe 22,19; Job 1,6; Tob 12,15; Mt 18,10), descienden para desempeñar sus misiones (Dan 4,10; Mt 28,2; Lc 22,43) y luego vuelven a ascender (Jue 13,20; Tob 12,20); subida y bajada que establecen el enlace entre cielo y tierra (Gén 28. 12; Jn 1,51). Para los hombres, el trayecto es en sí imposible. Hablar de subir al cielo equivale a expresar la búsqueda de lo inaccesible (Dt 30,12; Sal 139.8; Prov 30,4; Bar 3,29), cuando no es ya la pretensión de una soberbia insensata (Gén 11,4; Is 14, 14; Jer 51,53; Job 20,6; Mt 11,23). Ya es mucho que las oraciones suban al cielo (Tob 12,12; Eclo 35,16s; Act 10,4) y que Dios dé cita a los hombres en la cima de *montañas, a las que él desciende, mientras ellos suben, como el Sinaí (Ex 19,20) o el monte Sión (Is 2.3 y 4,5). Sólo elegidos, como Henoc (Gén 5,24; Eclo 44,16; 49,14) o Elías (2Re 2.11; Eclo 48,9-12; I Mac 2,58) tuvieron el privilegio de ser arrebatados al cielo por el poder divino. En Dan 7,13 la venida del *Hijo del hombre se efectúa hacia el anciano de dias, lo cual sugiere también una subida, si bien su punto de partida es misterioso y las nubes del cielo son quizá aquí, no un vehículo, sino únicamente la decoración de la morada divina. <br>II. LA SUBIDA DE CRISTO AL CIELO.<br> Según esta cosmología bíblica, Jesús exaltado por la *resurrección a la *diestra de Dios (Act 2,34; Rom 8.34; Ef 1.20s; IPe 3.22; cf. Mc 12.35ss p; 14,62 p), donde señorea como *rey (Ap I,5: 3.21: 5,6; 7. 17), debió «subir» al cielo. De hecho, su ascensión aparece en las primeras afirmaciones de la fc, no tanto como un fenómeno considerado por si mismo cuanto como la expresión indispensable de la exaltación celestial de Cristo (cf. Act 2,34; Mc 16,19; IPe 3,22). Pero, con el progreso de la revelación y la explicitación de la fe, ha ido adquiriendo una individualidad teológica e histórica cada vez más marcada. <br>1. Bajada y vuelta a subir.<br> La preexistencia de Cristo, implícita en los albores de la fe, se fue explicitando, en cuanto que la preexistencia escrituristica ayudó a percibir la preexistencia ontológica. Jesús, antes de vivir en la tierra, estaba junto a Dios como hijo, verbo, sabiduría. Consiguientemente, su exaltación celestial no fue sólo el triunfo de un hombre elevado al rango divino, como podia sugerirlo una cristología primitiva (Act 2,22-36; 10,36-42), sino el retorno al mundo celestial, de donde había venido. Fue Juan quien expresó en la forma más clara esta bajada del cielo (Jn 6,33.38.41s.50s. 58) y puso en relación con ella la nueva subida de la ascensión (Jn 3, 13; 6,62). Aquí no se puede invocar a Rom 10,6s, pues el movimiento que allí sigue a la bajada de la encarnación es el resurgimiento del mundo de los muertos más bien que la subida al cielo. En cambio, Ef 4,9s expone una trayectoria más amplia, en la que la bajada a las regiones inferiores de la tierra va seguida de una nueva subida que lleva a Cristo por encima de todos los cielos. Es también la misma trayectoria supuesta en el himno de Flp 2,6-11. <br>2. Triunfo de orden cósmico.<br> Otro motivo debía concurrir a especificar la ascensión como etapa glorificadora distinta de la *resurrección y de la sesión celeste: la solicitud por expresar mejor la supremacía cósmica de Cristo. Como la herejía colosense había amenazado con rebajar a Cristo a un rango subalterno entre las jerarquías angélicas, Pablo reitera en forma más categórica lo que había dicho ya sobre su triunfo sobre los poderes celestiales (ICor 15, 24), afirmando que este triunfo ha sido ya adquirido por la *cruz (Col 2,15), que desde ahora ya Cristo señorea en los cielos por encima de los poderes, cualesquiera que sean (Ef 1,20s); y entonces es cuando utiliza el Sal 68,19 para mostrar que la subida de Cristo por encima de todos los cielos fue su toma de posesión del universo, al que él «llena» (Ef 4.10), como lo «recapitula» (Ef 1, 10) en calidad de cabeza. El mismo horizonte cósmico aparece en el himno de ITim 3,16: la elevación a la gloria viene aquí después de la manifestación a los ángeles y al mundo. La epístola a los Hebreos vuelve a su vez a pensar la subida de Cristo en función de su perspectiva de un mundo celestial, en el que se hallan las realidades de la salvación y hacia el que peregrinan los humanos. Para estar allí sentado a la diestra de Dios (Heb 1,3; 8,1; 10,12s; 12,2) por encima de los ángeles (1,4-13; 2,7ss), el sumo sacerdote subió el primero, atravesando los cielos (4,14) y penetrando detrás del velo (6,19s) en el santuario, donde intercede en presencia de Dios (9,24). <br>3. Momento de la ascensión.<br> La subida de Cristo al cielo, distinguida de la salida del sepulcro a titulo de manifestación cósmica, debía todavia distanciarse de ella por la necesidad pedagógica de contar en el tiempo de los hombres un acontecimiento que lo trasciende y también para tener cuenta con el periodo de las apariciones. Ciertamente nada impide, y todo más bien lo postula, que al manifestarse Jesús a sus discipulos volviese para ello del mundo de la *gloria, en el que había entrado desde el instante de su resurrección; en efecto, es difícil ver dónde hubiera podido hallarse en el intervalo de estas manifestaciones, y, sin duda alguna, lo que les muestra es su estado ya glorificado. De hecho, Mt parece concebir así las cosas: no habla de la ascensión, pero da a entender por la declaración de Jesús acerca del poder de que dispone en el cielo y en la tierra (Mt 28,18), que la toma de posesión del trono celestial había tenido ya lugar al momento de la aparición en la montaña de Galilea: si Jesús advierte a sus discípulos por medio de Maria Magdalena que sube al Padre (Jn 20,17), esto indica que habrá ya subido y vuelto a bajar cuando les aparezca la tarde misma (20,19). Esta dilación de algunas horas entre resurrección y ascensión es absolutamente pedagógica y da a Jesús la oportunidad de inculcar a Maria Magdalena que entra en un estado nuevo, en el que quedarán espiritualizados (6,58 y 62) los contactos de otro tiempo (comp. 20,17 y 11,2; 12,3). En otros textos el momento de la ascensión se distingue todavía más del de la resurrección: Lc 24,50s, que viene después de los vv. 13.33. 36.44, da la sensación de que la ascensión se sitúa la tarde del domingo de pascua, después de diversas conversaciones de Jesús con sus discipulos. En el final de Mc 16,19, que depende en gran parte de Lc, se cuenta la ascensión después de las manifestaciones sucesivas, que no se ve si ocuparon sólo un día o varios. Finalmente, según Act 1,3-11, fue al final de cuarenta días de apariciones y conversaciones cuardo Jesús abandonó a los suyos para subir al cielo. La ascensión contada por esos tres textos pretende evidentemente clausurar el periodo de las apariciones; no quiere describir, después de una dilación variable e inexplicable, la primera entrada de Cristo en la gloria, sino más bien la última partida que pone fin a su manifestación en la tierra. La incertidumbre misma de la dilación se explica mejor en razón de este término contingente; en los Hechos, el *número de 40 se escogió sin duda en función de los 50 días de *pentecostés: si Jesús regresa definitivamente al cielo, es para enviar su Espiritu, que en adelante le reemplazará cerca de sus discipulos. En una palabra, la enseñanza variada de los textos sagrados invita a reconocer en este misterio dos aspectos conexos, pero distintos: por una parte, la glorificación celestial de Cristo que coincidió con su resurrección y, por otra parte, su última partida después de un periodo de apariciones, partida y retorno a Dios, de que fueron testigos en el monte de los Olivos y que se celebra más particularmente la fiesta de la Ascensión. <br>4 Modo de la ascensión.<br> Act 1,9 es el único texto canónico que da alguna descripción de la subida de Jesús al cielo, y su extremada discreción muestra que no pretende diseñar la primera entrada de Cristo en la gloria. Este cuadro tan sobrio no se parece en nada a las apoteosis de héroes paganos, como Rómulo o Mitra, ni siquiera al precedente biblico de *Elías. Hace intervenir la nube estereotipada de las teofanías y una palabra angélica que explica la escena, renunciando a dar una descripción del misterio, realista y de dudoso gusto, como la inventarán algunos apócrifos, y limitándose a los datos esenciales que evocan su significado. No es que esta escena localizada en forma precisa en el monte de los Olivos no represente un recuerdo histórico, ni que Jesús no pudiera conceder a sus discípulos cierta experiencia sensible de su retorno cerca de Dios; pero la intención del relato no es ciertamente describir un triunfo que de hecho tuvo lugar ya en el instante de la resurrección, sino únicamente enseñar que después de un cierto periodo de coloquios familiares con los discípulos, el resucitado retiró del mundo su *presencia manifiesta para no restituirla hasta el fin de los tiempos. <br>III. LA ASCENSIÓN, PRELUDIO DE LA PARUSÍA.<br> «Ese Jesús que ha sido llevado de entre vosotros al cielo vendrá así como le habéis visto ir al cielo» (Act 1,11). Esta palabra angélica, además de explicar la economia del relato de la ascensión, establece un vinculo profundo entre la subida de Cristo al cielo y su retorno al final de los tiempos. Como éste se hace esperar, la permanencia de Cristo en el cielo, de suyo definitiva por lo que a él respecta, resulta como una etapa transitoria en la economia general de la salvación: Cristo se mantiene allí oculto a los hombres en espera de su manifestación última (Col 3,1-4), en el momento de la restauración universal (Act 3, 21; I Tes 1,10). Entonces retornará de la manera que partió (Act 1,11), bajando del cielo (ITes 4,16; 2Tes 1,7) sobre las nubes (Ap 1,7; cf: 14,14ss), mientras que sus escogidos subirán a su encuentro, también sobre nubes (ITes 4,17), como los dos testigos del Apocalipsis (Ap 11,12). Es siempre la misma presentación cosmológica, inherente a nuestra imaginación humana, aunque, por otra parte, reducida a su mínima expresión. La afirmación profunda que se desprende de todos estos temas es que Cristo, triunfando de la muerte, inauguró un nuevo modo de vida cerca de Dios. ÉI penetró el primero para preparar un puesto a sus elegidos; luego retornará y los introducirá para que estén siempre con él (Jn 14,2s). <br>IV. ESPIRITUALIDAD CRISTIANA DE LA ASCENSIÓN.<br> Los cristianos, mientras esperan este término, deben mantenerse unidos por la fe y los sacramentos con su Señor glorificado. Ya desde ahora *resucitados y hasta sentados en los cielos con él (Ef 2,6) buscan «las cosas de arriba», pues su verdadera *vida está «escondida con Cristo en Dios» (Col 3,1ss). Su ciudad se halla en los cielos (Flp 3,20), la casa celestial que los espera y de la que aspiran a revestirse (2Cor 5,1ss), no es sino el mismo Cristo glorioso (Flp 3.21), el «hombre celestial» (ICor 15,45-49). De ahí brota toda una espiritualidad de ascensión a base de *esperanza, pues desde ahora hace vivir al cristiano en la realidad del mundo nuevo en que reina Cristo. Pero no por eso es arrancado del mundo antiguo, que todavía le retiene, sino, por el contrario, tiene misión y poder de vivir en él en forma nueva, que eleva a este mundo a la transformación de gloria a que Dios lo llama. -> Cielo - Gloria - Montaña - Nube - Resurrección - Rey";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

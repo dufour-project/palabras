@@ -1,0 +1,523 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">BAUTISMO</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;">
+<p id="tipo"></p>
+<p id="lista">
+	<div id="lecthist" style="display: none;">
+		<input name='lecthist' type='radio' id='hist0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lecthist' type='radio' id='hist10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectprof" style="display: none;">
+		<input name='lectprof' type='radio' id='prof0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectprof' type='radio' id='prof10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectcart" style="display: none;">
+		<input name='lectcart' type='radio' id='cart0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectcart' type='radio' id='cart10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+	<div id="lectev" style="display: none;">
+		<input name='lectev' type='radio' id='ev0' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev1' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev2' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev3' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev4' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev5' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev6' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev7' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev8' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev9' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+		<input name='lectev' type='radio' id='ev10' value='AQUI LA LECTURA' />AQUI LA LECTURA<br>
+	</div>
+</p>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onclick="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El nombre de «bautismo» deriva del verbo baptein/baptizein, que significa «sumergir, lavar». El bautismo es, pues, una inmersión o una ablución. El simbolismo del *agua como signo de purificación y de vida es tan frecuente en la historia de las religiones que no puede sorprender su existencia en los misterios paganos. Pero las semejanzas con el sacramento cristiano son puramente exteriores y no afectan a las realidades profundas. Las analogías se han de buscar primero en el AT, en las creencias judías y en el bautismo de Juan. <br>I. AT Y JUDAÍSMO. <br>1. El papel purificador del agua es muy marcado en el AT. Aparece en diversos acontecimientos de la historia sagrada, que en lo sucesivo serán mirados como prefiguraciones del bautismo: por ejemplo, el *diluvio (cf. lPe 3,20s), o el paso del *mar Rojo (cf. lCor 10,1s). En numerosos casos de impureza impone la ley abluciones rituales que *purifican y capacitan para el culto (Núm 19,2-10; Dt 23, 10s). Los profetas anuncian una efusión de agua purificadora del peca-do (Zac 13,1). Ezequiel asocia esta lustración escatológica con el don del Espíritu de Dios (Ez 36,24-28; cf. Sal 51,9.12s). <br>2. El judaísmo posterior al *exilio multiplica las abluciones rituales. Vienen a ser de una minucia extremada y no se libran del formalismo entre los fariseos contemporáneos del Evangelio (Mc 7,1-5 p). Estas prácticas simbolizaban la purificación del corazón y podían contribuir a obtenerla cuando se les añadían sentimientos de arrepentimiento. Hacia la época del NT y quizás un poco antes, los rabinos bautizaban a los prosélitos, paganos de origen que se agregaban al pueblo judío (cf. Mt 23,15). Parece incluso que algunos consideraban este bautismo tan necesario como la *circuncisión. Los baños rituales son frecuentes entre los esenios, según Josefo, así como en las comunidades de Da-masco y de Qumrán. Sin embargo, el baño no es aquí un rito de iniciación; no se admite a él sino tras larga prueba, destinada a manifestar la sinceridad de la conversión. Es cotidiano y expresa esfuerzo hacia una vida pura y la aspiración a la gracia purificadora. Uno mismo se sumerge en el agua, mientras que los penitentes que se presenten a Juan recibirán el bautismo de sus manos y una vez para siempre. <br>3. El bautismo de *Juan se puede comparar con el bautismo de los prosélitos. Este último introducía en el pueblo de Israel; el bautismo de Juan realiza una especie de agregación a la verdadera posteridad de *Abraham (Mt 3,8 p), al *resto de Israel, sustraído en adelante a la *ira de Dios (Mt 3,7.10 p) y en es-pera del mesías que viene. Es un bautismo único, conferido en el desierto con miras al arrepentimiento y al perdón (Mc 1,4 p). Comporta la confesión de los pecados y un es-fuerzo de conversión definitiva, que debe expresar el rito (Mt 3,6ss). Juan insiste en la pureza moral; no exige a los publicanos ni a los soldados que abandonen sus funciones (Lc 3, 10-14). El bautismo de Juan no establece sino una economía provisional: es un. bautismo de agua, preparatorio para el bautismo mesiánico en el Espíritu Santo y en el *fuego (Mt 3,11 p; Act 1,5; 11,16; 19,3s), purificación suprema (cf. Sal 51) que inaugurará el mundo nuevo y cuya perspectiva parece confundirse aquí con la del *juicio. En realidad el don del Espíritu, enviado por el mesías glorificado, se distinguirá del juicio (Lc 3,16s p). <br>II. BAUTISMO DE JESÚS. <br>1. Jesús, al presentarse para recibir el bautismo de Juan, se somete a la voluntad de su Padre (Mt 3,14s) y se sitúa humildemente entre los pecadores. Es el *cordero de Dios que toma así sobre sí mismo el pecado del mundo (Jn 1,29.36). El bautismo de Jesús en el Jordán anuncia y prepara su bautismo «en la muerte» (Lc 12, 50; Mc 10,38), encuadrando así en dos bautismos su vida pública. Es también lo que 'quiere decir el evangelista Juan cuando refiere que el agua y la *sangre brotaron del costado abierto de Jesús (Jn 19,34s; cf. Un 5,6-8). <br>2. El bautismo de Jesús por Juan es coronado por la bajada del *Espíritu Santo y la proclamación por el Padre celestial, de su filiación divina. La venida del Espíritu Santo sobre Jesús es una investidura que responde a las profecías (Is 11,2; 42,1; 61,1); es al mismo tiempo el anuncio de *pentecostés, que inaugurará el bautismo en el Espíritu, para la Iglesia (Act 1,15; 11,16) y para todos los que entren en ella (Ef 5,25-32; Tit 3,5ss). El reconocimiento de Jesús como *Hijo anuncia la filiación adoptiva de los creyentes, participación en la de Jesús y consecuencia del don del Espíritu (Gál 4,6). En efecto, el «bautismo en 'la muerte» debe conducir a Jesús a la *resurrección; entonces su humanidad glorificada, recibiendo la *plenitud del Espíritu, será constituida «espíritu vivificante» (lCor 15, 45), que comunique el Espíritu a los que crean en él. <br>III. EL BAUTISMO CRISTIANO. <br>1. El bautismo de agua y de Espíritu.<br> Juan Bautista anunciaba el bautismo en el Espíritu y en el fuego (Mt 3,11 p). El Espíritu es el don mesiánico pro-metido. El *fuego es el *juicio que comienza a verificarse a la venida de Jesús (Jn 3,18-21; 5,22-25; 9,39). Uno y otro son inaugurados en el bautismo de Jesús, que es el preludio del de los fieles. Este acto sagrado constituye así al nuevo pueblo; Pablo lo ve anunciado en el paso del mar Rojo que libera a Israel de la servidumbre (lCor 10,1s). El bautismo administrado por la Iglesia hace entrar en el *cuerpo de Cristo (Act 2,38-41; lCor 12,13; Ef 5,26). El mundo que pasa y el mundo que viene, el mundo terrenal y el mundo celestial coinciden paradójicamente en la Iglesia y en cada uno de los bautizados; la posesión de las arras del Espíritu (2Cor 1,22; 5,5) anuncia y garantiza la posesión perfecta y definitiva. Pero ésta no se realizará sino a condición de una *fidelidad perseverante: sin ella el bautizado será excluido de la vida eterna, como los israelitas prevaricadores fueron exterminados en el desierto y privados de entrar en la tierra prometida (lCor 10,6-13). El sacramento no actúa, pues, de manera mágica; exige una conversión total, punto de partida de una vida nueva. Para el individuo, el bautismo presenta diferentes aspectos. Es una purificación que, de una vez para siempre, lava al catecúmeno en nombre del Señor y por el Espíritu (lCor 6,11), purificación no únicamente individual, sino también de carácter comunitario y eclesial (Ef 5,26s). El bautismo es un nuevo *nacimiento del agua y del Espíritu (Jn 3,5), un baño de regeneración y de renovación en el Espíritu Santo (Tit 3,5), que hace al bautizado hijo de Dios (Un 3,1). Es una nueva *circuncisión, la circuncisión de Cristo, que agrega al nuevo pueblo de Dios (Col 2,11s; cf. Ef 2,11-22); un *sello impreso para siempre en el alma por el Espíritu Santo (Ef 1,13; 4,30; 2Cor 1,22); una iluminación, paso de las tinieblas del pecado a la *luz de Cristo resucitado (Ef 5,8-14; Heb 6,4). <br>2. Conversión y fe bautismal.<br> El bautismo supone que uno ha *confesado su *fe en Jesucristo (Act 16, 30s), cuyo artículo esencial, que resume y contiene los otros, es la resurrección de Cristo (Rom 10,9; Ef 2,17-21). El objeto de la fe puede, sin embargo, ser conocido implícitamente cuando es dado el Espíritu antes del bautismo (Act 10,44-48), y parece que la fe del *padre de familia puede valer para todos los suyos: así para Cornelio y el carcelero de Filipos (Act 10,47; 16,33). Pero 'la fe en Cristo no es sólo adhesión del espíritu al mensaje evangélico; tal fe comporta una *conversión total, una' donación entera a Cristo, que transforma toda la vida. Desemboca normalmente en 'la petición del bautismo, que es su sacramento y en cuya recepción adquiere su perfección. Pablo no la separa jamás de él; y cuando habla de la *justificación por la fe es para oponerla a la pretendida justificación por las *obras de la ley que invocaban los judaizantes. Supone siempre que la profesión de fe es coronada por la recepción del bautismo (cf. Gál 3,26s). Por la fe responde el hombre a la llamada divina que le ha sido manifestada por la predicación apostólica (Rom 10,14s), respuesta que, por lo demás, es obra de la *gracia (Ef 2,8). En el bautismo el Espíritu se posesiona del creyente, lo agrega al cuerpo de la Iglesia y le da la certeza de que ha entrado en el *reino de Dios. <br>3. El bautizado y las personas divinas.<br> El bautismo purifica, santifica y justifica al que lo recibe, por el nombre del Señor y por el Espíritu de Dios (1Cor 6,11); el cristiano se convierte en *templo del Espíritu (ICor 6,19), hijo adoptivo del Padre (Gál 4,5s), *hermano y coheredero de Cristo en una unión íntima con él (Rom 8,2.9.17; Gál 3,28). El bautismo «en el *nombre de Jesús» (Act 10,48; 19,5) designa el bautismo en cuanto es adhesión a Cristo o en cuanto se distingue del bautismo de Juan. Esta locución no supone necesariamente el empleo de una fórmula en que se mencione únicamente a Cristo. La tradición de la época apostólica estimó, por el contrario, que 'la fórmula trinitaria empleada en la liturgia cumplía exactamente las instrucciones del mismo Cristo (Mt 28,19). La expresión de «bautismo en el nombre de Jesús» sub-raya el efecto capital del bautismo, la unión con Cristo. Los bautizados se *revisten de Cristo, están entera-mente sometidos al influjo divino; están, además, unidos entre sí en la *unidad misma de Cristo y de su *cuerpo glorificado (Gál 3,27s; Rom 13,14; ICor 12,13; Ef 4,4s); ya no forman sino un espíritu con Cristo (1Cor ' 6,17). Para precisar más, la unión con Cristo es inserción en Cristo crucificado y glorificado. La inmersión en el agua bautismal y la emersión que la sigue simbolizan y realizan la participación en la *muerte y en la *resurrección de Cristo: el catecúmeno es sumergido en la muerte de Cristo y sepultado con él para resucitar con él en una nueva vida (Rom 6,3ss; Col 2,12). La muerte al pecado y el don de la vida son inseparables; la ablución de agua pura es al mismo tiempo aspersión de la *sangre de Cristo, más elocuente que la de Abel (Heb 12,24; lPe 1,2), participación efectiva en los méritos adquiridos en derecho para todos por Cristo en el Calvario, unión a su resurrección y, en principio, a su glorificación (Ef 2,5s). El bautismo es, pues, un sacramento pascual, una comunión en la *pascua de Cristo; el bautizado muere al pecado y vive para Dios en Cristo (Rom 6,11), vive de la *vida misma de Cristo (Gál 2,20; Flp 1,21). La transformación así realizada es radical; es despojamiento y muerte del hombre viejo y revestimiento del *hombre nuevo (Rom 6,6; Col 3,9; Ef 4,24), nueva *creación a la *imagen de Dios (Gál 6,15). <br>4. Aspectos de la nueva vida.<br> El bautismo es la condición de entrada en el reino de Dios (Jn 3,5) y el medio necesario de salvación (Me 16,16). Consagra al catecúmeno a Dios introduciéndolo en la Iglesia visible y por ella en la *comunión con Cristo y con el Padre en el *don del único Espíritu (Ef 2,15). Los bautizados, unidos a Cristo en la Iglesia, constituyen una familia única cuya alma es el Espíritu de amor (Gál 3,25-4,7). Los otros aspectos del bautismo son modalidades de esta realidad fundamental. Así la regeneración bautismal no es una manera de ser estática, adquirida de una vez para siempre; es entrada en un estado dinámico, vida superior de la que no debe decaer el alma; de ahí la exigencia de un constante esfuerzo espiritual para hacer cada día más efectiva la *muerte al pecado y 'la *vida para Dios (Rom 6,12ss). Tal es la vida cristiana, vida pascual, en la que el acento se pone unas veces en la unión con la pasión, otras en la resurrección, refiriéndose estos dos aspectos a una realidad única y manteniéndose indisolublemente unidos. Esto re-cuerda la liturgia de la noche pascual y del sacramento del bautismo: pro-mesa de vivir renacidos en Cristo, voluntad de conservar sin mancha la vestidura blanca del bautismo y de guardar sin reproche la gracia simbolizada por la vela encendida. El creyente, unido por su bautismo a la pascua de Cristo, es invitado a entrar un día en su reino glorioso (Col 1,12s) y en la posesión de la herencia celestial (Ef 1,14). -> Circuncisión - Diluvio - Agua - Iglesia - Espíritu de Dios - Luz - Muerte - Nuevo nacimiento - Pascua - Pecado - Penitencia - Resurrección - Sello.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=10;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=10;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=10;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=10;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">AGUA</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 1,7' /><label for="hist0">Gén 1,7</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 7,11' /><label for="hist1">Gén 7,11</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 8,2' /><label for="hist2">Gén 8,2</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Gén 16,14' /><label for="hist3">Gén 16,14</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Gén 21,25' /><label for="hist4">Gén 21,25</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Gén 26,20s' /><label for="hist5">Gén 26,20s</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Gén 27,28' /><label for="hist6">Gén 27,28</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Gén 8,11' /><label for="hist7">Gén 8,11</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Gén 18,4' /><label for="hist8">Gén 18,4</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Gén 19,2' /><label for="hist9">Gén 19,2</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Gén 2,10-14' /><label for="hist10">Gén 2,10-14</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Job 29,19' /><label for="hist11">Job 29,19</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Job 12,15' /><label for="hist12">Job 12,15</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Job 5,10' /><label for="hist13">Job 5,10</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Job 38,22-28' /><label for="hist14">Job 38,22-28</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Job 28,26' /><label for="hist15">Job 28,26</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='Job 40,23' /><label for="hist16">Job 40,23</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='Job 22,11' /><label for="hist17">Job 22,11</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Ex 16,13' /><label for="hist18">Ex 16,13</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Ex 15,23.27' /><label for="hist19">Ex 15,23.27</label><br>
+		<input name='lecthist' type='radio' id='hist20' value='Ex 29,4' /><label for="hist20">Ex 29,4</label><br>
+		<input name='lecthist' type='radio' id='hist21' value='Ex 40,12' /><label for="hist21">Ex 40,12</label><br>
+		<input name='lecthist' type='radio' id='hist22' value='Ex 17,1-7' /><label for="hist22">Ex 17,1-7</label><br>
+		<input name='lecthist' type='radio' id='hist23' value='Dt 8,7' /><label for="hist23">Dt 8,7</label><br>
+		<input name='lecthist' type='radio' id='hist24' value='Dt 33,13' /><label for="hist24">Dt 33,13</label><br>
+		<input name='lecthist' type='radio' id='hist25' value='Dt 28,12' /><label for="hist25">Dt 28,12</label><br>
+		<input name='lecthist' type='radio' id='hist26' value='Dt 11,14' /><label for="hist26">Dt 11,14</label><br>
+		<input name='lecthist' type='radio' id='hist27' value='Dt 28,1.12' /><label for="hist27">Dt 28,1.12</label><br>
+		<input name='lecthist' type='radio' id='hist28' value='Dt 28,23' /><label for="hist28">Dt 28,23</label><br>
+		<input name='lecthist' type='radio' id='hist29' value='Lev 26,3-10' /><label for="hist29">Lev 26,3-10</label><br>
+		<input name='lecthist' type='radio' id='hist30' value='Lev 26,19' /><label for="hist30">Lev 26,19</label><br>
+		<input name='lecthist' type='radio' id='hist31' value='Lev 16,4.24' /><label for="hist31">Lev 16,4.24</label><br>
+		<input name='lecthist' type='radio' id='hist32' value='Lev 11,40' /><label for="hist32">Lev 11,40</label><br>
+		<input name='lecthist' type='radio' id='hist33' value='Lev 17, 1 5s' /><label for="hist33">Lev 17, 1 5s</label><br>
+		<input name='lecthist' type='radio' id='hist34' value='Lev 14,8s' /><label for="hist34">Lev 14,8s</label><br>
+		<input name='lecthist' type='radio' id='hist35' value='Lev 15' /><label for="hist35">Lev 15</label><br>
+		<input name='lecthist' type='radio' id='hist36' value='Prov 3,19s' /><label for="hist36">Prov 3,19s</label><br>
+		<input name='lecthist' type='radio' id='hist37' value='Núm 24,6; ' /><label for="hist37">Núm 24,6; </label><br>
+		<input name='lecthist' type='radio' id='hist38' value='Jos 15,19' /><label for="hist38">Jos 15,19</label><br>
+		<input name='lecthist' type='radio' id='hist39' value='1Re 18,18' /><label for="hist39">1Re 18,18</label><br>
+		<input name='lecthist' type='radio' id='hist40' value='Sab 10,4' /><label for="hist40">Sab 10,4</label><br>
+		<input name='lecthist' type='radio' id='hist41' value='Sab 10,18s' /><label for="hist41">Sab 10,18s</label><br>
+		<input name='lecthist' type='radio' id='hist42' value='Núm 20,1-13' /><label for="hist42">Núm 20,1-13</label><br>
+		<input name='lecthist' type='radio' id='hist43' value='Eclo 15, 3' /><label for="hist43">Eclo 15, 3</label><br>
+		<input name='lecthist' type='radio' id='hist44' value='Eclo 24,25-31' /><label for="hist44">Eclo 24,25-31</label><br>
+		<input name='lecthist' type='radio' id='hist45' value='2Re 5,10-14 ' /><label for="hist45">2Re 5,10-14 </label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Dan 3,60' /><label for="prof0">Dan 3,60</label><br>
+		<input name='lectprof' type='radio' id='prof1' value='Is 24,18' /><label for="prof1">Is 24,18</label><br>
+		<input name='lectprof' type='radio' id='prof2' value='Is 30,23ss' /><label for="prof2">Is 30,23ss</label><br>
+		<input name='lectprof' type='radio' id='prof3' value='Is 44,27' /><label for="prof3">Is 44,27</label><br>
+		<input name='lectprof' type='radio' id='prof4' value='Is 5,13' /><label for="prof4">Is 5,13</label><br>
+		<input name='lectprof' type='radio' id='prof5' value='Is 19,5ss' /><label for="prof5">Is 19,5ss</label><br>
+		<input name='lectprof' type='radio' id='prof6' value='Is 8,6-7' /><label for="prof6">Is 8,6-7</label><br>
+		<input name='lectprof' type='radio' id='prof7' value='Is 1,16' /><label for="prof7">Is 1,16</label><br>
+		<input name='lectprof' type='radio' id='prof8' value='Is 49,10' /><label for="prof8">Is 49,10</label><br>
+		<input name='lectprof' type='radio' id='prof9' value='Is 43, 20' /><label for="prof9">Is 43, 20</label><br>
+		<input name='lectprof' type='radio' id='prof10' value='Is 41,17-20' /><label for="prof10">Is 41,17-20</label><br>
+		<input name='lectprof' type='radio' id='prof11' value='Is 35,6s' /><label for="prof11">Is 35,6s</label><br>
+		<input name='lectprof' type='radio' id='prof12' value='Is 48,21' /><label for="prof12">Is 48,21</label><br>
+		<input name='lectprof' type='radio' id='prof13' value='Is 44,3ss' /><label for="prof13">Is 44,3ss</label><br>
+		<input name='lectprof' type='radio' id='prof14' value='Is 55,10s' /><label for="prof14">Is 55,10s</label><br>
+		<input name='lectprof' type='radio' id='prof15' value='Is 55,1' /><label for="prof15">Is 55,1</label><br>
+		<input name='lectprof' type='radio' id='prof16' value='Is 58,11' /><label for="prof16">Is 58,11</label><br>
+		<input name='lectprof' type='radio' id='prof17' value='Is 25,8' /><label for="prof17">Is 25,8</label><br>
+		<input name='lectprof' type='radio' id='prof18' value='Is 51,10' /><label for="prof18">Is 51,10</label><br>
+		<input name='lectprof' type='radio' id='prof19' value='Mal 3,10' /><label for="prof19">Mal 3,10</label><br>
+		<input name='lectprof' type='radio' id='prof20' value='Ez 31,4' /><label for="prof20">Ez 31,4</label><br>
+		<input name='lectprof' type='radio' id='prof21' value='Ez 31,15' /><label for="prof21">Ez 31,15</label><br>
+		<input name='lectprof' type='radio' id='prof22' value='Ez 19,10' /><label for="prof22">Ez 19,10</label><br>
+		<input name='lectprof' type='radio' id='prof23' value='Ez 17,8' /><label for="prof23">Ez 17,8</label><br>
+		<input name='lectprof' type='radio' id='prof24' value='Ez 4,16s' /><label for="prof24">Ez 4,16s</label><br>
+		<input name='lectprof' type='radio' id='prof25' value='Ez 23,40' /><label for="prof25">Ez 23,40</label><br>
+		<input name='lectprof' type='radio' id='prof26' value='Ez 36,24-29' /><label for="prof26">Ez 36,24-29</label><br>
+		<input name='lectprof' type='radio' id='prof27' value='Ez 34,26' /><label for="prof27">Ez 34,26</label><br>
+		<input name='lectprof' type='radio' id='prof28' value='Ez 47,1-12' /><label for="prof28">Ez 47,1-12</label><br>
+		<input name='lectprof' type='radio' id='prof29' value='Ez 16,4-9' /><label for="prof29">Ez 16,4-9</label><br>
+		<input name='lectprof' type='radio' id='prof30' value='Miq 5,6' /><label for="prof30">Miq 5,6</label><br>
+		<input name='lectprof' type='radio' id='prof31' value='Am 4,7' /><label for="prof31">Am 4,7</label><br>
+		<input name='lectprof' type='radio' id='prof32' value='Am 7,4;' /><label for="prof32">Am 7,4;</label><br>
+		<input name='lectprof' type='radio' id='prof33' value='Am 8,11s' /><label for="prof33">Am 8,11s</label><br>
+		<input name='lectprof' type='radio' id='prof34' value='Jer 5,24' /><label for="prof34">Jer 5,24</label><br>
+		<input name='lectprof' type='radio' id='prof35' value='Jer 46,7s' /><label for="prof35">Jer 46,7s</label><br>
+		<input name='lectprof' type='radio' id='prof36' value='Jer 47,1s' /><label for="prof36">Jer 47,1s</label><br>
+		<input name='lectprof' type='radio' id='prof37' value='Jer 31,9' /><label for="prof37">Jer 31,9</label><br>
+		<input name='lectprof' type='radio' id='prof38' value='Jer 17,8' /><label for="prof38">Jer 17,8</label><br>
+		<input name='lectprof' type='radio' id='prof39' value='Jer 2,13' /><label for="prof39">Jer 2,13</label><br>
+		<input name='lectprof' type='radio' id='prof40' value='Zac 13,1' /><label for="prof40">Zac 13,1</label><br>
+		<input name='lectprof' type='radio' id='prof41' value='Zac 14,8' /><label for="prof41">Zac 14,8</label><br>
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Ap 4,6' /><label for="cart0">Ap 4,6</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Ap 22 1.17' /><label for="cart1">Ap 22 1.17</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='Ap 7,14-17' /><label for="cart2">Ap 7,14-17</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='Ap 21,6' /><label for="cart3">Ap 21,6</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='Ap 22,14' /><label for="cart4">Ap 22,14</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='2Pe 2,5' /><label for="cart5">2Pe 2,5</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='2Pe 3,5ss' /><label for="cart6">2Pe 3,5ss</label><br>
+		<input name='lectcart' type='radio' id='cart7' value='1Tim 5,10' /><label for="cart7">1Tim 5,10</label><br>
+		<input name='lectcart' type='radio' id='cart8' value='1Pe 3,20-21' /><label for="cart8">1Pe 3,20-21</label><br>
+		<input name='lectcart' type='radio' id='cart9' value='1Cor 10,4' /><label for="cart9">1Cor 10,4</label><br>
+		<input name='lectcart' type='radio' id='cart10' value='1Cor 6,11' /><label for="cart10">1Cor 6,11</label><br>
+		<input name='lectcart' type='radio' id='cart11' value='Ef 5,26' /><label for="cart11">Ef 5,26</label><br>
+		<input name='lectcart' type='radio' id='cart12' value='Heb 10,22' /><label for="cart12">Heb 10,22</label><br>
+		<input name='lectcart' type='radio' id='cart13' value='Hch 22,16' /><label for="cart13">Hch 22,16</label><br>
+		<input name='lectcart' type='radio' id='cart14' value='Heb 9,13s' /><label for="cart14">Heb 9,13s</label><br>
+		<input name='lectcart' type='radio' id='cart15' value='Rm 6, 3- 11' /><label for="cart15">Rm 6, 3- 11</label><br>
+		<input name='lectcart' type='radio' id='cart16' value='Tit 3,5' /><label for="cart16">Tit 3,5</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Lc 3,16s' /><label for="ev0">Lc 3,16s</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Lc 7,44' /><label for="ev1">Lc 7,44</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 27,24' /><label for="ev2">Mt 27,24</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Mt 3, 11' /><label for="ev3">Mt 3, 11</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Jn 13,2-15' /><label for="ev4">Jn 13,2-15</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Jn 15,3' /><label for="ev5">Jn 15,3</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Jn 19, 34' /><label for="ev6">Jn 19, 34</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Jn 7,37-39' /><label for="ev7">Jn 7,37-39</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Jn 2,19ss' /><label for="ev8">Jn 2,19ss</label><br>
+		<input name='lectev' type='radio' id='ev9' value='Jn 4,10-14' /><label for="ev9">Jn 4,10-14</label><br>
+		<input name='lectev' type='radio' id='ev10' value='Jn 9,6s' /><label for="ev10">Jn 9,6s</label><br>
+		<input name='lectev' type='radio' id='ev11' value='Jn 5,1-8' /><label for="ev11">Jn 5,1-8</label><br>
+		<input name='lectev' type='radio' id='ev12' value='Jn 3,5' /><label for="ev12">Jn 3,5</label><br>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El agua es, en primer lugar, fuente y poder de vida: sin ella no es la tierra más que un desierto *árido, país del hambre y de la sed, en el que hombres y animales están destinados a la muerte. Sin embargo, hay también aguas de *muerte: la inundación devastadora que trastorna la tierra y absorbe a los vivientes. Finalmente, el culto, trasponiendo un uso de la vida doméstica, se sirve de las abluciones de agua para *purificar a las personas y a las cosas de las manchas contraídas a lo largo de los contactos cotidianos. Asi el agua, alternativamente vivificadora o temible, pero siempre purificadora, está íntimamente unida con la vida humana y con la historia del pueblo de la Alianza. <br>I. LA CRIATURA DE DIOS.<br> Dios, señor del universo, dispensa el agua a su arbitrio y tiene así en su poder los destinos del hombre. Los israelitas, conservando la representación de la antigua cosmogonia babilónica, parten las aguas en dos masas distintas. Las «aguas de arriba»' son retenidas por el firmamento, concebido como una superficie sólida (Gén 1,7; Sal 148,4; Dan 3,60; cf. Ap 4,6). Ciertas compuertas dejan al abrirse que esas aguas caigan a la tierra en forma de lluvia (Gén 7,11; 8,2; 1s 24,18; Mal 3,10) o de rocio que por la noche se deposita sobre la hierba (Job 29,19; Cant 5,2, Ex 16,13). En cuanto a los manantiales y a los ríos, no provienen de la lluvia, sino de una inmensa reserva de agua, sobre la que reposa la tierra: son las «aguas de abajo», el abismo (Gén 7,11; Dt 8,7; 33,13; Ez 31,4). Dios, que instituyó este orden, es el dueño de las aguas. Las retiene o las deja en libertad a su arbitrio, tanto a las de arriba como a las de abajo, provocando así la sequía o la inundación (Job 12,15). «Derrama la lluvia sobre la tierra» (Job 5,10; Sal 104,10-16), lluvia que viene de Dios y no de los hombres (Miq 5,6; cf. Job 38,22-28). Dios le ha «impuesto leyes» (Job 28,26). Cuida de que caiga regularmente, «a su tiempo» (Lev 26,4; Dt 28,12): si viniera demasiado tarde (en enero), se pondrian en peligro las siembras, como también las cosechas si cesara demasiado temprano, «a tres meses de la siega» (Am 4,7). Por el contrario las lluvias de otoño y de primavera (Dt 11,14; Jer 5,24) cuando Dios se digna otorgarlas a los hombres aseguran la prosperidad del país (Is 30,23ss). Dios dispone igualmente del abismo según su voluntad (Sal 135,6; Prov 3,19s). Si lo deseca, se agotan las fuentes y los ríos (Am 7,4; Is 44,27; Ez 31,15), provocando la desolación. Si abre las «compuertas» del abismo, corren los ríos y hacen prosperar la vegetación en sus riberas(Núm 24,6; Sal 1,3; Ez 19,10), sobre todo cuando han sido raras las lluvias (Ez 17,8). En las regiones desérticas las fuentes y los pozos son los únicos puntos de agua que permiten abrevar a las bestias y a las personas (Gén 16,14; Ex 15,23.27) representan un capital de vida que las gentes se disputan encarnizadamente (Gén 21,25; 26,20s; Jos 15,19). El salmo 104 resume a maravilla el dominio de Dios sobre las aguas: él fue quien creó las aguas de arriba (Sal 104,3) como las del abismo (v. 6); él es quien regula el suministro de sus corrientes (v. 7s), quien las retiene para que no aneguen el país (v. 9), quien hace manar las fuentes (v. 10) y descender la lluvia (v. 13), gracias a lo cual se derrama la prosperidad sobre la tierra aportando gozo al corazón del hombre (v. 11-18). <br>II. LAS AGUAS EN LA HISTORIA DEL PUEBLO DE DIOS.<br> 1. Aguas y *retribución temporal.<br> Si Dios otorga o niega las aguas según su voluntad, no obra, sin embargo, en forma arbitraria, sino conforme al comportamiento de su pueblo. Según que el pueblo se mantenga o no fiel a la alianza, le otorga o le rehúsa Dios las aguas. Si los israelitas viven según la ley divina, *obedeciendo a la voz de Dios, abre Dios los cielos para dar la lluvia a su tiempo (Lev 26,3ss.10; Dt 28,1.12). El agua es, pues, efecto y signo de la *bendición de Dios para con los que le sirven fielmente (Gén 27,28; Sal 133,3). Por el contrario, si Israel es infiel, lo *castiga Dios haciéndole «un cielo de hierro y una tierra de bronce». (Lev 26,19; Dt 28,23), a fin de que comprenda y se *convierta (Am 4,7). La sequía es, pues, efecto de la *maldición divina para con los *impíos (Is 5,13; 19,5ss; Ez 4,16s; 31,15), como la que devastó el país bajo Ajab por haber Israel «abandonado a Dios para seguir a los Baales». (IRe 18,18). <br>2. Las aguas aterradoras.<br> El agua no es solo un poder de vida. Las aguas del *mar evocan la inquietud demoniaca con su agitación perpetua, y con su amargura, la desolación del sêol. La crecida súbita de los cauces del desierto, que en el momento de la *tormenta arrastran la tierra y a los vivientes (Job 12,15; 40,23), simboliza la desgracia que se apresta a lanzarse sobre el hombre de improviso (Sal 124), las intrigas que urden contra el justo sus *enemigos (Sal 18,5s.17; 42,8; 71,20; 144,7), que con sus maquinaciones se esfuerzan por arrastrarlo hasta el fondo mismo del abismo (Sal 35,25; 69,2s). Ahora bien, si Dios sabe proteger al justo contra estas aguas devastadoras (Sal 32,6; cf. Cant 8,6s), puede igualmente hacer que las olas se rompan sobre los impíos en justo *castigo de una conducta contraria al amor del prójimo (Job 22,11). En los profetas el desbordamiento devastador de los grandes ríos simboliza el *poder de los imperios que van a anegar y destruir los pequeños pueblos; poder de Asiria, comparado con el Eufrates (Is 8,7) o de Egipto, comparado con su Nilo(Jer 46,7s). Dios va a enviar estos ríos para castigar tanto a su pueblo culpable de falta de confianza en él (Is 8,6ss) como a los enemigos tradicionales de Israel (Jer 47,1s). Sin embargo, este azote brutal no es ciego en las manos del Creador: el *diluvio, que devora a un mundo impío (2Pe 2,5), deja subsistir al justo (Sab 10,4). Asimismo las aguas del mar Rojo distinguen entre el pueblo de Dios y el de los ídolos (Sab 10,18s). Las aguas aterradoras anticipan, pues, el *juicio definitivo por el fuego (2Pe 3,5ss; cf. Sal 29.10; Lc 3,16s) y dejan a su paso una tierra nueva (Gén 8,11). <br>3. Las aguas purificadoras.<br> El tema de las aguas de la ira converge con otro aspecto del agua bienhechora: ésta no es solo poder de vida, sino que es también lo que lava y hace desaparecer las impurezas (cf. Ez 16,4-9; 23,40). Uno de los ritos elementales de la *hospitalidad era el de lavar los pies al huésped para limpiarlo del polvo del camino (Gén 18,4; 19,2; cf. Lc 7,44; ITim 5,10); y Jesús, la víspera de su muerte, quiso desempeñar personalmente esta tarea de servidor como signo ejemplar de humildad y de caridad cristiana (Jn 13,2-15). El agua, instrumento de limpieza física, es con frecuencia símbolo de pureza moral. Se usa lavarse las manos para significar que son inocentes y que no han perpetrado el mal (Sal 26,6; cf. Mt 27,24). El pecador que abandona sus pecados y se convierte es como un hombre manchado que se lava (Is 1,16); asimismo Dios «lava' al pecador, al que *perdona sus faltas (Sal 51,4). Por el diluvio «purificó» Dios la tierra exterminando a los impíos (cf. IPe 3,20s). El ritual judío prescribía numerosas *purificaciones por el agua: el sumo sacerdote debía lavarse para prepararse a su investidura (Ex 29,4; 40,12) o al gran día de la *expiación (Lev 16,4.24); había prescritas abluciones por el agua si se había tocado un cadáver (Lev 11,40; 17, 1 5s), para purificarse de la *lepra (Lev 14,8s) o de toda impureza sexual (Lev 15). Estas diferentes purificaciones del cuerpo debían significar la purificación interior del *corazón, necesaria a quien quisiera acercarse al Dios tres veces *santo. Pero eran impotentes para procurar eñcazmente la pureza del alma. En la nueva alianza, Cristo instituirá un nuevo modo de purificación; en las bodas de Caná lo anuncia en forma simbólica cambiando el agua destinada a los purificaciones rituales (Jn 2,6) en *vino, el cual simboliza ya el Espiritu, ya la palabra purificadora (Jn 15,3; cf. 13,10). <br>III. LAS AGUAS ESCATOLÓGICAS.<br> 1. Finalmente, el tema del agua ocupa gran lugar en las perspectivas de restauración del pueblo de Dios. Después de la reunión de todos los *dispersos, derramará Dios con abundancia las aguas purificadoras, que lavarán el corazón del hombre para permitirle cumplir fielmente toda la ley de Yahveh (Ez 36,24-27). Yano habrá, pues, maldición ni sequía; Dios «dará la lluvia a su tiempo» (Ez 34,26), prenda de prosperidad (Ez 36,29s). Los sembrados germinarán asegurando el pan en abundancia; los pastos serán pingües (Is 30 23s). El pueblo de Dios será conducido a aguas manantiales, 'hambre y sed desaparecerán para siempre (Jer 31,9; Is 49,10). Al final del exilio en Babilonia el recuerdo del Exodo se mezcla con frecuencia en estas perspectivas de restauración. El retorno será, en efecto, un nuevo *éxodo con prodigios todavía mas espléndidos. En otro tiempo Dios, por mano de Moisés, había hecho brotar agua de la roca para apagar la sed de su pueblo (Ex 17,1-7; Núm 20,1-13; Sal 78, 16.20; 114,8; Is 48,21). En adelante va Dios a renovar el prodigio (Is 43, 20) y con tal magnificencia que el *desierto se cambie en un vergel abundoso (Is 41,17-20) y el país de la sed en fuentes (Is 35,6s). *Jerusalén, término de esta peregrinación, poseerá una fuente inagotable. Un río brotará del *templo para correr hacia el mar Muerto; derramará vida y salud a todo lo largo de su curso, y los *árboles crecerán en sus riberas, dotados de una fecundidad maravillosa: será el retorno de la dicha *paradisíaca (Ez 47,1-12; cf. Gén 2,10-14). El pueblo de Dios hallará en estas aguas la pureza (Zac 13,1), la vida (J1 4,18; Zac 14,8), la santidad (Sal 46,5). En estas perspectivas escatológicas reviste el agua de ordinario un valor simbólico. En efecto, Israel no detiene su mirada en las realidades materiales, y la dicha que entrevé no es solo prosperidad carnal. El agua que Ezequiel ve salir del templo simboliza el poder vivificador de Dios, que se derramará en los tiempos mesiánicos y permitirá a los hombres producir fruto con plenitud (Ez 47 12; Jer 17,8; Sal 1,3; Ez 19,10s). En Is 44,3ss, el agua es símbolo del *Espiritu de Dios, capaz de transformar un desierto en vergel floreciente, y al pueblo infiel en verdadero Israel'. En otros lugares se compara la *palabra de Dios con la lluvia que viene a fecundar la tierra (Is 55,10s; cf. Am 8,11s), y la doctrina que dispensa la *sabiduría es un agua vivificadora (Is 55,1; Eclo 15, 3; 24,25-31). En una palabra, Dios es fuente de vida para el hombre y le da la fuerza de desarrollarse en el amor y en la fidelidad (Jer 2,13 17,8). Lejos de Dios, el hombre no es sino una tierra árida condenada a la muerte (Sal 143,6); suspira, pues, por Dios, como el ciervo suspira por el agua viva (Sal 42,2s). Pero si Dios está con él, entonces viene a ser como un huerto que posee la fuente misma que le hace vivir (Is 58,11). <br>IV. EL NUEVO TESTAMENTO.<br> 1. Las aguas vivificadoras.<br> Cristo vino a traer a los hombres las aguas vivificadoras prometidas por los profetas. Es la *roca que, golpeada (cf. Jn 19, 34), deja correr de su flanco las aguas capaces de apagar la sed del pueblo que camina hacia la verdadera tierra prometida (ICor 10,4; Jn 7,38; cf. Ex 17,1-7). Es asimismo el*templo (cf. Jn 2,19ss) del que parte el río que va a irrigar y vivificar a la nueva *Jerusalén (Jn 7,37s, Ap 22 1.17; Ez 47,1-12), nuevo *paraíso. Estas aguas no son otras que el *Espíritu Santo, poder vivificador del Dios creador (Jn 7,39). En Jn 4,10-14 el agua, sin embargo, parece más bien simbolizar la doctrina vivificadora aportada por Cristo Sabiduria (cf. 4,25). De todos modos, en el momento de la consumación de todas las cosas, el agua viva seré el símbolo de la felicidad sin fin de los elegidos, conducidos a los pingües pastos por el *cordero (Ap 7,17; 21,6; cf. Is 25,8; 49,10). <br>2. Las aguas bautismales.<br> El simbolismo del agua halla su pleno siignificado en el *bautismo cristiano. En los origenes se empleó el agua en el bautismo por su valor purificador. Juan bautiza en el agua «para la remisión de los pecados» (Mt 3, 11 p), utilizando a este objeto el agua del Jordán que en otro tiempo habia purificado a Naamán de la lepra (2Re 5,10-14). El bautismo, sin embargo, efectúa la purificación, no del cuerpo, sino del alma, de la «conciencia». (IPe 3,21). Es un baño que nos lava de nuestros pecados (ICor 6,11; Ef 5,26 ; Heb 10,22 ; Act 22,16) aplicándonos la virtud redentora de la *sangre de Cristo (Heb 9,13s; Ap 7,14; 22,14). A este simbolismo fundamental del agua bautismal añade Pablo otro: inmersión y emersión del neófito simbolizan su sepultura con Cristo y su resurrección espiritual (Rm 6, 3- 11). Quizá vea Pablo aquí en el agua bautismal una representación del *mar, morada de los poderes maléficos y símbolo de muerte, vencida por Cristo como en otro tiempo el mar Rojo por Yahveh (ICor 10ss; cf. Is 51,10). Finalmente, el bautismo, al comunicarnos el Espiritu de Dios, es también principio de *vida nueva. Es posible que Cristo quisiera hacer alusión a ello efectuando diferentes curaciones por medio del agua (Jn 9,6s; cf. 5,1-8). Entonces el bautismo se concibe como un «baño de regeneración y de renovación del Espíritu Santo». (Tit 3,5; cf. Jn 3,5). -> Bautismo - Diluvio - Espíritu - Mar - Muerte - Puro - Vida";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=46;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=42;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=17;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=13;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>

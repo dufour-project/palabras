@@ -1,0 +1,599 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta content="width=device-width" name="viewport" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<style type="text/css">
+
+.boton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 11px 20px;
+  border: solid #498bc9 3px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  background: #fff;
+  font-family: "Roboto"; }
+
+a {
+  color: #FF4136; }
+
+.wrap {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto; }
+
+.info {
+  text-align: center;
+  padding: 20px;
+  color: #001F3F;
+  border-bottom: 1px solid #ccc; }
+  .info p {
+    margin-top: 20px; }
+
+.formulario {
+  /* --------------------------------------- */
+  /* ----- Radio Button */
+  /* --------------------------------------- */
+  /* --------------------------------------- */
+  /* ----- Checkbox */
+  /* --------------------------------------- */ }
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
+
+/*# sourceMappingURL=estilos.css.map */
+</style>
+        
+
+
+</head>
+<body style="color: rgb(255, 255, 255); background-color: rgb(51, 170, 255);">
+<center>
+<font face="Verdana" size="-1">
+<br>
+<h3 style="text-align: center;">ALIMENTO</h3>
+<div id="menu">
+<p>Opciones</p><br>
+
+<input name="Leer Difour" type="button" value="Leer Difour" class="boton" onclick="leerdifour()"/><br><br>
+<input name="Ver Históricos" type="button" value="Ver Históricos" class="boton" onclick="historicos()"/><br><br>
+<input name="Ver Proféticos" type="button" value="Ver Proféticos" class="boton" onclick="profeticos()"/><br><br>
+<input name="Ver Cartas" type="button" value="Ver Cartas" class="boton" onclick="cartas()"/><br><br>
+<input name="Ver Evangelios" type="button" value="Ver Evangelios" class="boton" onclick="evangelios()"/><br><br>
+<input name="Sortear" type="button" value="Sortear moniciones" class="boton" onclick="fsorteo()"/><br><br>
+</div>
+
+
+<div id="difour" style="display: none;">
+<div style="background-color: white; font-size: 15px">
+<font color="black">
+<p id="textodifour"></p>
+</div>
+</font>
+<input name="anterior" type="button" value="<INICIO" class="boton" onclick="principio()" />
+<input name="siguiente" type="button" value="HISTÓRICOS>" class="boton" onclick="historicos()"/>
+</div>
+
+
+<div id="lectura" style="display: none;" class="wrap">
+<p id="tipo"></p>
+<form id="lista" class="formulario">
+	<div id="lecthist" style="display: none;" class="radio">
+		<input name='lecthist' type='radio' id='hist0' value='Gén 1,29s' /><label for="hist0">Gén 1,29s</label><br>
+		<input name='lecthist' type='radio' id='hist1' value='Gén 9,2s' /><label for="hist1">Gén 9,2s</label><br>
+		<input name='lecthist' type='radio' id='hist2' value='Gén 3,19' /><label for="hist2">Gén 3,19</label><br>
+		<input name='lecthist' type='radio' id='hist3' value='Dt 14,29' /><label for="hist3">Dt 14,29</label><br>
+		<input name='lecthist' type='radio' id='hist4' value='Prov 23,20s' /><label for="hist4">Prov 23,20s</label><br>
+		<input name='lecthist' type='radio' id='hist5' value='Eclo 31,12-31' /><label for="hist5">Eclo 31,12-31</label><br>
+		<input name='lecthist' type='radio' id='hist6' value='Eclo 37,27-31' /><label for="hist6">Eclo 37,27-31</label><br>
+		<input name='lecthist' type='radio' id='hist7' value='Prov 11,26' /><label for="hist7">Prov 11,26</label><br>
+		<input name='lecthist' type='radio' id='hist8' value='Ecl 2,24' /><label for="hist8">Ecl 2,24</label><br>
+		<input name='lecthist' type='radio' id='hist9' value='Ecl 3,13' /><label for="hist9">Ecl 3,13</label><br>
+		<input name='lecthist' type='radio' id='hist10' value='Prov 15,17' /><label for="hist10">Prov 15,17</label><br>
+		<input name='lecthist' type='radio' id='hist11' value='Prov 17,1' /><label for="hist11">Prov 17,1</label><br>
+		<input name='lecthist' type='radio' id='hist12' value='Dt 16,1-7' /><label for="hist12">Dt 16,1-7</label><br>
+		<input name='lecthist' type='radio' id='hist13' value='Lev 11' /><label for="hist13">Lev 11</label><br>
+		<input name='lecthist' type='radio' id='hist14' value='Dt 14,21' /><label for="hist14">Dt 14,21</label><br>
+		<input name='lecthist' type='radio' id='hist15' value='Ex 16,4' /><label for="hist15">Ex 16,4</label><br>
+		<input name='lecthist' type='radio' id='hist16' value='Ex 16,15' /><label for="hist16">Ex 16,15</label><br>
+		<input name='lecthist' type='radio' id='hist17' value='Dt 8,3' /><label for="hist17">Dt 8,3</label><br>
+		<input name='lecthist' type='radio' id='hist18' value='Sab 16,26' /><label for="hist18">Sab 16,26</label><br>
+		<input name='lecthist' type='radio' id='hist19' value='Dt 8,8ss' /><label for="hist19">Dt 8,8ss</label><br>
+	</div>
+	<div id="lectprof" style="display: none;" class="radio">
+		<input name='lectprof' type='radio' id='prof0' value='Am 6,4' /><label for="prof0">Am 6,4</label><br>
+	</div>
+	<div id="lectcart" style="display: none;" class="radio">
+		<input name='lectcart' type='radio' id='cart0' value='Hch 10,13' /><label for="cart0">Hch 10,13</label><br>
+		<input name='lectcart' type='radio' id='cart1' value='Gál 4,3ss' /><label for="cart1">Gál 4,3ss</label><br>
+		<input name='lectcart' type='radio' id='cart2' value='1Cor 3,22' /><label for="cart2">1Cor 3,22</label><br>
+		<input name='lectcart' type='radio' id='cart3' value='1Cor 8,3.4;' /><label for="cart3">1Cor 8,3.4;</label><br>
+		<input name='lectcart' type='radio' id='cart4' value='1Cor 10,26-30' /><label for="cart4">1Cor 10,26-30</label><br>
+		<input name='lectcart' type='radio' id='cart5' value='1Tim 4,3s' /><label for="cart5">1Tim 4,3s</label><br>
+		<input name='lectcart' type='radio' id='cart6' value='Rom 14 17' /><label for="cart6">Rom 14 17</label><br>
+	</div>
+	<div id="lectev" style="display: none;" class="radio">
+		<input name='lectev' type='radio' id='ev0' value='Mt 4,1-4' /><label for="ev0">Mt 4,1-4</label><br>
+		<input name='lectev' type='radio' id='ev1' value='Mt 11,19' /><label for="ev1">Mt 11,19</label><br>
+		<input name='lectev' type='radio' id='ev2' value='Mt 6,25-26' /><label for="ev2">Mt 6,25-26</label><br>
+		<input name='lectev' type='radio' id='ev3' value='Mt 6,35' /><label for="ev3">Mt 6,35</label><br>
+		<input name='lectev' type='radio' id='ev4' value='Mt 15, 32' /><label for="ev4">Mt 15, 32</label><br>
+		<input name='lectev' type='radio' id='ev5' value='Lc 10,8' /><label for="ev5">Lc 10,8</label><br>
+		<input name='lectev' type='radio' id='ev6' value='Jn 6,27-32s' /><label for="ev6">Jn 6,27-32s</label><br>
+		<input name='lectev' type='radio' id='ev7' value='Jn 6, 55' /><label for="ev7">Jn 6, 55</label><br>
+		<input name='lectev' type='radio' id='ev8' value='Jn 4,31-34' /><label for="ev8">Jn 4,31-34</label><br>
+	</div>
+</form>
+
+<input id="difourboton" type="button" value="<Texto Difour" class="boton" onclick="leerdifour()" style="display: none;" />
+<input id="historicosboton" type="button" value="<Históricos" class="boton" onclick="historicos()" style="display: none;" />
+<input id="profeticosboton" type="button" value="<Proféticos" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton" type="button" value="<Cartas" class="boton" onclick="cartas()" style="display: none;" />
+<input id="profeticosboton1" type="button" value="Proféticos>" class="boton" onclick="profeticos()" style="display: none;" />
+<input id="cartasboton1" type="button" value="Cartas>" class="boton" onclick="cartas()" style="display: none;" />
+<input id="evangeliosboton" type="button" value="Evangelios>" class="boton" onclick="evangelios()" style="display: none;" />
+<input id="sorteoboton" type="button" value="Sorteo>" class="boton" onclick="fsorteo()" style="display: none;" />
+
+</div>
+
+<div id="sorteo" style="display: none;">
+<h3 id="titulo"><b></b></h3><br>
+<div id="sorteo1">
+	<p id="elegidas">
+	</p>
+	<h3>Número de personas:</h3>
+	<select name="listapersonas" id="listapersonas" onchange="imprimecampos()">
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>6</option>
+		<option>7</option>
+	</select>
+	<br>
+	<input type="text" name="nombre1" id="nombre1" placeholder="Nombre Persona 1" style="display: block;">
+	<input type="text" name="nombre2" id="nombre2" placeholder="Nombre Persona 2" style="display: block;">
+	<input type="text" name="nombre3" id="nombre3" placeholder="Nombre Persona 3" style="display: block;">
+	<input type="text" name="nombre4" id="nombre4" placeholder="Nombre Persona 4" style="display: none;">
+	<input type="text" name="nombre5" id="nombre5" placeholder="Nombre Persona 5" style="display: none;">
+	<input type="text" name="nombre6" id="nombre6" placeholder="Nombre Persona 6" style="display: none;">
+	<input type="text" name="nombre7" id="nombre7" placeholder="Nombre Persona 7" style="display: none;">
+	<br><br>
+	<p id="inputpersonas"></p>
+	<input id="sortearboton" type="button" value="SORTEAR" class="boton" onclick="sortear()" /><br><br>
+</div>
+<div id="sorteo2" style="display: none;">
+	<h3>SORTEADO:</h3>
+	<p id="sorteado"></p>
+	<br><br>
+</div>
+<input id="evangeliosboton1" type="button" value="<Volver a Evangelios" class="boton" onclick="evangelios()" />
+<input id="terminar" type="button" value="Terminar>" class="boton" onclick="principio()"/>
+</div>
+
+
+
+
+</font></center>
+<script type="text/javascript">
+var menu = document.getElementById("menu");
+var difour = document.getElementById("difour");
+var lectura = document.getElementById("lectura");
+var sorteo = document.getElementById("sorteo");
+var textodifour = document.getElementById("textodifour");
+var tipo = document.getElementById("tipo");
+var lista = document.getElementById("lista");
+var difourboton = document.getElementById("difourboton");
+var historicosboton = document.getElementById("historicosboton");
+var profeticosboton = document.getElementById("profeticosboton");
+var cartasboton = document.getElementById("cartasboton");
+var profeticosboton1 = document.getElementById("profeticosboton1");
+var cartasboton1 = document.getElementById("cartasboton1");
+var evangeliosboton = document.getElementById("evangeliosboton");
+var sorteo = document.getElementById("sorteo");
+var sorteoboton = document.getElementById("sorteoboton");
+var titulo = document.getElementById("titulo");
+var elegidahist = "No seleccionada";
+var elegidaprof = "No seleccionada";
+var elegidacart = "No seleccionada";
+var elegidaev = "No seleccionada";
+var temp;
+var maxhist;
+var maxprof;
+var maxcart;
+var maxev;
+var elegidas = document.getElementById("elegidas");
+var lecthist = document.getElementById("lecthist");
+var lectprof = document.getElementById("lectprof");
+var lectcart = document.getElementById("lectcart");
+var lectev = document.getElementById("lectev");
+var sorteo1 = document.getElementById("sorteo1");
+var sorteo2 = document.getElementById("sorteo2");
+var listapersonas = document.getElementById("listapersonas");
+var sorteado = document.getElementById("sorteado");
+
+
+function leerdifour(){
+	menu.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+	difour.style.display = 'block';
+	textodifour.innerHTML = "El hombre, como todos los seres vivos, está obligado a alimentarse para subsistir, y esta dependencia frente al mundo es un signo esencial de su inconsistencia, pero también es una invitación a alimentarse de Dios, único que tiene consistencia. La Biblia, para enseñar al hombre que su verdadero alimento es, como el del Señor, la voluntad de su Padre (Jn 4,34), le presenta los gestos de la alimentación en tres niveles diferentes: el de la creación y de la obediencia, el de la alianza y de la fe, el del Evangelio y de la caridad. <br>1. DIOS PROPORCIONA EL ALIMENTO DE SUS CRIATURAS.<br> «Yo os doy todas las hierbas que llevan simiente... todos los árboles que tienen frutos... A todos los animales de la tierra les doy como alimento la verdura de las plantas. (Gén 1,29s). Habiendo Dios creado al hombre y habiéndolo hecho señor de la *creación, le da su alimento como a todo el mundo animal. En aquella edad de oro y de paz universal, ningún *animal come la carne de otro; pero cuando, después del diluvio «pone (Dios) en manos del hombre» a todos los animales vivos para su alimentación, emplea el mismo lenguaje:«Os doy todo esto al igual que la verdura de las plantas» (9,2s). En este lenguaje aparece, a la vez, la dependencia de la naturaleza que tiene el hombre, sin la que no le es posible vivir, y su autonomía. El animal se alimenta de la hierba que encuentra o de la presa que persigue; el hombre se alimenta de los frutos y de las plantas que cultiva, de los animales que le pertenecen y que cría: se alimenta del producto de su cultivo, de su *trabajo (3,19), de «la obra de sus manos». (Dt 14,29). Como toda *obra, este carácter «artificial» de la alimentación humana entraña sus peligros: el del exceso, glotonería y *embriaguez, con sus consecuencias, desagradables para el que se entrega a él, pero también para la compañía (Prov 23,20s; Eclo 31,12-31; 37,27-31 —el del lujo (Am 6,4) y de la explotación de los pobres (Prov 11,26)—; sobre todo el de olvidar que todo alimento es *don de Dios. Si una solida tradición de sabiduría es capaz de mantener el equilibrio, de reconocer a la vez que «el comer y el beber y el gozar en el trabajo, constituyen buena parte de la felicidad humana (Ecl 2,24; 3,13, etc.) y que, sin embargo, «vale más una porción de verdura con afecto que un buey pingue con odio. (Prov 15,17; cf. 17,1), es porque esta tradición, incluso en el escéptico y desconfiado Qohelet, no olvida nunca que Todo esto viene de la mano de Dios. (Ecl 2,24). Para mantener viva la conciencia de ser así alimentados por las manos de Dios ejercieron una función capital, por una parte los sacrificios y las ofrendas, y por otra las prohibiciones relativas a los alimentos. Las buenas *comidas, las comidas de fiesta, se celebran una vez que se ha subido al santuario a inmolar una bestia, a ofrecer las primeras espigas y los más hermosos *frutos de la recolección (Dt 16,1-7). La prohibición de los animales impuros (Lev 11), fundada en el principio «A pueblo santo, alimento santo» (cf. Dt 14,21), mantiene, en una zona tan importante de la existencia humana como es la alimentación, el respeto a la voluntad soberana de Dios. <br>II. DIOS ALIMENTA A SU PUEBLO CON SU PALABRA<br> Por la *alianza toma Dios a su cargo la existencia de su pueblo. El *maná, venido «del cielo» (Ex 16,4), alimento procurado directamene por Dios (16,15) y en el que no tienen efecto el *trabajo y los cálculos del hombre (16,4s), es signo de esta nueva condición. Pero esta condición supone la *fe: el *maná está destinado a alimentar el cuerpo y a alimentar la fe, para enseñar a Israel a esperar su subsistencia y su supervivencia de la palabra «que sale de la boca de Yahveh» (Dt 8,3; Sab 16,26, cf. Mt 4,4), de sus *voluntades y de sus *promesas. Esta dirección divina, particularmente sentible en los milagros de la marcha por el desierto, no termina con el establecimiento en Palestina. La *tierra prometida, país de abundancia y de gratuidad, debe recordar cada día a Israel que todo le viene de su Dios (Dt 8,8ss). <br>III. DIOS, ALIMENTO DE SUS HIJOS.<br> El hombre, por ser *hijo de Dios puede a su vez prescindir de todos los alimentos de este mundo y utilizarlos todos. «¡Mata y come!», dice a Pedro la voz del cielo (Act 10,13): el cristiano no conoce ya distinción entre animales *puros e impuros; no está ya «esclavizado a los elementos del mundo», tiene la «adopción filial»e (Gál 4,3ss) y todo la pertenece en el universo (ICor 3,22), incluso las carnes inmoladas a los *ídolos(8,4; 10,26) a condición de que se acuerde de que él mismo pertenece a Cristo, como Cristo pertenece a Dios (3,23). Entonces' cualquier cosa que coma o que beba todo será para él fuente de *acción de gracias» (10,30s; ITim 4,3s). Ahora bien, Cristo, para mostrar que Dios le basta y que su alimento es la *voluntad de su Padre (Jn 4; 34), *ayuna cuarenta dias y cuarenta noches. (Mt 4,1-4). No es que desprecie el alimento: come como sus discípulos (Jn 4,31); acepta las invihciones que se le hacen y comparte nuestras *comidas (Mt 11,l9), recomienda a sus discípulos aceptar todo lo que se los ofrezca (Lc 10,8); multiplica los panes para impedir que las gentes sufran *hambre (Mt 15, 32 p). Con este milagro muestra Cristo que el Padre, protector de Ias aves del cielo (Mt 6,26), tiene todavíia más cuidado de sus hijos, pero sobre todo quiere enseñar que es él «el pan del cielo, el que baja del cielo y da la vida al mundo» (Jn 6,32s). Así como en el sermón de la montaña invitaba a «no preocuparse por la comida» (Mt 6,25) y a «buscar primero el reino de Dios» (Mt 6,35), así también aquí invita a *buscar otra cosa que «el alimento perecedero» (Jn 6,27; cf. Rom 14 17) y se propone a sí mismo, tal como es, en su carne y en su sangre, como nuestro alimento (Jn 6 S5). La *eucaristía, en la que el *pan de la tierra viene a ser el cuerpo de Cristo, hace que el hombre, hecho hijo de Dios, sea capaz de alimentarse, en cualquier circunstancia, de Jesucristo, de sus palabras, de sus gestos, de su vida. -> Eucaristía - Hambre y sed - Ayuno - Leche - Mana - Pan - Comida - Vino.";
+}
+	
+
+function historicos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Históricos";
+	difourboton.style.display = 'inline';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'inline';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'block';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxhist=20;
+
+
+	}
+
+function profeticos(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Proféticos";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'inline';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'inline';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'block';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxprof=1;
+}
+
+function cartas(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Cartas";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'inline';
+	cartasboton.style.display = 'none';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'inline';
+	sorteoboton.style.display = 'none';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'block';
+	lectev.style.display = 'none';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxcart=7;
+}
+
+function evangelios(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'none';
+	lectura.style.display = 'block';
+	tipo.innerHTML = "Evangelios";
+	difourboton.style.display = 'none';
+	historicosboton.style.display = 'none';
+	profeticosboton.style.display = 'none';
+	cartasboton.style.display = 'inline';
+	profeticosboton1.style.display = 'none';
+	cartasboton1.style.display = 'none';
+	evangeliosboton.style.display = 'none';
+	sorteoboton.style.display = 'inline';
+	lecthist.style.display = 'none';
+	lectprof.style.display = 'none';
+	lectcart.style.display = 'none';
+	lectev.style.display = 'block';
+	//CAMBIAR LOS NUMEROS HASTA EL MAXIMO DE LECTURAS, CAMBIAR EL VALOR MAXIMO 
+	maxev=9;
+}
+
+function fsorteo(){
+	menu.style.display = 'none';
+	difour.style.display = 'none';
+	sorteo.style.display = 'block';
+	lectura.style.display = 'none';
+	sorteo2.style.display = 'none';
+	sorteo1.style.display = 'block';
+	titulo.innerHTML = "Sorteo de moniciones";
+	//LAS LECTURAS ELEGIDAS SON:
+	for(var i = 0;i < maxhist; i++){
+		temp = 'hist'+(i);
+		if(document.getElementById(temp).checked)
+			elegidahist = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxprof; i++){
+		temp = 'prof'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaprof = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxcart; i++){
+		temp = 'cart'+(i);
+		if(document.getElementById(temp).checked)
+			elegidacart = document.getElementById(temp).value;
+	}
+	
+	for(var i = 0;i < maxev; i++){
+		temp = 'ev'+(i);
+		if(document.getElementById(temp).checked)
+			elegidaev = document.getElementById(temp).value;
+	}
+
+	elegidas.innerHTML = "Primera Lectura: " + elegidahist + "<br>" +
+	"Segunda Lectura: " + elegidaprof + "<br>" +
+	"Tercera Lectura: " + elegidacart + "<br>" +
+	"Evangelio: "+ elegidaev;
+}
+
+function sortear(){
+	sorteo1.style.display = 'none';
+	sorteo2.style.display = 'block';
+	switch(listapersonas.value){
+		case '3': var r = new random(1,3);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  while(amb == lect3)
+				  	lect3=r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4 || lect3 == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 3 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Tercera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Monición Evangelio ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '4': var r = new random(1,4);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  while(amb == lect4)
+				  	lect4=r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 4 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '5': var r = new random(1,5);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 5 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '6': var r = new random(1,6);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 6 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+		case '7': var r = new random(1,7);
+				  var amb = r.get();
+				  var lect1 = r.get();
+				  var lect2 = r.get();
+				  var lect3 = r.get();
+				  var lect4 = r.get();
+				  var nombreamb = ('nombre'+amb);
+				  var nombrehist = ('nombre'+lect1);
+				  var nombreprof = ('nombre'+lect2);
+				  var nombrecart = ('nombre'+lect3);
+				  var nombreev = ('nombre'+lect4);
+				  sorteado.innerHTML = "Sorteado para 7 personas: <br>Ambiental:"+document.getElementById(nombreamb).value+
+				  "<br>Primera monición ("+elegidahist+"): "+document.getElementById(nombrehist).value+
+				  "<br>Segunda monición ("+elegidaprof+"): "+document.getElementById(nombreprof).value+
+				  "<br>Primera monición ("+elegidacart+"): "+document.getElementById(nombrecart).value+
+				  "<br>Primera monición ("+elegidaev+"): "+document.getElementById(nombreev).value;
+			break;
+	}
+
+}
+
+function imprimecampos(){
+	switch(document.getElementById("listapersonas").value){
+		case '3':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'none';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '4':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'none';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '5':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'none';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '6':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'none';
+				break;
+		case '7':document.getElementById("nombre1").style.display = 'block';
+				document.getElementById("nombre2").style.display = 'block';
+				document.getElementById("nombre3").style.display = 'block';
+				document.getElementById("nombre4").style.display = 'block';
+				document.getElementById("nombre5").style.display = 'block';
+				document.getElementById("nombre6").style.display = 'block';
+				document.getElementById("nombre7").style.display = 'block';
+				break;
+	}
+}
+
+function principio (){
+	menu.style.display = 'block';
+	difour.style.display = 'none';
+	lectura.style.display = 'none';
+	sorteo.style.display = 'none';
+}
+
+function random(low, high){
+	if(arguments.length < 2){
+		high=low;
+		low=0;
+	}
+	this.low=low;
+	this.high=high;
+	this.reset();
+}
+
+random.prototype = {
+	reset: function(){
+		this.remaining = [];
+		for(var i = this.low;i <= this.high;i++){
+			this.remaining.push(i);
+		}
+	},
+	get:function(){
+		if(!this.remaining.length){
+			this.reset();
+		}
+		var index = Math.floor(Math.random() * this.remaining.length);
+		var val = this.remaining[index];
+		this.remaining.splice(index,1);
+		return val;
+	}
+}
+
+</script>
+</body>
+</html>
